@@ -20,18 +20,42 @@
     End Property
     Sub crear_cliente(ByVal iden As String, ByVal nom As String, ByVal tipodoc As String, ByVal tel As String, ByVal dir As String, ByVal email As String, ByVal f_alta As String, ByVal estado As String)
         conn.Open()
-
         cmd.CommandType = CommandType.Text
         cmd.Connection = conn
         Try
-            sql = "INSERT INTO cliente(identificacion,nombre_razon_social,tipo_documento,telefonos,direccion,e_mail,fecha_alta,estado) VALUES ('" & iden & "','" & nom & "','" & tipodoc & "','" & tel & "','" & dir & "','" & email & "','" & fecha_alta & "','" & estado & "')"
-            cmd.CommandText = sql
+            cmd.CommandText = "INSERT INTO cliente(identificacion,nombre_razon_social,tipo_documento,telefonos,direccion,e_mail,fecha_alta,estado) VALUES ('" & iden & "','" & nom & "','" & tipodoc & "','" & tel & "','" & dir & "','" & email & "','" & fecha_alta & "','" & estado & "')"
             cmd.ExecuteNonQuery()
-            MsgBox("Registro Guardado", MsgBoxStyle.Information, "Nuevo Cliente")
+            MsgBox("Cliente Creado Exitosamente", MsgBoxStyle.Information, "Nuevo Cliente")
             conn.Close()
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
     End Sub
+    Function consultar_con_nit(ByVal busqueda As String)
+        conn.Open()
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conn
+        cmd.CommandText = "SELECT  idcliente,nombre_razon_social,tipo_documento,telefonos,direccion FROM cliente WHERE identificacion LIKE '" & busqueda & "%' LIMIT 1"
+        lector = cmd.ExecuteReader
+        If lector.HasRows = True Then
+            While lector.Read()
+                _idcliente = lector(0)
+                _nombre = lector(1)
+                _tipodocumento = lector(2)
+                _telefono = lector(3)
+                _direccion = lector(4)
+                conn.Close()
+                Return True
+            End While
 
+        Else
+            conn.Close()
+            Return False
+
+        End If
+        lector.Close()
+        conn.Close()
+        Return False
+
+    End Function
 End Class
