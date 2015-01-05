@@ -5,11 +5,17 @@
         Dim objcliente As New Cliente
         Dim estado As String = "1"
         If txt_nombre.Text = Nothing Then
-            MsgBox("El campo Nombre esta vacio", MsgBoxStyle.Information, "CAMPO VACIO")
+            MsgBox("El campo Nombre esta vacio", MsgBoxStyle.Information, "JAFERRO")
         ElseIf txt_numdocu.Text = Nothing Then
-            MsgBox("El campo Numero de Documento esta vacio", MsgBoxStyle.Information, "CAMPO VACIO")
+            MsgBox("El campo Numero de Documento esta vacio", MsgBoxStyle.Information, "JAFERRO")
         Else
-            objcliente.crear_cliente(txt_numdocu.Text, txt_nombre.Text, cb_tipodocu.Text, txt_telefono.Text, txt_dir.Text, txt_email.Text, txt_fechanacio.Text, estado)
+
+            If objcliente.crear_cliente(txt_numdocu.Text, txt_nombre.Text, cb_tipodocu.Text, txt_telefono.Text, txt_dir.Text, txt_email.Text, txt_fechanacio.Text, estado) = True Then
+                MsgBox("Cliente Creado Exitosamente", MsgBoxStyle.Information, "JAFERRO")
+            Else
+                MsgBox("Error al Crear Cliente", MsgBoxStyle.Information, "JAFERRO")
+            End If
+
         End If
     End Sub
 
