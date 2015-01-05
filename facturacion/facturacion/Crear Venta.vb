@@ -24,7 +24,6 @@
     Private Sub txt_nit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_nit.KeyPress
         objfuncionesvarias.comprueba_numeros(e)
     End Sub
-
     Private Sub txt_nit_TextChanged(sender As Object, e As EventArgs) Handles txt_nit.TextChanged
         If txt_nit.Text <> Nothing Then
             If objcliente.consultar_todos_con_nit(txt_nit.Text) = True Then
@@ -41,10 +40,9 @@
             habilitarcampos()
         End If
     End Sub
-
     Private Sub btn_crear_Click(sender As Object, e As EventArgs) Handles btn_crear.Click
         Dim estado As String = "1"
-        If objcliente.crear_cliente(txt_nit.Text, txt_nombre.Text, txt_tdocu.Text, txt_telefono.Text, Nothing, Nothing, Nothing, estado) = True Then
+        If objcliente.crear_cliente(txt_nit.Text, txt_nombre.Text, txt_tdocu.Text, txt_telefono.Text, Nothing, Nothing, estado) = True Then
             If MsgBox("Cliente Creado. ¿Desea añadir informacion del cliente?", MsgBoxStyle.YesNo, "Cliente Creado") = MsgBoxResult.Yes Then
                 Dim adi_clien As New Editar_Cliente
                 objcliente._numdocumento = txt_nit.Text
@@ -66,8 +64,45 @@
         End If
 
     End Sub
-
     Private Sub Crear_Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txt_tdocu.SelectedIndex = 0
+    End Sub
+    Private Sub txt_telefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_telefono.KeyPress
+        objfuncionesvarias.comprueba_numeros(e)
+    End Sub
+    Private Sub dg_productosventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_productosventa.CellContentClick
+        If e.ColumnIndex = 13 Then
+            PanelBuscar_producto.Visible = True
+            check_nompro.CheckState = CheckState.Checked
+        Else
+
+        End If
+    End Sub
+    Private Sub check_nompro_CheckedChanged(sender As Object, e As EventArgs) Handles check_nompro.CheckedChanged
+        If check_referencia.CheckState = CheckState.Checked Then
+            check_referencia.CheckState = CheckState.Unchecked
+        Else
+            check_nompro.CheckState = CheckState.Checked
+        End If
+    End Sub
+    Private Sub check_referencia_CheckedChanged(sender As Object, e As EventArgs) Handles check_referencia.CheckedChanged
+        If check_nompro.CheckState = CheckState.Checked Then
+            check_nompro.CheckState = CheckState.Unchecked
+        Else
+            check_referencia.CheckState = CheckState.Checked
+        End If
+    End Sub
+
+    Private Sub cb_producto_TextChanged(sender As Object, e As EventArgs) Handles cb_producto.TextChanged
+        Dim criterio As Integer
+        If check_referencia.CheckState = CheckState.Checked Then
+            criterio = 1
+            objcliente.consultar_con_nombre(cb_producto.Text, criterio)
+        ElseIf check_nompro.CheckState = CheckState.Checked Then
+            criterio = 0
+            objcliente.consultar_con_nombre(cb_producto.Text, criterio)
+        Else
+
+        End If
     End Sub
 End Class

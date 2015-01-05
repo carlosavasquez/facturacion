@@ -36,8 +36,6 @@ Partial Class Form1
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txt_numdocu = New System.Windows.Forms.TextBox()
         Me.btn_cancelar = New System.Windows.Forms.Button()
-        Me.txt_fechanacio = New System.Windows.Forms.DateTimePicker()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -57,7 +55,7 @@ Partial Class Form1
         Me.bnt_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.bnt_guardar.ImageIndex = 0
         Me.bnt_guardar.ImageList = Me.ImageList1
-        Me.bnt_guardar.Location = New System.Drawing.Point(183, 226)
+        Me.bnt_guardar.Location = New System.Drawing.Point(183, 197)
         Me.bnt_guardar.Name = "bnt_guardar"
         Me.bnt_guardar.Size = New System.Drawing.Size(40, 40)
         Me.bnt_guardar.TabIndex = 7
@@ -77,7 +75,7 @@ Partial Class Form1
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(18, 273)
+        Me.Label9.Location = New System.Drawing.Point(13, 241)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(151, 15)
         Me.Label9.TabIndex = 37
@@ -165,35 +163,17 @@ Partial Class Form1
         Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_cancelar.ImageIndex = 1
         Me.btn_cancelar.ImageList = Me.ImageList1
-        Me.btn_cancelar.Location = New System.Drawing.Point(334, 226)
+        Me.btn_cancelar.Location = New System.Drawing.Point(334, 197)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(40, 40)
         Me.btn_cancelar.TabIndex = 8
         Me.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_cancelar.UseVisualStyleBackColor = False
         '
-        'txt_fechanacio
-        '
-        Me.txt_fechanacio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_fechanacio.Location = New System.Drawing.Point(183, 168)
-        Me.txt_fechanacio.Name = "txt_fechanacio"
-        Me.txt_fechanacio.Size = New System.Drawing.Size(190, 22)
-        Me.txt_fechanacio.TabIndex = 5
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label8.Location = New System.Drawing.Point(13, 172)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(137, 16)
-        Me.Label8.TabIndex = 38
-        Me.Label8.Text = "Fecha Nacimiento:"
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(13, 198)
+        Me.Label13.Location = New System.Drawing.Point(13, 169)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(56, 16)
         Me.Label13.TabIndex = 33
@@ -201,7 +181,7 @@ Partial Class Form1
         '
         'txt_email
         '
-        Me.txt_email.Location = New System.Drawing.Point(183, 198)
+        Me.txt_email.Location = New System.Drawing.Point(183, 169)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(190, 22)
         Me.txt_email.TabIndex = 6
@@ -242,9 +222,7 @@ Partial Class Form1
         '
         Me.GroupBox1.Controls.Add(Me.bnt_guardar)
         Me.GroupBox1.Controls.Add(Me.btn_cancelar)
-        Me.GroupBox1.Controls.Add(Me.txt_fechanacio)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.txt_email)
@@ -262,7 +240,7 @@ Partial Class Form1
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(18, 53)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(390, 292)
+        Me.GroupBox1.Size = New System.Drawing.Size(390, 259)
         Me.GroupBox1.TabIndex = 35
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Personales"
@@ -283,7 +261,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(426, 355)
+        Me.ClientSize = New System.Drawing.Size(426, 331)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Form1"
@@ -307,8 +285,6 @@ Partial Class Form1
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents txt_numdocu As System.Windows.Forms.TextBox
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
-    Friend WithEvents txt_fechanacio As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents txt_email As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label

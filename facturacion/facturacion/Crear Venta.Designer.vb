@@ -22,25 +22,26 @@ Partial Class Crear_Venta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.col_idbodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_valortotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_unitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_referencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_idproducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dg_productosventa = New System.Windows.Forms.DataGridView()
+        Me.col_idproducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_referencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_unitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_valortotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_idventa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_idbodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_btn_agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.txt_tdocu = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -65,65 +66,77 @@ Partial Class Crear_Venta
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txt_total = New System.Windows.Forms.TextBox()
         Me.txt_sub = New System.Windows.Forms.TextBox()
+        Me.PanelBuscar_producto = New System.Windows.Forms.Panel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txt_valor = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.cb_producto = New System.Windows.Forms.ComboBox()
+        Me.btn_agregarpro = New System.Windows.Forms.Button()
+        Me.check_nompro = New System.Windows.Forms.CheckBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.check_referencia = New System.Windows.Forms.CheckBox()
+        Me.txt_cantidad = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.dg_productosventa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
+        Me.PanelBuscar_producto.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'col_idbodega
+        'dg_productosventa
         '
-        Me.col_idbodega.HeaderText = "Id Bodega"
-        Me.col_idbodega.Name = "col_idbodega"
-        Me.col_idbodega.ReadOnly = True
-        Me.col_idbodega.Visible = False
+        Me.dg_productosventa.AllowUserToDeleteRows = False
+        Me.dg_productosventa.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        Me.dg_productosventa.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dg_productosventa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal
+        Me.dg_productosventa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg_productosventa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idproducto, Me.col_nombre, Me.col_referencia, Me.col_marca, Me.col_descripcion, Me.col_iva, Me.col_estado, Me.col_cantidad, Me.col_unitario, Me.col_descuento, Me.col_valortotal, Me.col_idventa, Me.col_idbodega, Me.col_btn_agregar})
+        Me.dg_productosventa.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dg_productosventa.Location = New System.Drawing.Point(3, 17)
+        Me.dg_productosventa.Name = "dg_productosventa"
+        Me.dg_productosventa.ReadOnly = True
+        Me.dg_productosventa.RowHeadersVisible = False
+        Me.dg_productosventa.Size = New System.Drawing.Size(631, 229)
+        Me.dg_productosventa.TabIndex = 0
         '
-        'col_valortotal
+        'col_idproducto
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Format = "C0"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.col_valortotal.DefaultCellStyle = DataGridViewCellStyle6
-        Me.col_valortotal.HeaderText = "V. TOTAL"
-        Me.col_valortotal.Name = "col_valortotal"
-        Me.col_valortotal.ReadOnly = True
+        Me.col_idproducto.HeaderText = "Id Producto"
+        Me.col_idproducto.Name = "col_idproducto"
+        Me.col_idproducto.ReadOnly = True
+        Me.col_idproducto.Visible = False
         '
-        'col_descuento
+        'col_nombre
         '
-        DataGridViewCellStyle7.Format = "N0"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.col_descuento.DefaultCellStyle = DataGridViewCellStyle7
-        Me.col_descuento.HeaderText = "Descuento"
-        Me.col_descuento.Name = "col_descuento"
-        Me.col_descuento.ReadOnly = True
-        Me.col_descuento.Visible = False
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.col_nombre.DefaultCellStyle = DataGridViewCellStyle21
+        Me.col_nombre.HeaderText = "PRODUCTO"
+        Me.col_nombre.Name = "col_nombre"
+        Me.col_nombre.ReadOnly = True
+        Me.col_nombre.Width = 270
         '
-        'col_unitario
+        'col_referencia
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.Format = "C0"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.col_unitario.DefaultCellStyle = DataGridViewCellStyle8
-        Me.col_unitario.HeaderText = "V. UNITARIO"
-        Me.col_unitario.Name = "col_unitario"
-        Me.col_unitario.ReadOnly = True
-        Me.col_unitario.Width = 120
+        Me.col_referencia.HeaderText = "Referencia"
+        Me.col_referencia.Name = "col_referencia"
+        Me.col_referencia.ReadOnly = True
+        Me.col_referencia.Visible = False
         '
-        'col_cantidad
+        'col_marca
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.Format = "N0"
-        DataGridViewCellStyle9.NullValue = Nothing
-        Me.col_cantidad.DefaultCellStyle = DataGridViewCellStyle9
-        Me.col_cantidad.HeaderText = "CANTIDAD"
-        Me.col_cantidad.Name = "col_cantidad"
-        Me.col_cantidad.ReadOnly = True
-        Me.col_cantidad.Width = 80
+        Me.col_marca.HeaderText = "Marca"
+        Me.col_marca.Name = "col_marca"
+        Me.col_marca.ReadOnly = True
+        Me.col_marca.Visible = False
         '
-        'col_estado
+        'col_descripcion
         '
-        Me.col_estado.HeaderText = "Estado"
-        Me.col_estado.Name = "col_estado"
-        Me.col_estado.ReadOnly = True
-        Me.col_estado.Visible = False
+        Me.col_descripcion.HeaderText = "Descripcion"
+        Me.col_descripcion.Name = "col_descripcion"
+        Me.col_descripcion.ReadOnly = True
+        Me.col_descripcion.Visible = False
         '
         'col_iva
         '
@@ -133,59 +146,54 @@ Partial Class Crear_Venta
         Me.col_iva.Visible = False
         Me.col_iva.Width = 50
         '
-        'col_descripcion
+        'col_estado
         '
-        Me.col_descripcion.HeaderText = "Descripcion"
-        Me.col_descripcion.Name = "col_descripcion"
-        Me.col_descripcion.ReadOnly = True
-        Me.col_descripcion.Visible = False
+        Me.col_estado.HeaderText = "Estado"
+        Me.col_estado.Name = "col_estado"
+        Me.col_estado.ReadOnly = True
+        Me.col_estado.Visible = False
         '
-        'col_marca
+        'col_cantidad
         '
-        Me.col_marca.HeaderText = "Marca"
-        Me.col_marca.Name = "col_marca"
-        Me.col_marca.ReadOnly = True
-        Me.col_marca.Visible = False
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle22.Format = "N0"
+        DataGridViewCellStyle22.NullValue = Nothing
+        Me.col_cantidad.DefaultCellStyle = DataGridViewCellStyle22
+        Me.col_cantidad.HeaderText = "CANTIDAD"
+        Me.col_cantidad.Name = "col_cantidad"
+        Me.col_cantidad.ReadOnly = True
+        Me.col_cantidad.Width = 80
         '
-        'col_referencia
+        'col_unitario
         '
-        Me.col_referencia.HeaderText = "Referencia"
-        Me.col_referencia.Name = "col_referencia"
-        Me.col_referencia.ReadOnly = True
-        Me.col_referencia.Visible = False
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle23.Format = "C0"
+        DataGridViewCellStyle23.NullValue = Nothing
+        Me.col_unitario.DefaultCellStyle = DataGridViewCellStyle23
+        Me.col_unitario.HeaderText = "V. UNITARIO"
+        Me.col_unitario.Name = "col_unitario"
+        Me.col_unitario.ReadOnly = True
+        Me.col_unitario.Width = 120
         '
-        'col_nombre
+        'col_descuento
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.col_nombre.DefaultCellStyle = DataGridViewCellStyle10
-        Me.col_nombre.HeaderText = "PRODUCTO"
-        Me.col_nombre.Name = "col_nombre"
-        Me.col_nombre.ReadOnly = True
-        Me.col_nombre.Width = 270
+        DataGridViewCellStyle24.Format = "N0"
+        DataGridViewCellStyle24.NullValue = Nothing
+        Me.col_descuento.DefaultCellStyle = DataGridViewCellStyle24
+        Me.col_descuento.HeaderText = "Descuento"
+        Me.col_descuento.Name = "col_descuento"
+        Me.col_descuento.ReadOnly = True
+        Me.col_descuento.Visible = False
         '
-        'col_idproducto
+        'col_valortotal
         '
-        Me.col_idproducto.HeaderText = "Id Producto"
-        Me.col_idproducto.Name = "col_idproducto"
-        Me.col_idproducto.ReadOnly = True
-        Me.col_idproducto.Visible = False
-        '
-        'dg_productosventa
-        '
-        Me.dg_productosventa.AllowUserToAddRows = False
-        Me.dg_productosventa.AllowUserToDeleteRows = False
-        Me.dg_productosventa.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dg_productosventa.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dg_productosventa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal
-        Me.dg_productosventa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg_productosventa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idproducto, Me.col_nombre, Me.col_referencia, Me.col_marca, Me.col_descripcion, Me.col_iva, Me.col_estado, Me.col_cantidad, Me.col_unitario, Me.col_descuento, Me.col_valortotal, Me.col_idventa, Me.col_idbodega})
-        Me.dg_productosventa.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dg_productosventa.Location = New System.Drawing.Point(3, 17)
-        Me.dg_productosventa.Name = "dg_productosventa"
-        Me.dg_productosventa.ReadOnly = True
-        Me.dg_productosventa.RowHeadersVisible = False
-        Me.dg_productosventa.Size = New System.Drawing.Size(569, 229)
-        Me.dg_productosventa.TabIndex = 0
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle25.Format = "C0"
+        DataGridViewCellStyle25.NullValue = Nothing
+        Me.col_valortotal.DefaultCellStyle = DataGridViewCellStyle25
+        Me.col_valortotal.HeaderText = "V. TOTAL"
+        Me.col_valortotal.Name = "col_valortotal"
+        Me.col_valortotal.ReadOnly = True
         '
         'col_idventa
         '
@@ -193,6 +201,20 @@ Partial Class Crear_Venta
         Me.col_idventa.Name = "col_idventa"
         Me.col_idventa.ReadOnly = True
         Me.col_idventa.Visible = False
+        '
+        'col_idbodega
+        '
+        Me.col_idbodega.HeaderText = "Id Bodega"
+        Me.col_idbodega.Name = "col_idbodega"
+        Me.col_idbodega.ReadOnly = True
+        Me.col_idbodega.Visible = False
+        '
+        'col_btn_agregar
+        '
+        Me.col_btn_agregar.HeaderText = ""
+        Me.col_btn_agregar.Name = "col_btn_agregar"
+        Me.col_btn_agregar.ReadOnly = True
+        Me.col_btn_agregar.Width = 50
         '
         'txt_tdocu
         '
@@ -258,9 +280,9 @@ Partial Class Crear_Venta
         '
         Me.GroupBox4.Controls.Add(Me.dg_productosventa)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(41, 150)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 150)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(575, 249)
+        Me.GroupBox4.Size = New System.Drawing.Size(637, 249)
         Me.GroupBox4.TabIndex = 130
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "PRODUCTOS VENTA"
@@ -418,11 +440,148 @@ Partial Class Crear_Venta
         Me.txt_sub.Size = New System.Drawing.Size(107, 22)
         Me.txt_sub.TabIndex = 124
         '
+        'PanelBuscar_producto
+        '
+        Me.PanelBuscar_producto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelBuscar_producto.Controls.Add(Me.GroupBox2)
+        Me.PanelBuscar_producto.Location = New System.Drawing.Point(200, 57)
+        Me.PanelBuscar_producto.Name = "PanelBuscar_producto"
+        Me.PanelBuscar_producto.Size = New System.Drawing.Size(388, 203)
+        Me.PanelBuscar_producto.TabIndex = 136
+        Me.PanelBuscar_producto.Visible = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txt_valor)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.cb_producto)
+        Me.GroupBox2.Controls.Add(Me.btn_agregarpro)
+        Me.GroupBox2.Controls.Add(Me.check_nompro)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.check_referencia)
+        Me.GroupBox2.Controls.Add(Me.txt_cantidad)
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.Label15)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(376, 188)
+        Me.GroupBox2.TabIndex = 9
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Producto"
+        '
+        'txt_valor
+        '
+        Me.txt_valor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txt_valor.FormattingEnabled = True
+        Me.txt_valor.Location = New System.Drawing.Point(96, 118)
+        Me.txt_valor.Name = "txt_valor"
+        Me.txt_valor.Size = New System.Drawing.Size(124, 24)
+        Me.txt_valor.TabIndex = 50
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Location = New System.Drawing.Point(6, 154)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(86, 16)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "Descuento:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(96, 147)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(43, 22)
+        Me.TextBox1.TabIndex = 9
+        Me.TextBox1.Text = "0"
+        '
+        'cb_producto
+        '
+        Me.cb_producto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.cb_producto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cb_producto.FormattingEnabled = True
+        Me.cb_producto.Location = New System.Drawing.Point(96, 63)
+        Me.cb_producto.Name = "cb_producto"
+        Me.cb_producto.Size = New System.Drawing.Size(274, 24)
+        Me.cb_producto.TabIndex = 3
+        '
+        'btn_agregarpro
+        '
+        Me.btn_agregarpro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_agregarpro.Location = New System.Drawing.Point(338, 137)
+        Me.btn_agregarpro.Name = "btn_agregarpro"
+        Me.btn_agregarpro.Size = New System.Drawing.Size(32, 32)
+        Me.btn_agregarpro.TabIndex = 10
+        Me.btn_agregarpro.UseVisualStyleBackColor = True
+        '
+        'check_nompro
+        '
+        Me.check_nompro.AutoSize = True
+        Me.check_nompro.CheckAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.check_nompro.Location = New System.Drawing.Point(9, 19)
+        Me.check_nompro.Name = "check_nompro"
+        Me.check_nompro.Size = New System.Drawing.Size(67, 34)
+        Me.check_nompro.TabIndex = 0
+        Me.check_nompro.Text = "Nombre"
+        Me.check_nompro.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Location = New System.Drawing.Point(6, 126)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(49, 16)
+        Me.Label12.TabIndex = 6
+        Me.Label12.Text = "Valor:"
+        '
+        'check_referencia
+        '
+        Me.check_referencia.AutoSize = True
+        Me.check_referencia.CheckAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.check_referencia.Location = New System.Drawing.Point(82, 19)
+        Me.check_referencia.Name = "check_referencia"
+        Me.check_referencia.Size = New System.Drawing.Size(88, 34)
+        Me.check_referencia.TabIndex = 1
+        Me.check_referencia.Text = "Referencia"
+        Me.check_referencia.UseVisualStyleBackColor = True
+        '
+        'txt_cantidad
+        '
+        Me.txt_cantidad.Location = New System.Drawing.Point(96, 90)
+        Me.txt_cantidad.Name = "txt_cantidad"
+        Me.txt_cantidad.Size = New System.Drawing.Size(56, 22)
+        Me.txt_cantidad.TabIndex = 5
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Location = New System.Drawing.Point(6, 66)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(74, 16)
+        Me.Label14.TabIndex = 2
+        Me.Label14.Text = "Producto:"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Location = New System.Drawing.Point(6, 97)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(74, 16)
+        Me.Label15.TabIndex = 4
+        Me.Label15.Text = "Cantidad:"
+        '
         'Crear_Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(652, 532)
+        Me.Controls.Add(Me.PanelBuscar_producto)
         Me.Controls.Add(Me.txt_tdocu)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label6)
@@ -451,24 +610,14 @@ Partial Class Crear_Venta
         Me.Text = "Crear Venta"
         CType(Me.dg_productosventa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
+        Me.PanelBuscar_producto.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents col_idbodega As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_valortotal As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_descuento As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_unitario As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_estado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_iva As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_marca As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_referencia As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_idproducto As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dg_productosventa As System.Windows.Forms.DataGridView
-    Friend WithEvents col_idventa As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txt_tdocu As System.Windows.Forms.ComboBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
@@ -493,4 +642,31 @@ Partial Class Crear_Venta
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents txt_total As System.Windows.Forms.TextBox
     Friend WithEvents txt_sub As System.Windows.Forms.TextBox
+    Friend WithEvents col_idproducto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_referencia As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_marca As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_iva As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_estado As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_unitario As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_descuento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_valortotal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_idventa As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_idbodega As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_btn_agregar As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents PanelBuscar_producto As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents txt_valor As System.Windows.Forms.ComboBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents cb_producto As System.Windows.Forms.ComboBox
+    Friend WithEvents btn_agregarpro As System.Windows.Forms.Button
+    Friend WithEvents check_nompro As System.Windows.Forms.CheckBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents check_referencia As System.Windows.Forms.CheckBox
+    Friend WithEvents txt_cantidad As System.Windows.Forms.TextBox
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class

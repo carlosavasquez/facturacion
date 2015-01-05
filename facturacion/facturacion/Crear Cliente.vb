@@ -10,7 +10,7 @@
             MsgBox("El campo Numero de Documento esta vacio", MsgBoxStyle.Information, "JAFERRO")
         Else
 
-            If objcliente.crear_cliente(txt_numdocu.Text, txt_nombre.Text, cb_tipodocu.Text, txt_telefono.Text, txt_dir.Text, txt_email.Text, txt_fechanacio.Text, estado) = True Then
+            If objcliente.crear_cliente(txt_numdocu.Text, txt_nombre.Text, cb_tipodocu.Text, txt_telefono.Text, txt_dir.Text, txt_email.Text, estado) = True Then
                 MsgBox("Cliente Creado Exitosamente", MsgBoxStyle.Information, "JAFERRO")
             Else
                 MsgBox("Error al Crear Cliente", MsgBoxStyle.Information, "JAFERRO")
@@ -21,8 +21,6 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cb_tipodocu.SelectedIndex = 0
-        txt_fechanacio.Format = DateTimePickerFormat.Custom
-        txt_fechanacio.CustomFormat = "yyyy-MM-dd"
     End Sub
 
     Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
