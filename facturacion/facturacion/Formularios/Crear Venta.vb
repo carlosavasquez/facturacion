@@ -1,6 +1,7 @@
 ﻿Public Class Crear_Venta
     Dim objcliente As New Cliente
     Dim objfuncionesvarias As New funciones_varias
+    Dim objproductos As New Productos
     Private Sub inhabilitarcampos()
         btn_crear.Visible = False
         txt_id.Enabled = False
@@ -94,14 +95,16 @@
     End Sub
 
     Private Sub cb_producto_TextChanged(sender As Object, e As EventArgs) Handles cb_producto.TextChanged
-        Dim criterio As Integer
+        Dim criterio As String
+
         If check_referencia.CheckState = CheckState.Checked Then
-            criterio = 1
-            objcliente.consultar_con_nombre(cb_producto.Text, criterio)
+            criterio = "referencia"
+            cb_producto.DataSource = Nothing
+            cb_producto.DataSource = objproductos.consultar_con_nombre(cb_producto.Text, criterio)
         ElseIf check_nompro.CheckState = CheckState.Checked Then
-            criterio = 0
-            objcliente.consultar_con_nombre(cb_producto.Text, criterio)
-        Else
+            criterio = "nombre"
+            cb_producto.DataSource = Nothing
+            cb_producto.DataSource = objproductos.consultar_con_nombre(cb_producto.Text, criterio)
 
         End If
     End Sub

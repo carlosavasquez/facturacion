@@ -72,20 +72,5 @@
             Return False
         End Try
     End Function
-    Function consultar_con_nombre(ByVal busqueda As String, ByVal criterio As Integer)
-
-        Try
-            conn.Open()
-            cmd.CommandType = CommandType.Text
-            cmd.Connection = conn
-            cmd.CommandText = "SELECT nombre FROM producto WHERE nombre LIKE '%" & busqueda & "%' ORDER BY pro.nombre DESC"
-            _idcliente = cmd.ExecuteScalar()
-            conn.Close()
-            Return True
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-            conn.Close()
-            Return False
-        End Try
-    End Function
+    
 End Class
