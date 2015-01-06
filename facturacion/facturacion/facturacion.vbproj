@@ -82,6 +82,12 @@
       <DependentUpon>Crear Cliente.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Crear Producto.Designer.vb">
+      <DependentUpon>Crear Producto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Crear Producto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Crear Venta.Designer.vb">
       <DependentUpon>Crear Venta.vb</DependentUpon>
     </Compile>
@@ -112,11 +118,14 @@
     </Compile>
     <Compile Include="Clases\Persona.vb" />
     <Compile Include="Clases\Ventas.vb" />
-    <Compile Include="Productos.vb" />
+    <Compile Include="Clases\Productos.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Formularios\Crear Cliente.resx">
       <DependentUpon>Crear Cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Crear Producto.resx">
+      <DependentUpon>Crear Producto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Crear Venta.resx">
       <DependentUpon>Crear Venta.vb</DependentUpon>
@@ -145,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logojaferro.ico" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\salir.jpg" />
+    <None Include="Resources\Save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

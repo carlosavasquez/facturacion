@@ -2,6 +2,7 @@
     Dim objcliente As New Cliente
     Dim objfuncionesvarias As New funciones_varias
     Dim objproductos As New Productos
+    Dim criterio As String
     Private Sub inhabilitarcampos()
         btn_crear.Visible = False
         txt_id.Enabled = False
@@ -74,7 +75,9 @@
     Private Sub dg_productosventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_productosventa.CellContentClick
         If e.ColumnIndex = 13 Then
             PanelBuscar_producto.Visible = True
+            p_salir.Visible = True
             check_nompro.CheckState = CheckState.Checked
+
         Else
 
         End If
@@ -84,6 +87,9 @@
             check_referencia.CheckState = CheckState.Unchecked
         Else
             check_nompro.CheckState = CheckState.Checked
+            criterio = "nombre"
+            cb_producto.DataSource = Nothing
+            cb_producto.DataSource = objproductos.consultar_con_nombre(criterio)
         End If
     End Sub
     Private Sub check_referencia_CheckedChanged(sender As Object, e As EventArgs) Handles check_referencia.CheckedChanged
@@ -91,21 +97,15 @@
             check_nompro.CheckState = CheckState.Unchecked
         Else
             check_referencia.CheckState = CheckState.Checked
+            criterio = "referencia"
+            cb_producto.DataSource = Nothing
+            cb_producto.DataSource = objproductos.consultar_con_nombre(criterio)
         End If
     End Sub
 
-    Private Sub cb_producto_TextChanged(sender As Object, e As EventArgs) Handles cb_producto.TextChanged
-        Dim criterio As String
+    Private Sub p_salir_Click(sender As Object, e As EventArgs) Handles p_salir.Click
+        PanelBuscar_producto.Visible = False
+        p_salir.Visible = False
 
-        If check_referencia.CheckState = CheckState.Checked Then
-            criterio = "referencia"
-            cb_producto.DataSource = Nothing
-            cb_producto.DataSource = objproductos.consultar_con_nombre(cb_producto.Text, criterio)
-        ElseIf check_nompro.CheckState = CheckState.Checked Then
-            criterio = "nombre"
-            cb_producto.DataSource = Nothing
-            cb_producto.DataSource = objproductos.consultar_con_nombre(cb_producto.Text, criterio)
-
-        End If
     End Sub
 End Class
