@@ -77,12 +77,25 @@
             PanelBuscar_producto.Visible = True
             p_salir.Visible = True
             check_nompro.CheckState = CheckState.Checked
-
         Else
 
         End If
     End Sub
-    Private Sub check_nompro_CheckedChanged(sender As Object, e As EventArgs) Handles check_nompro.CheckedChanged
+
+    Private Sub p_salir_Click(sender As Object, e As EventArgs) Handles p_salir.Click
+        PanelBuscar_producto.Visible = False
+        p_salir.Visible = False
+
+    End Sub
+
+    Private Sub txt_cantidad_GotFocus(sender As Object, e As EventArgs) Handles txt_cantidad.GotFocus
+        objproductos.obtener_idproducto_connombre_o_ref(criterio, cb_producto.Text)
+        txt_valor.DataSource = Nothing
+        txt_valor.DataSource = objproductos.precios_producto()
+
+    End Sub
+
+    Private Sub check_nompro_CheckedChanged1(sender As Object, e As EventArgs) Handles check_nompro.CheckedChanged
         If check_referencia.CheckState = CheckState.Checked Then
             check_referencia.CheckState = CheckState.Unchecked
         Else
@@ -92,7 +105,8 @@
             cb_producto.DataSource = objproductos.consultar_con_nombre(criterio)
         End If
     End Sub
-    Private Sub check_referencia_CheckedChanged(sender As Object, e As EventArgs) Handles check_referencia.CheckedChanged
+
+    Private Sub check_referencia_CheckedChanged1(sender As Object, e As EventArgs) Handles check_referencia.CheckedChanged
         If check_nompro.CheckState = CheckState.Checked Then
             check_nompro.CheckState = CheckState.Unchecked
         Else
@@ -101,11 +115,5 @@
             cb_producto.DataSource = Nothing
             cb_producto.DataSource = objproductos.consultar_con_nombre(criterio)
         End If
-    End Sub
-
-    Private Sub p_salir_Click(sender As Object, e As EventArgs) Handles p_salir.Click
-        PanelBuscar_producto.Visible = False
-        p_salir.Visible = False
-
     End Sub
 End Class
