@@ -56,6 +56,17 @@
         Return False
 
     End Function
+    Function consultar_nombre_nit(ByVal busqueda As String, ByVal dato As String)
+        conn.Open()
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conn
+        cmd.CommandText = "SELECT nombre_razon_social,identificacion FROM cliente WHERE " & dato & " LIKE '" & busqueda & "%'"
+        Dim da = New Odbc.OdbcDataAdapter(cmd)
+        Dim dt As New DataTable
+        da.Fill(dt)
+        conn.Close()
+        Return dt
+    End Function
     Function consultar_id_con_nit(nit)
 
         Try

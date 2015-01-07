@@ -57,7 +57,7 @@ Partial Class Crear_Producto
         Me.txt_iva.Location = New System.Drawing.Point(19, 312)
         Me.txt_iva.Name = "txt_iva"
         Me.txt_iva.Size = New System.Drawing.Size(72, 24)
-        Me.txt_iva.TabIndex = 51
+        Me.txt_iva.TabIndex = 5
         '
         'Label12
         '
@@ -85,7 +85,7 @@ Partial Class Crear_Producto
         Me.txt_precio2.Location = New System.Drawing.Point(236, 136)
         Me.txt_precio2.Name = "txt_precio2"
         Me.txt_precio2.Size = New System.Drawing.Size(199, 22)
-        Me.txt_precio2.TabIndex = 35
+        Me.txt_precio2.TabIndex = 8
         '
         'Label9
         '
@@ -103,7 +103,7 @@ Partial Class Crear_Producto
         Me.txt_precio1.Location = New System.Drawing.Point(236, 92)
         Me.txt_precio1.Name = "txt_precio1"
         Me.txt_precio1.Size = New System.Drawing.Size(199, 22)
-        Me.txt_precio1.TabIndex = 34
+        Me.txt_precio1.TabIndex = 7
         '
         'Label6
         '
@@ -121,7 +121,7 @@ Partial Class Crear_Producto
         Me.txt_precio3.Location = New System.Drawing.Point(236, 180)
         Me.txt_precio3.Name = "txt_precio3"
         Me.txt_precio3.Size = New System.Drawing.Size(199, 22)
-        Me.txt_precio3.TabIndex = 36
+        Me.txt_precio3.TabIndex = 9
         '
         'Label8
         '
@@ -140,7 +140,7 @@ Partial Class Crear_Producto
         Me.Check_servicio.Location = New System.Drawing.Point(132, 314)
         Me.Check_servicio.Name = "Check_servicio"
         Me.Check_servicio.Size = New System.Drawing.Size(84, 20)
-        Me.Check_servicio.TabIndex = 33
+        Me.Check_servicio.TabIndex = 6
         Me.Check_servicio.Text = "Servicio"
         Me.Check_servicio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Check_servicio.UseVisualStyleBackColor = True
@@ -161,7 +161,7 @@ Partial Class Crear_Producto
         Me.txt_cod_barras.Location = New System.Drawing.Point(17, 224)
         Me.txt_cod_barras.Name = "txt_cod_barras"
         Me.txt_cod_barras.Size = New System.Drawing.Size(199, 22)
-        Me.txt_cod_barras.TabIndex = 37
+        Me.txt_cod_barras.TabIndex = 3
         '
         'Label5
         '
@@ -181,7 +181,7 @@ Partial Class Crear_Producto
         Me.txt_descrip.Name = "txt_descrip"
         Me.txt_descrip.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_descrip.Size = New System.Drawing.Size(199, 115)
-        Me.txt_descrip.TabIndex = 38
+        Me.txt_descrip.TabIndex = 10
         '
         'Label3
         '
@@ -199,7 +199,7 @@ Partial Class Crear_Producto
         Me.txt_marca.Location = New System.Drawing.Point(17, 180)
         Me.txt_marca.Name = "txt_marca"
         Me.txt_marca.Size = New System.Drawing.Size(199, 22)
-        Me.txt_marca.TabIndex = 32
+        Me.txt_marca.TabIndex = 2
         '
         'Label2
         '
@@ -217,7 +217,7 @@ Partial Class Crear_Producto
         Me.txt_ref.Location = New System.Drawing.Point(17, 136)
         Me.txt_ref.Name = "txt_ref"
         Me.txt_ref.Size = New System.Drawing.Size(199, 22)
-        Me.txt_ref.TabIndex = 31
+        Me.txt_ref.TabIndex = 1
         '
         'Label1
         '
@@ -235,7 +235,7 @@ Partial Class Crear_Producto
         Me.txt_nombre.Location = New System.Drawing.Point(17, 92)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(199, 22)
-        Me.txt_nombre.TabIndex = 30
+        Me.txt_nombre.TabIndex = 0
         '
         'PictureBox1
         '
@@ -263,7 +263,7 @@ Partial Class Crear_Producto
         Me.txt_ubicacion.Location = New System.Drawing.Point(19, 268)
         Me.txt_ubicacion.Name = "txt_ubicacion"
         Me.txt_ubicacion.Size = New System.Drawing.Size(199, 22)
-        Me.txt_ubicacion.TabIndex = 53
+        Me.txt_ubicacion.TabIndex = 4
         '
         'Crear_Producto
         '
