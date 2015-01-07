@@ -2,6 +2,7 @@
     Dim objcliente As New Cliente
     Dim objfuncionesvarias As New funciones_varias
     Dim objproductos As New Productos
+    Dim objventas As New Ventas
     Dim criterio As String
     Private Sub inhabilitarcampos()
         btn_crear_cliente.Visible = False
@@ -61,10 +62,11 @@
         objfuncionesvarias.comprueba_numeros(e)
     End Sub
     Private Sub dg_productosventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_productosventa.CellContentClick
-        If e.ColumnIndex = 13 Then
+        If e.ColumnIndex = 7 Then
             PanelBuscar_producto.Visible = True
             p_salir.Visible = True
             check_nompro.CheckState = CheckState.Checked
+            cb_producto.Focus()
         Else
 
         End If
@@ -124,13 +126,15 @@
             dg_buscarnit.Columns(1).HeaderText = "NIT/CC"
             dg_buscarnit.Columns(1).Width = 130
             If dg_buscarnit.RowCount = 0 Then
-
+                dg_buscarnit.Visible = False
+                p_salir_buscarcliente.Visible = False
             Else
                 dg_buscarnit.Visible = True
+                p_salir_buscarcliente.Visible = True
             End If
         Else
             dg_buscarnit.Visible = False
-
+            p_salir_buscarcliente.Visible = False
             habilitarcampos()
         End If
 
@@ -168,5 +172,33 @@
 
             End If
         End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If cb_producto.Text = Nothing Then
+            MsgBox("El campo Producto esta vacio", MsgBoxStyle.Information, "JAFERRO")
+        ElseIf txt_cantidad.Text = Nothing Then
+            MsgBox("El campo Cantidad esta vacio", MsgBoxStyle.Information, "JAFERRO")
+        ElseIf txt_valor.Text = Nothing Then
+            MsgBox("El campo Precio esta vacio", MsgBoxStyle.Information, "JAFERRO")
+        ElseIf txt_desc.Text = Nothing Then
+            txt_desc.Text = "0"
+        Else
+            If objproductos.comprobar_existencia(Val(txt_cantidad.Text)) = True Then
+                objproductos.calcular_iva(Val(txt_valor.Text), Val(txt_cantidad.Text))
+                txt_iva.Text = objproductos._totaliva
+                txt_sub.Text = objproductos._subtotal
+                txt_total.Text = objproductos._totalventa
+            Else
+                MsgBox("La cantidad maxima que puede vender de este producto es:" & objproductos._cantidad.ToString, MsgBoxStyle.Critical, "JAFERRO")
+            End If
+
+        End If
+       
+    End Sub
+
+    Private Sub p_salir_buscarcliente_Click(sender As Object, e As EventArgs) Handles p_salir_buscarcliente.Click
+        dg_buscarnit.Visible = False
+        p_salir_buscarcliente.Visible = False
     End Sub
 End Class
