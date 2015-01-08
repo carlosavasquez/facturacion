@@ -38,6 +38,7 @@
             If dg_buscarnit.RowCount = 0 Then
             Else
                 dg_buscarnit.Visible = True
+                p_salir_buscarcliente.Visible = True
             End If
             If objcliente.consultar_todos_con_nit(txt_nit.Text) = True Then
                 txt_id.Text = objcliente._idcliente
@@ -51,6 +52,7 @@
             End If
         Else
             dg_buscarnit.Visible = False
+            p_salir_buscarcliente.Visible = False
 
             habilitarcampos()
         End If
@@ -67,6 +69,17 @@
             p_salir.Visible = True
             check_nompro.CheckState = CheckState.Checked
             cb_producto.Focus()
+        ElseIf e.ColumnIndex = 8 Then
+            Dim seleccionada As Integer
+            seleccionada = CType(sender, DataGridView).CurrentRow.Index
+            Dim vuni As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(5).Value()
+            Dim piva As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(2).Value()
+            Dim can As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(4).Value()
+            objproductos.restartotales(vuni, can, piva)
+            txt_iva.Text = objproductos._totaliva
+            txt_sub.Text = objproductos._subtotal
+            txt_total.Text = objproductos._totalventa
+            dg_productosventa.Rows.RemoveAt(seleccionada)
         Else
 
         End If
@@ -82,6 +95,8 @@
         objproductos.obtener_idproducto_connombre_o_ref(criterio, cb_producto.Text)
         txt_valor.DataSource = Nothing
         txt_valor.DataSource = objproductos.precios_producto()
+        objproductos.obtenercantidad()
+        txt_existencias.Text = objproductos._cantidad
 
     End Sub
 
@@ -112,11 +127,11 @@
         Dim nomdg As String
         seleccionada = CType(sender, DataGridView).CurrentRow.Index
         nomdg = dg_buscarnit.Rows(seleccionada).Cells(1).Value()
-        txt_nit.Text = nomdg
+        'txt_nit.Text = nomdg
         txt_nit.Focus()
         dg_buscarnit.Visible = False
+        p_salir_buscarcliente.Visible = False
     End Sub
-
     Private Sub txt_nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_nombre.TextChanged
         If txt_nombre.Text <> Nothing Then
             dg_buscarnit.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -137,7 +152,6 @@
             p_salir_buscarcliente.Visible = False
             habilitarcampos()
         End If
-
     End Sub
 
     Private Sub btn_crear_cliente_Click(sender As Object, e As EventArgs) Handles btn_crear_cliente.Click
@@ -184,13 +198,18 @@
         ElseIf txt_desc.Text = Nothing Then
             txt_desc.Text = "0"
         Else
-            If objproductos.comprobar_existencia(Val(txt_cantidad.Text)) = True Then
+            If Val(txt_cantidad.Text) >= Val(txt_existencias.Text) Then
+                MsgBox("La cantidad maxima que puede vender de este producto es:" & txt_existencias.Text, MsgBoxStyle.Critical, "JAFERRO")
+            Else
                 objproductos.calcular_iva(Val(txt_valor.Text), Val(txt_cantidad.Text))
                 txt_iva.Text = objproductos._totaliva
                 txt_sub.Text = objproductos._subtotal
                 txt_total.Text = objproductos._totalventa
-            Else
-                MsgBox("La cantidad maxima que puede vender de este producto es:" & objproductos._cantidad.ToString, MsgBoxStyle.Critical, "JAFERRO")
+                Dim v_total As Integer = Val(txt_valor.Text) * Val(txt_cantidad.Text)
+                objproductos.Obtenerdatos()
+                dg_productosventa.Rows.Insert(0, objproductos._idproducto, objproductos._nombreproducto, objproductos._iva, objproductos._estadoproducto, txt_cantidad.Text, txt_valor.Text, v_total.ToString)
+                PanelBuscar_producto.Visible = False
+                p_salir.Visible = False
             End If
 
         End If
@@ -200,5 +219,12 @@
     Private Sub p_salir_buscarcliente_Click(sender As Object, e As EventArgs) Handles p_salir_buscarcliente.Click
         dg_buscarnit.Visible = False
         p_salir_buscarcliente.Visible = False
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox(dg_productosventa.RowCount.ToString)
+    End Sub
+
+    Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
+
     End Sub
 End Class

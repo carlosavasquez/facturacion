@@ -33,7 +33,7 @@
         conn.Open()
         cmd.CommandType = CommandType.Text
         cmd.Connection = conn
-        cmd.CommandText = "SELECT  idcliente,nombre_razon_social,tipo_documento,telefonos,direccion FROM cliente WHERE identificacion LIKE '" & busqueda & "%' LIMIT 1"
+        cmd.CommandText = "SELECT  idcliente,nombre_razon_social,tipo_documento,telefonos,direccion FROM cliente WHERE identificacion = '" & busqueda & "'"
         lector = cmd.ExecuteReader
         If lector.HasRows = True Then
             While lector.Read()
@@ -60,7 +60,8 @@
         conn.Open()
         cmd.CommandType = CommandType.Text
         cmd.Connection = conn
-        cmd.CommandText = "SELECT nombre_razon_social,identificacion FROM cliente WHERE " & dato & " LIKE '" & busqueda & "%'"
+        cmd.CommandText = "SELECT nombre_razon_social,identificacion FROM cliente WHERE " & dato & " LIKE '%" & busqueda & "%'"
+        'MsgBox(cmd.CommandText)
         Dim da = New Odbc.OdbcDataAdapter(cmd)
         Dim dt As New DataTable
         da.Fill(dt)
