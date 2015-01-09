@@ -10,7 +10,6 @@
             Me.id_cliente = value
         End Set
     End Property
-    
     Function crear_cliente(ByVal iden As String, ByVal nom As String, ByVal tipodoc As String, ByVal tel As String, ByVal dir As String, ByVal email As String, ByVal estado As String)
         conn.Open()
         cmd.CommandType = CommandType.Text
@@ -84,5 +83,4 @@
             Return False
         End Try
     End Function
-    
 End Class

@@ -8,6 +8,8 @@ Public Class conexion
     Public conn As New OdbcConnection("dsn=jaferro")
     Public cmd As New OdbcCommand
     Public lector As Odbc.OdbcDataReader
+    Public trans As OdbcTransaction
+
     'procedimiento que abre un OdbcConnection
     Public Sub conectarse()
         Try

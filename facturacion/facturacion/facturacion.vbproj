@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Clases\Cliente.vb" />
     <Compile Include="Clases\conexion.vb" />
+    <Compile Include="Clases\Vendedor.vb" />
     <Compile Include="Formularios\Crear Cliente.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +87,12 @@
       <DependentUpon>Crear Producto.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Crear Producto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Crear Vendedor.Designer.vb">
+      <DependentUpon>Crear Vendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Crear Vendedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Crear Venta.Designer.vb">
@@ -126,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Crear Producto.resx">
       <DependentUpon>Crear Producto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Crear Vendedor.resx">
+      <DependentUpon>Crear Vendedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Crear Venta.resx">
       <DependentUpon>Crear Venta.vb</DependentUpon>

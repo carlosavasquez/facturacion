@@ -142,7 +142,7 @@ Partial Class Form1
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(104, 10)
+        Me.Label15.Location = New System.Drawing.Point(103, 15)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(219, 29)
         Me.Label15.TabIndex = 37
@@ -238,7 +238,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txt_nombre)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(18, 53)
+        Me.GroupBox1.Location = New System.Drawing.Point(17, 58)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(390, 259)
         Me.GroupBox1.TabIndex = 35
@@ -261,7 +261,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(426, 331)
+        Me.ClientSize = New System.Drawing.Size(424, 332)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Form1"
