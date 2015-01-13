@@ -33,6 +33,7 @@
         cmd.Connection = conn
         cmd.CommandText = "SELECT idfactura_venta FROM factura_venta ORDER BY idfactura_venta DESC LIMIT 1 "
         _idventa = cmd.ExecuteScalar
+        conn.Close()
     End Sub
     Function validar_factura(ByVal numero As Integer)
         conn.Open()
@@ -70,17 +71,30 @@
     Function CrearVenta(ByVal num_factura As Integer, ByVal fecha As String, ByVal valorventa As Integer, ByVal valoriva As Integer, ByVal idcli As Integer, ByVal idvendedor As Integer)
         conn.Open()
         Dim estado As Integer = 1
-        cmd.CommandType = CommandType.Text
-        cmd.Connection = conn
-        cmd.CommandText = "INSERT INTO factura_venta(numero_factura,fecha_expedicion,valor_total_venta,valor_total_iva,estado,cliente_idcliente,vendedor_idvendedor) VALUES "
-        cmd.CommandText += "(" & num_factura & " , '" & fecha & "', " & valorventa & "," & valoriva & "," & estado & "," & idcli & "," & idvendedor & ")"
-        Dim resultado As Integer = cmd.ExecuteNonQuery()
-        If resultado <> 0 Then
+        Try
+
+            trans = conn.BeginTransaction()
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conn
+            cmd.Transaction = trans
+            cmd.CommandText = "INSERT INTO factura_venta(numero_factura,fecha_expedicion,valor_total_venta,valor_total_iva,estado,cliente_idcliente,vendedor_idvendedor) VALUES "
+            cmd.CommandText += "(" & num_factura & " , '" & fecha & "', " & valorventa & "," & valoriva & "," & estado & "," & idcli & "," & idvendedor & ")"
+            cmd.ExecuteNonQuery()
+            trans.Commit()
             conn.Close()
             Return True
-        Else
+
+        Catch ex As Exception
+            trans.Rollback()
             conn.Close()
             Return False
-        End If
+        End Try
     End Function
+    Sub EliminarVenta()
+        conn.Open()
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conn
+        cmd.CommandText = "DELETE FROM factura_venta WHERE idfactura_venta='" & _idventa & "'"
+        cmd.ExecuteNonQuery()
+    End Sub
 End Class

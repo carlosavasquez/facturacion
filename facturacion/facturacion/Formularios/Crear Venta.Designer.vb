@@ -23,11 +23,11 @@ Partial Class Crear_Venta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dg_productosventa = New System.Windows.Forms.DataGridView()
         Me.col_idproducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,6 +65,7 @@ Partial Class Crear_Venta
         Me.txt_existencias = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.txt_desc = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txt_valor = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cb_producto = New System.Windows.Forms.ComboBox()
@@ -76,23 +77,22 @@ Partial Class Crear_Venta
         Me.Label15 = New System.Windows.Forms.Label()
         Me.dg_buscarnit = New System.Windows.Forms.DataGridView()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btn_crear_cliente = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txt_numfactura = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txt_vendedor = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.p_salir = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btn_crear_cliente = New System.Windows.Forms.PictureBox()
         Me.btn_guardar = New System.Windows.Forms.PictureBox()
         Me.p_salir_buscarcliente = New System.Windows.Forms.PictureBox()
         CType(Me.dg_productosventa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.PanelBuscar_producto.SuspendLayout()
-        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.p_salir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_crear_cliente, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p_salir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.p_salir_buscarcliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -103,14 +103,14 @@ Partial Class Crear_Venta
         Me.dg_productosventa.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.dg_productosventa.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dg_productosventa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_productosventa.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_productosventa.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_productosventa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_productosventa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idproducto, Me.col_nombre, Me.col_iva, Me.col_estado, Me.col_cantidad, Me.col_unitario, Me.col_valortotal, Me.col_btn_agregar, Me.col_eliminar})
         Me.dg_productosventa.Dock = System.Windows.Forms.DockStyle.Fill
@@ -130,8 +130,8 @@ Partial Class Crear_Venta
         '
         'col_nombre
         '
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.col_nombre.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.col_nombre.DefaultCellStyle = DataGridViewCellStyle2
         Me.col_nombre.HeaderText = "PRODUCTO"
         Me.col_nombre.Name = "col_nombre"
         Me.col_nombre.ReadOnly = True
@@ -154,10 +154,10 @@ Partial Class Crear_Venta
         '
         'col_cantidad
         '
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle18.Format = "N0"
-        DataGridViewCellStyle18.NullValue = Nothing
-        Me.col_cantidad.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Format = "N0"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.col_cantidad.DefaultCellStyle = DataGridViewCellStyle3
         Me.col_cantidad.HeaderText = "CANTIDAD"
         Me.col_cantidad.Name = "col_cantidad"
         Me.col_cantidad.ReadOnly = True
@@ -165,10 +165,10 @@ Partial Class Crear_Venta
         '
         'col_unitario
         '
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle19.Format = "C0"
-        DataGridViewCellStyle19.NullValue = Nothing
-        Me.col_unitario.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Format = "C0"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.col_unitario.DefaultCellStyle = DataGridViewCellStyle4
         Me.col_unitario.HeaderText = "V. UNITARIO"
         Me.col_unitario.Name = "col_unitario"
         Me.col_unitario.ReadOnly = True
@@ -176,10 +176,10 @@ Partial Class Crear_Venta
         '
         'col_valortotal
         '
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle20.Format = "C0"
-        DataGridViewCellStyle20.NullValue = Nothing
-        Me.col_valortotal.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Format = "C0"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.col_valortotal.DefaultCellStyle = DataGridViewCellStyle5
         Me.col_valortotal.HeaderText = "V. TOTAL"
         Me.col_valortotal.Name = "col_valortotal"
         Me.col_valortotal.ReadOnly = True
@@ -464,6 +464,17 @@ Partial Class Crear_Venta
         Me.txt_desc.TabIndex = 59
         Me.txt_desc.Text = "0"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.facturacion.My.Resources.Resources.e024
+        Me.PictureBox1.Location = New System.Drawing.Point(303, 126)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 49)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 143
+        Me.PictureBox1.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Crear Cliente")
+        '
         'txt_valor
         '
         Me.txt_valor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -563,6 +574,17 @@ Partial Class Crear_Venta
         Me.dg_buscarnit.TabIndex = 0
         Me.dg_buscarnit.Visible = False
         '
+        'btn_crear_cliente
+        '
+        Me.btn_crear_cliente.Image = Global.facturacion.My.Resources.Resources.User_Accounts
+        Me.btn_crear_cliente.Location = New System.Drawing.Point(538, 39)
+        Me.btn_crear_cliente.Name = "btn_crear_cliente"
+        Me.btn_crear_cliente.Size = New System.Drawing.Size(50, 49)
+        Me.btn_crear_cliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_crear_cliente.TabIndex = 142
+        Me.btn_crear_cliente.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btn_crear_cliente, "Crear Cliente")
+        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(135, 411)
@@ -623,28 +645,6 @@ Partial Class Crear_Venta
         Me.p_salir.TabStop = False
         Me.p_salir.Visible = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.facturacion.My.Resources.Resources.e024
-        Me.PictureBox1.Location = New System.Drawing.Point(303, 126)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 49)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 143
-        Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Crear Cliente")
-        '
-        'btn_crear_cliente
-        '
-        Me.btn_crear_cliente.Image = Global.facturacion.My.Resources.Resources.User_Accounts
-        Me.btn_crear_cliente.Location = New System.Drawing.Point(538, 39)
-        Me.btn_crear_cliente.Name = "btn_crear_cliente"
-        Me.btn_crear_cliente.Size = New System.Drawing.Size(50, 49)
-        Me.btn_crear_cliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_crear_cliente.TabIndex = 142
-        Me.btn_crear_cliente.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.btn_crear_cliente, "Crear Cliente")
-        '
         'btn_guardar
         '
         Me.btn_guardar.Image = Global.facturacion.My.Resources.Resources.Save
@@ -672,6 +672,8 @@ Partial Class Crear_Venta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(751, 471)
+        Me.Controls.Add(Me.p_salir_buscarcliente)
+        Me.Controls.Add(Me.dg_buscarnit)
         Me.Controls.Add(Me.txt_vendedor)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.txt_numfactura)
@@ -704,8 +706,6 @@ Partial Class Crear_Venta
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txt_total)
         Me.Controls.Add(Me.txt_sub)
-        Me.Controls.Add(Me.p_salir_buscarcliente)
-        Me.Controls.Add(Me.dg_buscarnit)
         Me.Name = "Crear_Venta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Crear Venta"
@@ -713,10 +713,10 @@ Partial Class Crear_Venta
         Me.GroupBox4.ResumeLayout(False)
         Me.PanelBuscar_producto.ResumeLayout(False)
         Me.PanelBuscar_producto.PerformLayout()
-        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.p_salir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_crear_cliente, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p_salir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.p_salir_buscarcliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
