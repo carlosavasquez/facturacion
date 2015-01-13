@@ -29,27 +29,27 @@ Partial Class Menu_Principal
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_reportes = New System.Windows.Forms.PictureBox()
+        Me.btn_vendedores = New System.Windows.Forms.PictureBox()
+        Me.btn_ventas = New System.Windows.Forms.PictureBox()
+        Me.btn_clientes = New System.Windows.Forms.PictureBox()
+        Me.btn_productos = New System.Windows.Forms.PictureBox()
+        Me.btn_proveedores = New System.Windows.Forms.PictureBox()
+        Me.btn_compras = New System.Windows.Forms.PictureBox()
+        CType(Me.btn_reportes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_vendedores, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_ventas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_productos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_compras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(49, 58)
+        Me.Label1.Location = New System.Drawing.Point(181, 161)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 20)
         Me.Label1.TabIndex = 4
@@ -59,7 +59,7 @@ Partial Class Menu_Principal
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(182, 58)
+        Me.Label2.Location = New System.Drawing.Point(356, 161)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(149, 20)
         Me.Label2.TabIndex = 5
@@ -69,7 +69,7 @@ Partial Class Menu_Principal
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(206, 210)
+        Me.Label3.Location = New System.Drawing.Point(380, 338)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(98, 20)
         Me.Label3.TabIndex = 6
@@ -79,7 +79,7 @@ Partial Class Menu_Principal
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(59, 210)
+        Me.Label4.Location = New System.Drawing.Point(191, 338)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(81, 20)
         Me.Label4.TabIndex = 8
@@ -89,7 +89,7 @@ Partial Class Menu_Principal
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(349, 58)
+        Me.Label5.Location = New System.Drawing.Point(562, 163)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(125, 20)
         Me.Label5.TabIndex = 10
@@ -99,7 +99,7 @@ Partial Class Menu_Principal
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(344, 210)
+        Me.Label6.Location = New System.Drawing.Point(557, 338)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(137, 20)
         Me.Label6.TabIndex = 13
@@ -109,128 +109,135 @@ Partial Class Menu_Principal
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(513, 131)
+        Me.Label7.Location = New System.Drawing.Point(757, 247)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(108, 20)
         Me.Label7.TabIndex = 16
         Me.Label7.Text = "REPORTES"
         '
-        'PictureBox7
+        'btn_reportes
         '
-        Me.PictureBox7.Image = Global.facturacion.My.Resources.Resources.sales_report_icon
-        Me.PictureBox7.Location = New System.Drawing.Point(492, 130)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 15
-        Me.PictureBox7.TabStop = False
+        Me.btn_reportes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_reportes.Image = Global.facturacion.My.Resources.Resources.sales_report_icon
+        Me.btn_reportes.Location = New System.Drawing.Point(736, 246)
+        Me.btn_reportes.Name = "btn_reportes"
+        Me.btn_reportes.Size = New System.Drawing.Size(150, 150)
+        Me.btn_reportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_reportes.TabIndex = 15
+        Me.btn_reportes.TabStop = False
         '
-        'PictureBox6
+        'btn_vendedores
         '
-        Me.PictureBox6.Image = Global.facturacion.My.Resources.Resources.Occupations_Technical_Support_Representative_Male_Light_icon
-        Me.PictureBox6.Location = New System.Drawing.Point(336, 209)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 12
-        Me.PictureBox6.TabStop = False
+        Me.btn_vendedores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_vendedores.Image = Global.facturacion.My.Resources.Resources.Occupations_Technical_Support_Representative_Male_Light_icon
+        Me.btn_vendedores.Location = New System.Drawing.Point(549, 337)
+        Me.btn_vendedores.Name = "btn_vendedores"
+        Me.btn_vendedores.Size = New System.Drawing.Size(150, 150)
+        Me.btn_vendedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_vendedores.TabIndex = 12
+        Me.btn_vendedores.TabStop = False
         '
-        'PictureBox5
+        'btn_ventas
         '
-        Me.PictureBox5.Image = Global.facturacion.My.Resources.Resources.product256
-        Me.PictureBox5.Location = New System.Drawing.Point(336, 57)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 9
-        Me.PictureBox5.TabStop = False
+        Me.btn_ventas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_ventas.Image = Global.facturacion.My.Resources.Resources.shopping_cart_insert256
+        Me.btn_ventas.Location = New System.Drawing.Point(157, 337)
+        Me.btn_ventas.Name = "btn_ventas"
+        Me.btn_ventas.Size = New System.Drawing.Size(150, 150)
+        Me.btn_ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_ventas.TabIndex = 7
+        Me.btn_ventas.TabStop = False
         '
-        'PictureBox4
+        'btn_clientes
         '
-        Me.PictureBox4.Image = Global.facturacion.My.Resources.Resources.shopping_cart_insert256
-        Me.PictureBox4.Location = New System.Drawing.Point(25, 209)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 7
-        Me.PictureBox4.TabStop = False
+        Me.btn_clientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_clientes.Image = Global.facturacion.My.Resources.Resources.man1_256
+        Me.btn_clientes.Location = New System.Drawing.Point(355, 337)
+        Me.btn_clientes.Name = "btn_clientes"
+        Me.btn_clientes.Size = New System.Drawing.Size(150, 150)
+        Me.btn_clientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_clientes.TabIndex = 3
+        Me.btn_clientes.TabStop = False
         '
-        'PictureBox3
+        'btn_productos
         '
-        Me.PictureBox3.Image = Global.facturacion.My.Resources.Resources.man1_256
-        Me.PictureBox3.Location = New System.Drawing.Point(181, 209)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 3
-        Me.PictureBox3.TabStop = False
+        Me.btn_productos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_productos.Image = Global.facturacion.My.Resources.Resources.product256
+        Me.btn_productos.Location = New System.Drawing.Point(549, 161)
+        Me.btn_productos.Name = "btn_productos"
+        Me.btn_productos.Size = New System.Drawing.Size(150, 150)
+        Me.btn_productos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_productos.TabIndex = 9
+        Me.btn_productos.TabStop = False
         '
-        'PictureBox2
+        'btn_proveedores
         '
-        Me.PictureBox2.Image = Global.facturacion.My.Resources.Resources.couple256
-        Me.PictureBox2.Location = New System.Drawing.Point(181, 57)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 2
-        Me.PictureBox2.TabStop = False
+        Me.btn_proveedores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_proveedores.Image = Global.facturacion.My.Resources.Resources.couple256
+        Me.btn_proveedores.Location = New System.Drawing.Point(355, 160)
+        Me.btn_proveedores.Name = "btn_proveedores"
+        Me.btn_proveedores.Size = New System.Drawing.Size(150, 150)
+        Me.btn_proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_proveedores.TabIndex = 2
+        Me.btn_proveedores.TabStop = False
         '
-        'PictureBox1
+        'btn_compras
         '
-        Me.PictureBox1.Image = Global.facturacion.My.Resources.Resources.shopping_cart_add256
-        Me.PictureBox1.Location = New System.Drawing.Point(25, 57)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.btn_compras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_compras.Image = Global.facturacion.My.Resources.Resources.shopping_cart_add256
+        Me.btn_compras.Location = New System.Drawing.Point(157, 160)
+        Me.btn_compras.Name = "btn_compras"
+        Me.btn_compras.Size = New System.Drawing.Size(150, 150)
+        Me.btn_compras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_compras.TabIndex = 1
+        Me.btn_compras.TabStop = False
         '
         'Menu_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(667, 416)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(1042, 646)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.PictureBox7)
+        Me.Controls.Add(Me.btn_reportes)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.PictureBox6)
+        Me.Controls.Add(Me.btn_vendedores)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.btn_ventas)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.IsMdiContainer = True
+        Me.Controls.Add(Me.btn_clientes)
+        Me.Controls.Add(Me.btn_productos)
+        Me.Controls.Add(Me.btn_proveedores)
+        Me.Controls.Add(Me.btn_compras)
         Me.Name = "Menu_Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menu Principal"
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_reportes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_vendedores, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_ventas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_clientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_productos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_compras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_compras As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_proveedores As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_clientes As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_ventas As System.Windows.Forms.PictureBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_productos As System.Windows.Forms.PictureBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_vendedores As System.Windows.Forms.PictureBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_reportes As System.Windows.Forms.PictureBox
 End Class

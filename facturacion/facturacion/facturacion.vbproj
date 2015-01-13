@@ -173,6 +173,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logojaferro.ico" />
+    <None Include="Resources\add product.png" />
+    <None Include="Resources\add person.png" />
+    <None Include="Resources\Actions-document-save-icon.png" />
+    <None Include="Resources\pro BN.png" />
+    <None Include="Resources\pack BN.png" />
+    <None Include="Resources\man BN.png" />
     <None Include="Resources\sales-report-icon.png" />
     <None Include="Resources\Reports-icon.png" />
     <None Include="Resources\Occupations-Technical-Support-Representative-Male-Light-icon.png" />

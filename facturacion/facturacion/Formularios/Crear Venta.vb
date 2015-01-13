@@ -78,16 +78,21 @@
             cb_producto.Focus()
 
         ElseIf e.ColumnIndex = 8 Then
-            Dim seleccionada As Integer
-            seleccionada = CType(sender, DataGridView).CurrentRow.Index
-            Dim vuni As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(5).Value()
-            Dim piva As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(2).Value()
-            Dim can As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(4).Value()
-            objproductos.restartotales(vuni, can, piva)
-            txt_iva.Text = objproductos._totaliva
-            txt_sub.Text = objproductos._subtotal
-            txt_total.Text = objproductos._totalventa
-            dg_productosventa.Rows.RemoveAt(seleccionada)
+            If dg_productosventa.RowCount - 1 = 0 Then
+                MsgBox("No hay productos para eliminar", MsgBoxStyle.Information, "JAFERRO")
+            Else
+                Dim seleccionada As Integer
+                seleccionada = CType(sender, DataGridView).CurrentRow.Index
+                Dim vuni As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(5).Value()
+                Dim piva As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(2).Value()
+                Dim can As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(4).Value()
+                objproductos.restartotales(vuni, can, piva)
+                txt_iva.Text = objproductos._totaliva
+                txt_sub.Text = objproductos._subtotal
+                txt_total.Text = objproductos._totalventa
+                dg_productosventa.Rows.RemoveAt(seleccionada)
+            End If
+            
         Else
 
         End If
@@ -167,9 +172,9 @@
         ElseIf txt_telefono.Text = Nothing Then
             MsgBox("El campo Telefono esta vacio", MsgBoxStyle.Information, "JAFERRO")
         Else
-            If objcliente.crear_cliente(txt_nit.Text, txt_nombre.Text, txt_tdocu.Text, txt_telefono.Text, Nothing, Nothing, estado) = True Then
+            If objcliente.crear_cliente(txt_nit.Text, txt_nombre.Text, txt_tdocu.Text, txt_telefono.Text, txt_direccion.Text, Nothing, estado) = True Then
                 If MsgBox("Confirma la creacion del cliente con los siguientes datos:" & vbCrLf & "NIT/CC:" & txt_nit.Text & vbCrLf & "Nombre ó Razon Social:" & txt_nombre.Text & vbCrLf & "Dirección:" & txt_direccion.Text & vbCrLf & "Telefono:" & txt_telefono.Text, MsgBoxStyle.YesNo, "JAFERRO") = MsgBoxResult.Yes Then
-                    If MsgBox("Cliente Creado. ¿Desea añadir informacion del cliente?", MsgBoxStyle.YesNo, "Cliente Creado") = MsgBoxResult.Yes Then
+                    If MsgBox("Cliente Creado. ¿Desea añadir mas informacion del cliente?", MsgBoxStyle.YesNo, "Cliente Creado") = MsgBoxResult.Yes Then
                         Dim adi_clien As New Editar_Cliente
                         objcliente._numdocumento = txt_nit.Text
                         objcliente.consultar_id_con_nit(txt_nit.Text)
@@ -194,8 +199,8 @@
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If cb_producto.Text = Nothing Then
             MsgBox("El campo Producto esta vacio", MsgBoxStyle.Information, "JAFERRO")
-        ElseIf txt_cantidad.Text = Nothing Then
-            MsgBox("El campo Cantidad esta vacio", MsgBoxStyle.Information, "JAFERRO")
+        ElseIf txt_cantidad.Text = Nothing Or txt_cantidad.Text = "0" Then
+            MsgBox("El campo Cantidad esta vacio ó es cero", MsgBoxStyle.Information, "JAFERRO")
         ElseIf txt_valor.Text = Nothing Then
             MsgBox("El campo Precio esta vacio", MsgBoxStyle.Information, "JAFERRO")
         ElseIf txt_desc.Text = Nothing Then
@@ -210,7 +215,7 @@
                 txt_total.Text = objproductos._totalventa
                 Dim v_total As Integer = Val(txt_valor.Text) * Val(txt_cantidad.Text)
                 objproductos.Obtenerdatos()
-                dg_productosventa.Rows.Insert(0, objproductos._idproducto, objproductos._nombreproducto, objproductos._iva, objproductos._estadoproducto, txt_cantidad.Text, txt_valor.Text, v_total.ToString)
+                dg_productosventa.Rows.Insert(0, objproductos._idproducto, objproductos._nombreproducto, objproductos._iva, objproductos._estadoproducto, Val(txt_cantidad.Text), txt_valor.Text, v_total.ToString)
                 PanelBuscar_producto.Visible = False
                 p_salir.Visible = False
                 txt_valor.DataSource = Nothing
@@ -232,36 +237,39 @@
         Dim si As Integer = 0
         If txt_numfactura.Text = Nothing Then
             MsgBox("El campo Factura esta vacio", MsgBoxStyle.Information, "JAFERRO")
+        ElseIf txt_id.Text = Nothing Then
+            MsgBox("No ha seleccionado un Cliente", MsgBoxStyle.Information, "JAFERRO")
         Else
-            If Me.dg_productosventa.RowCount - 1 <> 0 Then
-                If objventas.validar_factura(Val(txt_numfactura.Text)) = False Then
-                    Dim cantidadproductos As Integer = Me.dg_productosventa.RowCount - 2
-                    objvendedor.obtenerid(txt_vendedor.Text)
-                    objventas.CrearVenta(Val(txt_numfactura.Text), txt_fecha.Text, Val(txt_total.Text), Val(txt_iva.Text), Val(txt_id.Text), objvendedor._idvendedor)
-                    objventas.obteneridventa()
-                    For i = 0 To cantidadproductos
-                        objproductos._idproducto = Me.dg_productosventa.Rows(i).Cells(0).Value()
-                        Dim cant_vendida As Integer = Me.dg_productosventa.Rows(i).Cells(4).Value()
-                        Dim val_unit As Integer = Me.dg_productosventa.Rows(i).Cells(5).Value()
-                        objproductos.obtenercantidad()
-                        objproductos._cantidad += cant_vendida
-                        objproductos.actualizarcantidad()
-                        objproductos.agregar_productos_a_compra(cant_vendida, val_unit, objventas._idventa)
-                        si = 1
-                    Next
-                    If si = 1 Then
-                        MsgBox("Factura reaizada", MsgBoxStyle.Information, "JAFERRO")
-                    Else
-                        MsgBox("Error Factura", MsgBoxStyle.Critical, "JAFERRO")
-                    End If
+        If Me.dg_productosventa.RowCount - 1 <> 0 Then
+            If objventas.validar_factura(Val(txt_numfactura.Text)) = False Then
+                Dim cantidadproductos As Integer = Me.dg_productosventa.RowCount - 2
+                objvendedor.obtenerid(txt_vendedor.Text)
+                objventas.CrearVenta(Val(txt_numfactura.Text), txt_fecha.Text, Val(txt_total.Text), Val(txt_iva.Text), Val(txt_id.Text), objvendedor._idvendedor)
+                objventas.obteneridventa()
+                For i = 0 To cantidadproductos
+                    objproductos._idproducto = Me.dg_productosventa.Rows(i).Cells(0).Value()
+                    Dim cant_vendida As Integer = Me.dg_productosventa.Rows(i).Cells(4).Value()
+                    Dim val_unit As Integer = Me.dg_productosventa.Rows(i).Cells(5).Value()
+                    objproductos.obtenercantidad()
+                    objproductos._cantidad -= cant_vendida
+                    objproductos.actualizarcantidad()
+                    objproductos.agregar_productos_a_compra(cant_vendida, val_unit, objventas._idventa)
+                    si = 1
+                Next
+                If si = 1 Then
+                    MsgBox("Factura Realizada", MsgBoxStyle.Information, "JAFERRO")
+                    Me.Close()
                 Else
-                    MsgBox("El numero de factura ya esta", MsgBoxStyle.Information, "JAFERRO")
+                    MsgBox("Error Factura", MsgBoxStyle.Critical, "JAFERRO")
                 End If
             Else
-                MsgBox("No Ha Agregado Productos a la Venta", MsgBoxStyle.Critical, "JAFERRO")
+                MsgBox("El numero de factura ya esta", MsgBoxStyle.Information, "JAFERRO")
             End If
+        Else
+            MsgBox("No Ha Agregado Productos a la Venta", MsgBoxStyle.Critical, "JAFERRO")
         End If
-        
+        End If
+
 
     End Sub
 End Class

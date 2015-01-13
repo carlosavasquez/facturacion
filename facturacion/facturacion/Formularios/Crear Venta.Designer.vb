@@ -65,7 +65,6 @@ Partial Class Crear_Venta
         Me.txt_existencias = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.txt_desc = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txt_valor = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cb_producto = New System.Windows.Forms.ComboBox()
@@ -77,24 +76,27 @@ Partial Class Crear_Venta
         Me.Label15 = New System.Windows.Forms.Label()
         Me.dg_buscarnit = New System.Windows.Forms.DataGridView()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.btn_crear_cliente = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txt_numfactura = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txt_vendedor = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.p_salir = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btn_crear_cliente = New System.Windows.Forms.PictureBox()
         Me.btn_guardar = New System.Windows.Forms.PictureBox()
         Me.p_salir_buscarcliente = New System.Windows.Forms.PictureBox()
+        Me.dg_buscarproducto = New System.Windows.Forms.DataGridView()
         CType(Me.dg_productosventa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.PanelBuscar_producto.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_crear_cliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.p_salir, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_crear_cliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.p_salir_buscarcliente, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg_buscarproducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dg_productosventa
@@ -266,6 +268,7 @@ Partial Class Crear_Venta
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.dg_buscarproducto)
         Me.GroupBox4.Controls.Add(Me.dg_productosventa)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(8, 94)
@@ -352,6 +355,7 @@ Partial Class Crear_Venta
         'txt_iva
         '
         Me.txt_iva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_iva.Enabled = False
         Me.txt_iva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_iva.Location = New System.Drawing.Point(618, 365)
         Me.txt_iva.Name = "txt_iva"
@@ -401,6 +405,7 @@ Partial Class Crear_Venta
         'txt_total
         '
         Me.txt_total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_total.Enabled = False
         Me.txt_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_total.Location = New System.Drawing.Point(618, 409)
         Me.txt_total.Name = "txt_total"
@@ -410,6 +415,7 @@ Partial Class Crear_Venta
         'txt_sub
         '
         Me.txt_sub.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_sub.Enabled = False
         Me.txt_sub.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_sub.Location = New System.Drawing.Point(618, 343)
         Me.txt_sub.Name = "txt_sub"
@@ -432,65 +438,59 @@ Partial Class Crear_Venta
         Me.PanelBuscar_producto.Controls.Add(Me.txt_cantidad)
         Me.PanelBuscar_producto.Controls.Add(Me.Label14)
         Me.PanelBuscar_producto.Controls.Add(Me.Label15)
-        Me.PanelBuscar_producto.Location = New System.Drawing.Point(341, 103)
+        Me.PanelBuscar_producto.Location = New System.Drawing.Point(4, 103)
         Me.PanelBuscar_producto.Name = "PanelBuscar_producto"
-        Me.PanelBuscar_producto.Size = New System.Drawing.Size(377, 206)
+        Me.PanelBuscar_producto.Size = New System.Drawing.Size(377, 223)
         Me.PanelBuscar_producto.TabIndex = 136
         Me.PanelBuscar_producto.Visible = False
         '
         'txt_existencias
         '
         Me.txt_existencias.Enabled = False
-        Me.txt_existencias.Location = New System.Drawing.Point(196, 98)
+        Me.txt_existencias.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_existencias.Location = New System.Drawing.Point(265, 99)
         Me.txt_existencias.Name = "txt_existencias"
-        Me.txt_existencias.Size = New System.Drawing.Size(56, 20)
+        Me.txt_existencias.Size = New System.Drawing.Size(56, 24)
         Me.txt_existencias.TabIndex = 145
         '
         'Label16
         '
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Location = New System.Drawing.Point(134, 101)
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(160, 101)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(63, 13)
+        Me.Label16.Size = New System.Drawing.Size(99, 18)
         Me.Label16.TabIndex = 144
         Me.Label16.Text = "Existencias:"
         '
         'txt_desc
         '
-        Me.txt_desc.Location = New System.Drawing.Point(72, 153)
+        Me.txt_desc.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_desc.Location = New System.Drawing.Point(93, 163)
         Me.txt_desc.Name = "txt_desc"
-        Me.txt_desc.Size = New System.Drawing.Size(43, 20)
+        Me.txt_desc.Size = New System.Drawing.Size(43, 24)
         Me.txt_desc.TabIndex = 59
         Me.txt_desc.Text = "0"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.facturacion.My.Resources.Resources.e024
-        Me.PictureBox1.Location = New System.Drawing.Point(303, 126)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 49)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 143
-        Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Crear Cliente")
         '
         'txt_valor
         '
         Me.txt_valor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txt_valor.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_valor.FormattingEnabled = True
-        Me.txt_valor.Location = New System.Drawing.Point(72, 126)
+        Me.txt_valor.Location = New System.Drawing.Point(93, 126)
         Me.txt_valor.Name = "txt_valor"
-        Me.txt_valor.Size = New System.Drawing.Size(124, 21)
+        Me.txt_valor.Size = New System.Drawing.Size(124, 26)
         Me.txt_valor.TabIndex = 61
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Location = New System.Drawing.Point(5, 162)
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(5, 166)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(62, 13)
+        Me.Label10.Size = New System.Drawing.Size(94, 18)
         Me.Label10.TabIndex = 58
         Me.Label10.Text = "Descuento:"
         '
@@ -498,19 +498,21 @@ Partial Class Crear_Venta
         '
         Me.cb_producto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
         Me.cb_producto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cb_producto.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cb_producto.FormattingEnabled = True
-        Me.cb_producto.Location = New System.Drawing.Point(72, 71)
+        Me.cb_producto.Location = New System.Drawing.Point(93, 69)
         Me.cb_producto.Name = "cb_producto"
-        Me.cb_producto.Size = New System.Drawing.Size(258, 21)
+        Me.cb_producto.Size = New System.Drawing.Size(275, 26)
         Me.cb_producto.TabIndex = 54
         '
         'check_nompro
         '
         Me.check_nompro.AutoSize = True
         Me.check_nompro.CheckAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.check_nompro.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.check_nompro.Location = New System.Drawing.Point(8, 27)
         Me.check_nompro.Name = "check_nompro"
-        Me.check_nompro.Size = New System.Drawing.Size(48, 31)
+        Me.check_nompro.Size = New System.Drawing.Size(72, 36)
         Me.check_nompro.TabIndex = 51
         Me.check_nompro.Text = "Nombre"
         Me.check_nompro.UseVisualStyleBackColor = True
@@ -519,9 +521,10 @@ Partial Class Crear_Venta
         '
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Location = New System.Drawing.Point(5, 134)
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(9, 135)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(34, 13)
+        Me.Label12.Size = New System.Drawing.Size(52, 18)
         Me.Label12.TabIndex = 57
         Me.Label12.Text = "Valor:"
         '
@@ -529,27 +532,30 @@ Partial Class Crear_Venta
         '
         Me.check_referencia.AutoSize = True
         Me.check_referencia.CheckAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.check_referencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.check_referencia.Location = New System.Drawing.Point(81, 27)
         Me.check_referencia.Name = "check_referencia"
-        Me.check_referencia.Size = New System.Drawing.Size(63, 31)
+        Me.check_referencia.Size = New System.Drawing.Size(93, 36)
         Me.check_referencia.TabIndex = 52
         Me.check_referencia.Text = "Referencia"
         Me.check_referencia.UseVisualStyleBackColor = True
         '
         'txt_cantidad
         '
-        Me.txt_cantidad.Location = New System.Drawing.Point(72, 98)
+        Me.txt_cantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_cantidad.Location = New System.Drawing.Point(93, 98)
         Me.txt_cantidad.Name = "txt_cantidad"
-        Me.txt_cantidad.Size = New System.Drawing.Size(56, 20)
+        Me.txt_cantidad.Size = New System.Drawing.Size(56, 24)
         Me.txt_cantidad.TabIndex = 56
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(5, 74)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(53, 13)
+        Me.Label14.Size = New System.Drawing.Size(82, 18)
         Me.Label14.TabIndex = 53
         Me.Label14.Text = "Producto:"
         '
@@ -557,9 +563,10 @@ Partial Class Crear_Venta
         '
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.Location = New System.Drawing.Point(5, 105)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(52, 13)
+        Me.Label15.Size = New System.Drawing.Size(79, 18)
         Me.Label15.TabIndex = 55
         Me.Label15.Text = "Cantidad:"
         '
@@ -574,17 +581,6 @@ Partial Class Crear_Venta
         Me.dg_buscarnit.TabIndex = 0
         Me.dg_buscarnit.Visible = False
         '
-        'btn_crear_cliente
-        '
-        Me.btn_crear_cliente.Image = Global.facturacion.My.Resources.Resources.User_Accounts
-        Me.btn_crear_cliente.Location = New System.Drawing.Point(538, 39)
-        Me.btn_crear_cliente.Name = "btn_crear_cliente"
-        Me.btn_crear_cliente.Size = New System.Drawing.Size(50, 49)
-        Me.btn_crear_cliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_crear_cliente.TabIndex = 142
-        Me.btn_crear_cliente.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.btn_crear_cliente, "Crear Cliente")
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(135, 411)
@@ -593,6 +589,7 @@ Partial Class Crear_Venta
         Me.Button1.TabIndex = 144
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'txt_numfactura
         '
@@ -617,11 +614,12 @@ Partial Class Crear_Venta
         'txt_vendedor
         '
         Me.txt_vendedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txt_vendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_vendedor.FormattingEnabled = True
         Me.txt_vendedor.Items.AddRange(New Object() {"CC", "NIT", "TI", "PSP"})
         Me.txt_vendedor.Location = New System.Drawing.Point(89, 351)
         Me.txt_vendedor.Name = "txt_vendedor"
-        Me.txt_vendedor.Size = New System.Drawing.Size(261, 21)
+        Me.txt_vendedor.Size = New System.Drawing.Size(261, 26)
         Me.txt_vendedor.TabIndex = 6
         '
         'Label18
@@ -637,7 +635,7 @@ Partial Class Crear_Venta
         'p_salir
         '
         Me.p_salir.Image = Global.facturacion.My.Resources.Resources.salir
-        Me.p_salir.Location = New System.Drawing.Point(717, 80)
+        Me.p_salir.Location = New System.Drawing.Point(380, 80)
         Me.p_salir.Name = "p_salir"
         Me.p_salir.Size = New System.Drawing.Size(25, 25)
         Me.p_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -645,9 +643,34 @@ Partial Class Crear_Venta
         Me.p_salir.TabStop = False
         Me.p_salir.Visible = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Image = Global.facturacion.My.Resources.Resources.add_product
+        Me.PictureBox1.Location = New System.Drawing.Point(318, 163)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 49)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 143
+        Me.PictureBox1.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Crear Cliente")
+        '
+        'btn_crear_cliente
+        '
+        Me.btn_crear_cliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_crear_cliente.Image = Global.facturacion.My.Resources.Resources.add_person
+        Me.btn_crear_cliente.Location = New System.Drawing.Point(538, 39)
+        Me.btn_crear_cliente.Name = "btn_crear_cliente"
+        Me.btn_crear_cliente.Size = New System.Drawing.Size(50, 49)
+        Me.btn_crear_cliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_crear_cliente.TabIndex = 142
+        Me.btn_crear_cliente.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.btn_crear_cliente, "Crear Cliente")
+        '
         'btn_guardar
         '
-        Me.btn_guardar.Image = Global.facturacion.My.Resources.Resources.Save
+        Me.btn_guardar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_guardar.Image = Global.facturacion.My.Resources.Resources.Actions_document_save_icon
         Me.btn_guardar.Location = New System.Drawing.Point(300, 392)
         Me.btn_guardar.Name = "btn_guardar"
         Me.btn_guardar.Size = New System.Drawing.Size(50, 50)
@@ -666,14 +689,20 @@ Partial Class Crear_Venta
         Me.p_salir_buscarcliente.TabStop = False
         Me.p_salir_buscarcliente.Visible = False
         '
+        'dg_buscarproducto
+        '
+        Me.dg_buscarproducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg_buscarproducto.Location = New System.Drawing.Point(372, 9)
+        Me.dg_buscarproducto.Name = "dg_buscarproducto"
+        Me.dg_buscarproducto.Size = New System.Drawing.Size(362, 223)
+        Me.dg_buscarproducto.TabIndex = 149
+        '
         'Crear_Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(751, 471)
-        Me.Controls.Add(Me.p_salir_buscarcliente)
-        Me.Controls.Add(Me.dg_buscarnit)
         Me.Controls.Add(Me.txt_vendedor)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.txt_numfactura)
@@ -706,6 +735,8 @@ Partial Class Crear_Venta
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txt_total)
         Me.Controls.Add(Me.txt_sub)
+        Me.Controls.Add(Me.p_salir_buscarcliente)
+        Me.Controls.Add(Me.dg_buscarnit)
         Me.Name = "Crear_Venta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Crear Venta"
@@ -713,12 +744,13 @@ Partial Class Crear_Venta
         Me.GroupBox4.ResumeLayout(False)
         Me.PanelBuscar_producto.ResumeLayout(False)
         Me.PanelBuscar_producto.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_crear_cliente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.p_salir, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_crear_cliente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.p_salir_buscarcliente, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dg_buscarproducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -781,4 +813,5 @@ Partial Class Crear_Venta
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents txt_vendedor As System.Windows.Forms.ComboBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents dg_buscarproducto As System.Windows.Forms.DataGridView
 End Class

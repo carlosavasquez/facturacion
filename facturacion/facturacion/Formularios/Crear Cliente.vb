@@ -19,6 +19,11 @@
         End If
     End Sub
 
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Menu_Principal.btn_clientes.Enabled = True
+        Menu_Principal.btn_clientes.Image = My.Resources.man1_256
+    End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cb_tipodocu.SelectedIndex = 0
     End Sub
