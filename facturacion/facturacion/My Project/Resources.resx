@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="add product" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add product.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Reports-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reports-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Occupations-Technical-Support-Representative-Male-Light-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Occupations-Technical-Support-Representative-Male-Light-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User Accounts1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User Accounts1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -138,9 +144,6 @@
   </data>
   <data name="pack BN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pack BN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="product256" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\product256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="couple256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\couple256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,8 +166,8 @@
   <data name="shopping-cart-add256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-cart-add256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Occupations-Technical-Support-Representative-Male-Light-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Occupations-Technical-Support-Representative-Male-Light-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="product256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\product256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add person" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add person.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +181,7 @@
   <data name="Actions-document-save-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-document-save-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add product" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add product.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1421382337_add1-" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1421382337_add1-.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
