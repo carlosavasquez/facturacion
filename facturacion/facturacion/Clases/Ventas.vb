@@ -3,6 +3,7 @@
     Private numero_factura As Integer
     Private idventa As Integer
     Private fecha_expedicion As String
+#Region "PROPIEDADES"
     Property _numero_factura
         Get
             Return numero_factura
@@ -27,12 +28,16 @@
             Me.fecha_expedicion = value
         End Set
     End Property
+#End Region
     Sub obteneridventa()
         conn.Open()
         cmd.CommandType = CommandType.Text
         cmd.Connection = conn
+        cmd.Transaction = trans
         cmd.CommandText = "SELECT idfactura_venta FROM factura_venta ORDER BY idfactura_venta DESC LIMIT 1 "
-        _idventa = cmd.ExecuteScalar
+        Dim idmas As Integer = cmd.ExecuteScalar
+        idmas += 1
+        _idventa = idmas
         conn.Close()
     End Sub
     Function validar_factura(ByVal numero As Integer)
@@ -68,28 +73,22 @@
             Return True
         End If
     End Function
-    Function CrearVenta(ByVal num_factura As Integer, ByVal fecha As String, ByVal valorventa As Integer, ByVal valoriva As Integer, ByVal idcli As Integer, ByVal idvendedor As Integer)
-        conn.Open()
+    Sub ejecutartodo()
+        VariasTrans()
+    End Sub
+    Sub CrearVenta(ByVal num_factura As Integer, ByVal fecha As String, ByVal valorventa As Integer, ByVal valoriva As Integer, ByVal idcli As Integer, ByVal idvendedor As Integer)
+        'conn.Open()
         Dim estado As Integer = 1
-        Try
-
-            trans = conn.BeginTransaction()
-            cmd.CommandType = CommandType.Text
-            cmd.Connection = conn
-            cmd.Transaction = trans
-            cmd.CommandText = "INSERT INTO factura_venta(numero_factura,fecha_expedicion,valor_total_venta,valor_total_iva,estado,cliente_idcliente,vendedor_idvendedor) VALUES "
-            cmd.CommandText += "(" & num_factura & " , '" & fecha & "', " & valorventa & "," & valoriva & "," & estado & "," & idcli & "," & idvendedor & ")"
-            cmd.ExecuteNonQuery()
-            trans.Commit()
-            conn.Close()
-            Return True
-
-        Catch ex As Exception
-            trans.Rollback()
-            conn.Close()
-            Return False
-        End Try
-    End Function
+        'trans = conn.BeginTransaction()
+        'cmd.CommandType = CommandType.Text
+        'cmd.Connection = conn
+        'cmd.Transaction = trans
+        listquerys = "INSERT INTO factura_venta(numero_factura,fecha_expedicion,valor_total_venta,valor_total_iva,estado,cliente_idcliente,vendedor_idvendedor) VALUES (" & num_factura & " , '" & fecha & "', " & valorventa & "," & valoriva & "," & estado & "," & idcli & "," & idvendedor & ");"
+        MsgBox(listquerys(increment))
+        'cmd.ExecuteNonQuery()
+        ''trans.Commit()
+        'conn.Close()
+    End Sub
     Sub EliminarVenta()
         conn.Open()
         cmd.CommandType = CommandType.Text

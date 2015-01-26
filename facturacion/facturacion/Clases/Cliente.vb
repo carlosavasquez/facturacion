@@ -28,11 +28,11 @@
             Return False
         End Try
     End Function
-    Function consultar_todos_con_nit(ByVal busqueda As String)
+    Function consultar_todos_con_nit(ByVal busqueda As String, ByVal criterio As String)
         conn.Open()
         cmd.CommandType = CommandType.Text
         cmd.Connection = conn
-        cmd.CommandText = "SELECT  idcliente,nombre_razon_social,tipo_documento,telefonos,direccion FROM cliente WHERE identificacion = '" & busqueda & "'"
+        cmd.CommandText = "SELECT  idcliente,nombre_razon_social,tipo_documento,telefonos,direccion FROM cliente WHERE " & criterio & " = '" & busqueda & "'"
         lector = cmd.ExecuteReader
         If lector.HasRows = True Then
             While lector.Read()
@@ -68,7 +68,6 @@
         Return dt
     End Function
     Function consultar_id_con_nit(nit)
-
         Try
             conn.Open()
             cmd.CommandType = CommandType.Text

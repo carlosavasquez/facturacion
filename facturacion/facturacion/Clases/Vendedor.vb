@@ -13,8 +13,11 @@
         conn.Open()
         cmd.CommandType = CommandType.Text
         cmd.Connection = conn
+        cmd.Transaction = trans
         cmd.CommandText = "SELECT idvendedor FROM vendedor WHERE nombre='" & nom & "'"
+        'Dim SLQ_obtenerid = "SELECT idvendedor FROM vendedor WHERE nombre='" & nom & "'"
         _idvendedor = cmd.ExecuteScalar()
+        'listquerys(0) = SLQ_obtenerid
         conn.Close()
     End Sub
     Function obtenervendedor()

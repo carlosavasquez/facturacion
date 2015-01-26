@@ -1,9 +1,11 @@
 ﻿Public Class Crear_Venta
+    Dim objcon As New conexion
     Dim objcliente As New Cliente
     Dim objfuncionesvarias As New funciones_varias
     Dim objproductos As New Productos
     Dim objventas As New Ventas
     Dim objvendedor As New Vendedor
+
     Dim criterio As String
     Private Sub inhabilitarcampos()
         btn_crear_cliente.Visible = False
@@ -44,7 +46,7 @@
                 dg_buscarnit.Visible = True
                 p_salir_buscarcliente.Visible = True
             End If
-            If objcliente.consultar_todos_con_nit(txt_nit.Text) = True Then
+            If objcliente.consultar_todos_con_nit(txt_nit.Text, "identificacion") = True Then
                 txt_id.Text = objcliente._idcliente
                 txt_nombre.Text = objcliente._nombre
                 txt_telefono.Text = objcliente._telefono
@@ -79,16 +81,16 @@
     Private Sub txt_cantidad_GotFocus(sender As Object, e As EventArgs) Handles txt_cantidad.GotFocus
         objproductos.obtener_idproducto_connombre_o_ref(criterio, cb_producto.Text)
         txt_valor.DataSource = Nothing
-      
-            Try
-                txt_valor.DataSource = objproductos.precios_producto()
+
+        Try
+            txt_valor.DataSource = objproductos.precios_producto()
         Catch ex As Exception
             MsgBox(ex.ToString)
             'If ex .ToString .Contains ("")
             cb_producto.Focus()
             cb_producto.Text = Nothing
             'MsgBox("EL PRODUCTO SELECCIONADO NO ES VALIDO", MsgBoxStyle.Critical, "JAFERRO")
-            End Try
+        End Try
 
         objproductos.obtenercantidad()
         txt_existencias.Text = objproductos._cantidad
@@ -100,7 +102,7 @@
         Else
             check_nompro.CheckState = CheckState.Checked
             criterio = "nombre"
-           
+
         End If
     End Sub
     Private Sub check_referencia_CheckedChanged1(sender As Object, e As EventArgs) Handles check_referencia.CheckedChanged
@@ -158,6 +160,7 @@
                 If MsgBox("Confirma la creacion del cliente con los siguientes datos:" & vbCrLf & "NIT/CC:" & txt_nit.Text & vbCrLf & "Nombre ó Razon Social:" & txt_nombre.Text & vbCrLf & "Dirección:" & txt_direccion.Text & vbCrLf & "Telefono:" & txt_telefono.Text, MsgBoxStyle.YesNo, "JAFERRO") = MsgBoxResult.Yes Then
                     If MsgBox("Cliente Creado. ¿Desea añadir mas informacion del cliente?", MsgBoxStyle.YesNo, "Cliente Creado") = MsgBoxResult.Yes Then
                         Dim adi_clien As New Editar_Cliente
+                        'trans = conn.BeginTransaction()
                         objcliente._numdocumento = txt_nit.Text
                         objcliente.consultar_id_con_nit(txt_nit.Text)
                         txt_id.Text = objcliente._idcliente
@@ -185,9 +188,9 @@
             MsgBox("El campo Cantidad esta vacio ó es cero", MsgBoxStyle.Information, "JAFERRO")
         ElseIf txt_valor.Text = Nothing Then
             MsgBox("El campo Precio esta vacio", MsgBoxStyle.Information, "JAFERRO")
-       
+
         Else
-            If Val(txt_cantidad.Text) >= Val(txt_existencias.Text) Then
+            If Val(txt_cantidad.Text) > Val(txt_existencias.Text) Then
                 MsgBox("La cantidad maxima que puede vender de este producto es:" & txt_existencias.Text, MsgBoxStyle.Critical, "JAFERRO")
             Else
                 objproductos.calcular_iva(Val(txt_valor.Text), Val(txt_cantidad.Text))
@@ -200,17 +203,14 @@
                 txt_total.Text = t
                 Dim v_total As Integer = Val(txt_valor.Text) * Val(txt_cantidad.Text)
                 objproductos.Obtenerdatos()
-                dg_productosventa.Rows.Insert(0, objproductos._idproducto, objproductos._nombreproducto, objproductos._iva, objproductos._estadoproducto, Val(txt_cantidad.Text), Val(txt_valor.Text), Val(v_total.ToString))
+                dg_productosventa.Rows.Insert(0, objproductos._idproducto, objproductos._nombreproducto, objproductos._iva, objproductos._estadoproducto, Val(txt_cantidad.Text), Val(txt_valor.Text), Val(v_total.ToString), Val(txt_existencias.Text))
                 PanelBuscar_producto.Visible = False
                 p_salir.Visible = False
                 dg_buscarproducto.Visible = False
                 txt_valor.DataSource = Nothing
                 txt_cantidad.Text = Nothing
-
             End If
-
         End If
-       
     End Sub
     Private Sub p_salir_buscarcliente_Click(sender As Object, e As EventArgs) Handles p_salir_buscarcliente.Click
         dg_buscarnit.Visible = False
@@ -227,41 +227,66 @@
         ElseIf txt_id.Text = Nothing Then
             MsgBox("No ha seleccionado un Cliente", MsgBoxStyle.Information, "JAFERRO")
         Else
-        If Me.dg_productosventa.RowCount - 1 <> 0 Then
-            If objventas.validar_factura(Val(txt_numfactura.Text)) = False Then
-                    Dim cantidadproductos As Integer = Me.dg_productosventa.RowCount - 1
-                    objvendedor.obtenerid(txt_vendedor.Text)
-                    Dim vtot As Integer = Val(txt_total.Text)
-                    Dim viv As Integer = Val(txt_iva.Text)
-                    objventas.CrearVenta(Val(txt_numfactura.Text), txt_fecha.Text, vtot, viv, Val(txt_id.Text), objvendedor._idvendedor)
-                objventas.obteneridventa()
-                For i = 0 To cantidadproductos
-                    objproductos._idproducto = Me.dg_productosventa.Rows(i).Cells(0).Value()
-                    Dim cant_vendida As Integer = Me.dg_productosventa.Rows(i).Cells(4).Value()
-                    Dim val_unit As Integer = Me.dg_productosventa.Rows(i).Cells(5).Value()
-                    objproductos.obtenercantidad()
-                    objproductos._cantidad -= cant_vendida
-                    objproductos.actualizarcantidad()
-                    objproductos.agregar_productos_a_compra(cant_vendida, val_unit, objventas._idventa)
-                    si = 1
-                Next
-                If si = 1 Then
-                    MsgBox("Factura Realizada", MsgBoxStyle.Information, "JAFERRO")
-                    Me.Close()
+            If Me.dg_productosventa.RowCount <> 0 Then
+
+                If objventas.validar_factura(Val(txt_numfactura.Text)) = False Then
+                    Try
+                        Dim cantidadproductos As Integer = Me.dg_productosventa.RowCount
+                        objvendedor.obtenerid(txt_vendedor.Text)
+                        Dim vtot As Integer = Val(txt_total.Text)
+                        Dim viv As Integer = Val(txt_iva.Text)
+                        objcon.conn.Open()
+
+                        objcon.trans = objcon.conn.BeginTransaction()
+                        objcon.cmd.CommandType = CommandType.Text
+                        objcon.cmd.Connection = objcon.conn
+
+                        objventas.obteneridventa()
+                        Dim estado As Integer = 1
+                        'objventas.CrearVenta(Val(txt_numfactura.Text), txt_fecha.Text, vtot, viv, Val(txt_id.Text), objvendedor._idvendedor)
+                        objcon.cmd.CommandText = "INSERT INTO factura_venta(numero_factura,fecha_expedicion,valor_total_venta,valor_total_iva,estado,cliente_idcliente,vendedor_idvendedor) VALUES (" & txt_numfactura.Text & " , '" & txt_fecha.Text & "', " & vtot & "," & viv & "," & estado & "," & Val(txt_id.Text) & "," & objvendedor._idvendedor & ")"
+                        objcon.cmd.Transaction = objcon.trans
+                        objcon.cmd.ExecuteNonQuery()
+                        For i = 0 To cantidadproductos - 1
+
+                            objproductos._idproducto = Me.dg_productosventa.Rows(i).Cells(0).Value()
+                            Dim cant_vendida As Integer = Me.dg_productosventa.Rows(i).Cells(4).Value()
+                            Dim val_unit As Integer = Me.dg_productosventa.Rows(i).Cells(5).Value()
+                            objproductos._cantidad = Me.dg_productosventa.Rows(i).Cells(7).Value()
+                            'objproductos.obtenercantidad()
+                            objproductos._cantidad -= cant_vendida
+                            'objcon.increment += 1
+                            objcon.cmd.CommandText = "insert into productos_venta(cantidad,valor,estado,factura_venta_idfactura_venta,producto_idproducto) values(" & cant_vendida & "," & val_unit & ",'" & estado & "'," & objventas._idventa & ",'" & objproductos._idproducto & "')"
+                            objcon.cmd.Transaction = objcon.trans
+                            objcon.cmd.ExecuteNonQuery()
+                            'objproductos.agregar_productos_a_venta(cant_vendida, val_unit, objventas._idventa)
+                            'objcon.increment += 1
+                            'objproductos.actualizarcantidad()
+                            objcon.cmd.CommandText = "Update producto Set cantidad=" & objproductos._cantidad & " WHERE idproducto='" & objproductos._idproducto & "'"
+                            objcon.cmd.Transaction = objcon.trans
+                            objcon.cmd.ExecuteNonQuery()
+                        Next
+                        objcon.trans.Commit()
+                        MsgBox("VENTA EXITOSA", MsgBoxStyle.Information, "JAFERRO")
+                        objcon.conn.Close()
+                        Me.Close()
+                    Catch ex As Exception
+                        objcon.trans.Rollback()
+                        objcon.conn.Close()
+                        MsgBox("No se pudo ejecutar la transacción!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error en la transacción")
+                        MsgBox(ex.ToString, MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Detalles del error")
+
+                    End Try
                 Else
-                    MsgBox("Error Factura", MsgBoxStyle.Critical, "JAFERRO")
+                    MsgBox("El numero de factura ya esta", MsgBoxStyle.Information, "JAFERRO")
                 End If
             Else
-                MsgBox("El numero de factura ya esta", MsgBoxStyle.Information, "JAFERRO")
+                MsgBox("No Ha Agregado Productos a la Venta", MsgBoxStyle.Critical, "JAFERRO")
             End If
-        Else
-            MsgBox("No Ha Agregado Productos a la Venta", MsgBoxStyle.Critical, "JAFERRO")
         End If
-        End If
-
-
     End Sub
     Private Sub cb_producto_TextChanged(sender As Object, e As EventArgs) Handles cb_producto.TextChanged
+        'verifica
         If cb_producto.Text <> Nothing Then
             If check_nompro.CheckState = CheckState.Checked Then
                 Dim criterio As String = "nombre"
@@ -278,9 +303,9 @@
             dg_buscarproducto.Columns(2).Width = 50
             dg_buscarproducto.Columns(3).HeaderText = "PRECIO 1"
             dg_buscarproducto.Columns(3).Width = 80
-            dg_buscarproducto.Columns(4).HeaderText = "PRECIO2"
+            dg_buscarproducto.Columns(4).HeaderText = "PRECIO 2"
             dg_buscarproducto.Columns(4).Width = 80
-            dg_buscarproducto.Columns(5).HeaderText = "PRECIO3"
+            dg_buscarproducto.Columns(5).HeaderText = "PRECIO 3"
             dg_buscarproducto.Columns(5).Width = 80
             If dg_buscarproducto.RowCount = 0 Then
                 dg_buscarproducto.Visible = False
@@ -294,7 +319,7 @@
         End If
     End Sub
     Private Sub dg_productosventa_CellContentClick1(sender As Object, e As DataGridViewCellEventArgs) Handles dg_productosventa.CellContentClick
-        If e.ColumnIndex = 7 Then
+        If e.ColumnIndex = 8 Then
             PanelBuscar_producto.Visible = True
             p_salir.Visible = True
             check_nompro.CheckState = CheckState.Checked
@@ -304,8 +329,8 @@
             txt_existencias.Text = Nothing
             txt_valor.Text = Nothing
 
-        ElseIf e.ColumnIndex = 8 Then
-            If dg_productosventa.RowCount - 1 = 0 Then
+        ElseIf e.ColumnIndex = 9 Then
+            If dg_productosventa.RowCount = 0 Then
                 MsgBox("No hay productos para eliminar", MsgBoxStyle.Information, "JAFERRO")
             Else
                 Dim seleccionada As Integer
@@ -313,20 +338,26 @@
                 Dim vuni As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(5).Value()
                 Dim piva As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(2).Value()
                 Dim can As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(4).Value()
-                objproductos.restartotales(vuni, can, piva)
-                Dim i, s, t As Integer
-                i = objproductos._totaliva
-                s = objproductos._subtotal
-                t = objproductos._totalventa
-                txt_iva.Text = i
-                txt_sub.Text = s
-                txt_total.Text = t
-                dg_productosventa.Rows.RemoveAt(seleccionada)
-            End If
+                Dim nom As String = Me.dg_productosventa.CurrentRow.Cells.Item(1).Value()
+                If MsgBox("Confirma la Eliminacion de este Producto:" & vbCrLf & "Producto:" & nom & vbCrLf & "Cantidad:" & can.ToString, MsgBoxStyle.YesNo, "JAFERRO") = MsgBoxResult.Yes Then
+
+                    objproductos.restartotales(vuni, can, piva)
+                    Dim i, s, t As Integer
+                    i = objproductos._totaliva
+                    s = objproductos._subtotal
+                    t = objproductos._totalventa
+                    txt_iva.Text = i
+                    txt_sub.Text = s
+                    txt_total.Text = t
+                    dg_productosventa.Rows.RemoveAt(seleccionada)
+
+                Else
+                    MsgBox("La eliminación a sido cancelada", MsgBoxStyle.Information, "JAFERRO")
+                End If
+                End If
         Else
         End If
     End Sub
-
     Private Sub dg_buscarproducto_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dg_buscarproducto.CellMouseDoubleClick
         Dim seleccionada As Integer
         Dim nompro As String
@@ -334,12 +365,7 @@
         nompro = dg_buscarproducto.Rows(seleccionada).Cells(0).Value()
         cb_producto.Text = nompro
         txt_cantidad.Focus()
-        'dg_buscarproducto.Visible = False
-        'PanelBuscar_producto.Visible = False
-        'p_salir.Visible = False
-
     End Sub
-
     Private Sub dg_productosventa_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dg_productosventa.CellEndEdit
         If e.ColumnIndex = 4 Then
             Dim seleccionada As Integer
@@ -363,30 +389,43 @@
                 txt_total.Text = t
                 MsgBox("El campo cantidad no puede quedar vacio", MsgBoxStyle.Critical, "JAFERRO")
             Else
-                Dim va, car, tot As Integer
-                Try
+                If dg_productosventa.Rows(seleccionada).Cells(4).Value() > dg_productosventa.Rows(seleccionada).Cells(7).Value() Then
+                    MsgBox("Ha digitado una cantidad mayor a las existencias del producto", MsgBoxStyle.Critical, "JAFERRO")
+                    dg_productosventa.Rows(seleccionada).Cells(4).Value() = 1
+                    Dim va, car, tot As Integer
                     car = dg_productosventa.Rows(seleccionada).Cells(4).Value()
-                Catch ex As Exception
-                    If ex.ToString.Contains("la conversión") Then
-                        dg_productosventa.Rows(seleccionada).Cells(4).Value() = 1
-                        MsgBox("Ha digitado una letra en el campo cantidad, por consiguiente se digitara 1", MsgBoxStyle.Information, "JAFERRO")
-                    Else
-                        dg_productosventa.Rows(seleccionada).Cells(4).Value() = 1
-                        MsgBox("Ha digitado una letra en el campo cantidad, por consiguiente se digitara 1", MsgBoxStyle.Information, "JAFERRO")
-                    End If
-                End Try
-                va = dg_productosventa.Rows(seleccionada).Cells(5).Value()
-                tot = va * car
-                dg_productosventa.Rows(seleccionada).Cells(6).Value() = tot
-                objproductos._idproducto = dg_productosventa.Rows(seleccionada).Cells(0).Value()
-                objproductos.calcular_iva(va, car)
-                Dim i, s, t As Integer
-                i = objproductos._totaliva
-                s = objproductos._subtotal
-                t = objproductos._totalventa
-                txt_iva.Text = i
-                txt_sub.Text = s
-                txt_total.Text = t
+                    va = dg_productosventa.Rows(seleccionada).Cells(5).Value()
+                    tot = va * car
+                    dg_productosventa.Rows(seleccionada).Cells(6).Value() = tot
+                    objproductos._idproducto = dg_productosventa.Rows(seleccionada).Cells(0).Value()
+                    'MsgBox(car.ToString)
+                    objproductos.calcular_iva(va, car)
+                    Dim i, s, t As Integer
+                    i = objproductos._totaliva
+                    s = objproductos._subtotal
+                    t = objproductos._totalventa
+                    txt_iva.Text = i
+                    txt_sub.Text = s
+                    txt_total.Text = t
+                Else
+                    Dim va, car, tot As Integer
+
+                    car = dg_productosventa.Rows(seleccionada).Cells(4).Value()
+
+                    va = dg_productosventa.Rows(seleccionada).Cells(5).Value()
+                    tot = va * car
+                    dg_productosventa.Rows(seleccionada).Cells(6).Value() = tot
+                    objproductos._idproducto = dg_productosventa.Rows(seleccionada).Cells(0).Value()
+                    objproductos.calcular_iva(va, car)
+                    Dim i, s, t As Integer
+                    i = objproductos._totaliva
+                    s = objproductos._subtotal
+                    t = objproductos._totalventa
+                    txt_iva.Text = i
+                    txt_sub.Text = s
+                    txt_total.Text = t
+                End If
+                
             End If
         Else
 
@@ -416,7 +455,6 @@
     Private Sub dg_productosventa_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dg_productosventa.EditingControlShowing
         AddHandler e.Control.KeyPress, AddressOf Validar_Numeros
     End Sub
-
     Private Sub Validar_Numeros(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
 
         Dim Celda As DataGridViewCell = Me.dg_productosventa.CurrentCell()
@@ -462,8 +500,6 @@
             End If
         End If
     End Sub
-
-    
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         PanelBuscar_producto.Visible = True
         p_salir.Visible = True
@@ -473,5 +509,9 @@
         txt_cantidad.Text = Nothing
         txt_existencias.Text = Nothing
         txt_valor.Text = Nothing
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox(Me.dg_productosventa.RowCount.ToString - 1)
     End Sub
 End Class
