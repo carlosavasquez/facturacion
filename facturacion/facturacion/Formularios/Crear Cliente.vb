@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     
-    Private Sub bnt_guardar_Click(sender As Object, e As EventArgs) Handles bnt_guardar.Click
+    Private Sub bnt_guardar_Click(sender As Object, e As EventArgs)
 
         Dim objcliente As New Cliente
         Dim estado As String = "1"
@@ -28,7 +28,7 @@
         cb_tipodocu.SelectedIndex = 0
     End Sub
 
-    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
+    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 End Class

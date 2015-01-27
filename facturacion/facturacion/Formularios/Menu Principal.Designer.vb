@@ -22,6 +22,7 @@ Partial Class Menu_Principal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -29,6 +30,10 @@ Partial Class Menu_Principal
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.tip_barra = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btn_cerrar = New System.Windows.Forms.PictureBox()
+        Me.btn_maximizar = New System.Windows.Forms.PictureBox()
+        Me.btn_minimizar = New System.Windows.Forms.PictureBox()
         Me.btn_reportes = New System.Windows.Forms.PictureBox()
         Me.btn_vendedores = New System.Windows.Forms.PictureBox()
         Me.btn_ventas = New System.Windows.Forms.PictureBox()
@@ -36,6 +41,10 @@ Partial Class Menu_Principal
         Me.btn_productos = New System.Windows.Forms.PictureBox()
         Me.btn_proveedores = New System.Windows.Forms.PictureBox()
         Me.btn_compras = New System.Windows.Forms.PictureBox()
+        Me.barra = New System.Windows.Forms.PictureBox()
+        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_maximizar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_reportes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_vendedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_ventas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,6 +52,7 @@ Partial Class Menu_Principal
         CType(Me.btn_productos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_compras, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.barra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -114,6 +124,40 @@ Partial Class Menu_Principal
         Me.Label7.Size = New System.Drawing.Size(108, 20)
         Me.Label7.TabIndex = 16
         Me.Label7.Text = "REPORTES"
+        '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.Image = Global.facturacion.My.Resources.Resources.salir
+        Me.btn_cerrar.Location = New System.Drawing.Point(1012, 0)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_cerrar.TabIndex = 19
+        Me.btn_cerrar.TabStop = False
+        Me.tip_barra.SetToolTip(Me.btn_cerrar, "Maximizar")
+        '
+        'btn_maximizar
+        '
+        Me.btn_maximizar.Image = Global.facturacion.My.Resources.Resources.maxi
+        Me.btn_maximizar.Location = New System.Drawing.Point(1000, 36)
+        Me.btn_maximizar.Name = "btn_maximizar"
+        Me.btn_maximizar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_maximizar.TabIndex = 18
+        Me.btn_maximizar.TabStop = False
+        Me.btn_maximizar.Visible = False
+        '
+        'btn_minimizar
+        '
+        Me.btn_minimizar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_minimizar.Image = Global.facturacion.My.Resources.Resources.mini2
+        Me.btn_minimizar.Location = New System.Drawing.Point(982, 0)
+        Me.btn_minimizar.Name = "btn_minimizar"
+        Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_minimizar.TabIndex = 17
+        Me.btn_minimizar.TabStop = False
+        Me.tip_barra.SetToolTip(Me.btn_minimizar, "Minimizar")
         '
         'btn_reportes
         '
@@ -192,12 +236,25 @@ Partial Class Menu_Principal
         Me.btn_compras.TabIndex = 1
         Me.btn_compras.TabStop = False
         '
+        'barra
+        '
+        Me.barra.Image = Global.facturacion.My.Resources.Resources.barra
+        Me.barra.Location = New System.Drawing.Point(0, 0)
+        Me.barra.Name = "barra"
+        Me.barra.Size = New System.Drawing.Size(1042, 30)
+        Me.barra.TabIndex = 20
+        Me.barra.TabStop = False
+        '
         'Menu_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(1042, 646)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.btn_cerrar)
+        Me.Controls.Add(Me.btn_maximizar)
+        Me.Controls.Add(Me.btn_minimizar)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btn_reportes)
         Me.Controls.Add(Me.Label6)
@@ -212,9 +269,16 @@ Partial Class Menu_Principal
         Me.Controls.Add(Me.btn_productos)
         Me.Controls.Add(Me.btn_proveedores)
         Me.Controls.Add(Me.btn_compras)
+        Me.Controls.Add(Me.barra)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Menu_Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menu Principal"
+        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_maximizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_reportes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_vendedores, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_ventas, System.ComponentModel.ISupportInitialize).EndInit()
@@ -222,6 +286,7 @@ Partial Class Menu_Principal
         CType(Me.btn_productos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_compras, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.barra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -240,4 +305,9 @@ Partial Class Menu_Principal
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btn_reportes As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_minimizar As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_maximizar As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_cerrar As System.Windows.Forms.PictureBox
+    Friend WithEvents barra As System.Windows.Forms.PictureBox
+    Friend WithEvents tip_barra As System.Windows.Forms.ToolTip
 End Class

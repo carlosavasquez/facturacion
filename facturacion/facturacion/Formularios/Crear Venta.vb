@@ -1,11 +1,29 @@
 ﻿Public Class Crear_Venta
+#Region "Moverventana"
+    Inherits System.Windows.Forms.Form
+
+    <System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint:="ReleaseCapture")> _
+    Private Shared Sub ReleaseCapture()
+    End Sub
+    <System.Runtime.InteropServices.DllImport("user32.DLL", EntryPoint:="SendMessage")> _
+    Private Shared Sub SendMessage( _
+            ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, _
+            ByVal wParam As Integer, ByVal lParam As Integer _
+            )
+    End Sub
+    Private Const WM_SYSCOMMAND As Integer = &H112&
+    Private Const MOUSE_MOVE As Integer = &HF012&
+    Public Sub moverForm()
+        ReleaseCapture()
+        SendMessage(Me.Handle, WM_SYSCOMMAND, MOUSE_MOVE, 0)
+    End Sub
+#End Region
     Dim objcon As New conexion
     Dim objcliente As New Cliente
     Dim objfuncionesvarias As New funciones_varias
     Dim objproductos As New Productos
     Dim objventas As New Ventas
     Dim objvendedor As New Vendedor
-
     Dim criterio As String
     Private Sub inhabilitarcampos()
         btn_crear_cliente.Visible = False
@@ -61,6 +79,11 @@
             p_salir_buscarcliente.Visible = False
             habilitarcampos()
         End If
+    End Sub
+
+    Private Sub Crear_Venta_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Menu_Principal.btn_ventas.Enabled = True
+        Menu_Principal.btn_ventas.Image = My.Resources.shopping_cart_insert256
     End Sub
     Private Sub Crear_Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txt_tdocu.SelectedIndex = 0
@@ -156,28 +179,24 @@
         ElseIf txt_telefono.Text = Nothing Then
             MsgBox("El campo Telefono esta vacio", MsgBoxStyle.Information, "JAFERRO")
         Else
-            If objcliente.crear_cliente(txt_nit.Text, txt_nombre.Text, txt_tdocu.Text, txt_telefono.Text, txt_direccion.Text, Nothing, estado) = True Then
-                If MsgBox("Confirma la creacion del cliente con los siguientes datos:" & vbCrLf & "NIT/CC:" & txt_nit.Text & vbCrLf & "Nombre ó Razon Social:" & txt_nombre.Text & vbCrLf & "Dirección:" & txt_direccion.Text & vbCrLf & "Telefono:" & txt_telefono.Text, MsgBoxStyle.YesNo, "JAFERRO") = MsgBoxResult.Yes Then
-                    If MsgBox("Cliente Creado. ¿Desea añadir mas informacion del cliente?", MsgBoxStyle.YesNo, "Cliente Creado") = MsgBoxResult.Yes Then
-                        Dim adi_clien As New Editar_Cliente
-                        'trans = conn.BeginTransaction()
-                        objcliente._numdocumento = txt_nit.Text
-                        objcliente.consultar_id_con_nit(txt_nit.Text)
-                        txt_id.Text = objcliente._idcliente
-                        inhabilitarcampos()
-                        adi_clien.Show()
-                    Else
-                        If objcliente.consultar_id_con_nit(txt_nit.Text) = True Then
-                            txt_id.Text = objcliente._idcliente
-                            txt_nombre.Enabled = False
-                            txt_telefono.Enabled = False
-                            txt_direccion.Enabled = False
-                        End If
-
-                    End If
+            If MsgBox("Confirma la creacion del cliente con los siguientes datos:" & vbCrLf & "NIT/CC: " & txt_nit.Text & vbCrLf & "NOMBRE Ó RAZON SOCIAL: " & txt_nombre.Text & vbCrLf & "DIRECCIÓN: " & txt_direccion.Text & vbCrLf & "TELEFONO: " & txt_telefono.Text, MsgBoxStyle.YesNo, "INVENTARIO") = MsgBoxResult.Yes Then
+                objcliente.crear_cliente(txt_nit.Text, txt_nombre.Text, txt_tdocu.Text, txt_telefono.Text, txt_direccion.Text, Nothing, estado)
+                If MsgBox("Cliente Creado. ¿Desea añadir mas informacion del cliente?", MsgBoxStyle.YesNo, "Cliente Creado") = MsgBoxResult.Yes Then
+                    objcliente._numdocumento = txt_nit.Text
+                    objcliente.consultar_id_con_nit(txt_nit.Text)
+                    txt_id.Text = objcliente._idcliente
+                    inhabilitarcampos()
+                    Dim adi_clien As New Editar_Cliente
+                    adi_clien.Show()
                 Else
-
+                    If objcliente.consultar_id_con_nit(txt_nit.Text) = True Then
+                        txt_id.Text = objcliente._idcliente
+                        txt_nombre.Enabled = False
+                        txt_telefono.Enabled = False
+                        txt_direccion.Enabled = False
+                    End If
                 End If
+            Else
             End If
         End If
     End Sub
@@ -235,20 +254,20 @@
                         objvendedor.obtenerid(txt_vendedor.Text)
                         Dim vtot As Integer = Val(txt_total.Text)
                         Dim viv As Integer = Val(txt_iva.Text)
+                        'objventas.obteneridventa()
                         objcon.conn.Open()
-
                         objcon.trans = objcon.conn.BeginTransaction()
                         objcon.cmd.CommandType = CommandType.Text
                         objcon.cmd.Connection = objcon.conn
-
-                        objventas.obteneridventa()
                         Dim estado As Integer = 1
                         'objventas.CrearVenta(Val(txt_numfactura.Text), txt_fecha.Text, vtot, viv, Val(txt_id.Text), objvendedor._idvendedor)
                         objcon.cmd.CommandText = "INSERT INTO factura_venta(numero_factura,fecha_expedicion,valor_total_venta,valor_total_iva,estado,cliente_idcliente,vendedor_idvendedor) VALUES (" & txt_numfactura.Text & " , '" & txt_fecha.Text & "', " & vtot & "," & viv & "," & estado & "," & Val(txt_id.Text) & "," & objvendedor._idvendedor & ")"
                         objcon.cmd.Transaction = objcon.trans
                         objcon.cmd.ExecuteNonQuery()
+                        objcon.cmd.CommandText = "SELECT idfactura_venta FROM factura_venta ORDER BY idfactura_venta DESC LIMIT 1 FOR UPDATE"
+                        objcon.cmd.Transaction = objcon.trans
+                        objventas._idventa = objcon.cmd.ExecuteScalar()
                         For i = 0 To cantidadproductos - 1
-
                             objproductos._idproducto = Me.dg_productosventa.Rows(i).Cells(0).Value()
                             Dim cant_vendida As Integer = Me.dg_productosventa.Rows(i).Cells(4).Value()
                             Dim val_unit As Integer = Me.dg_productosventa.Rows(i).Cells(5).Value()
@@ -270,10 +289,11 @@
                         MsgBox("VENTA EXITOSA", MsgBoxStyle.Information, "JAFERRO")
                         objcon.conn.Close()
                         Me.Close()
-                    Catch ex As Exception
+                    Catch ex As System.Data.Odbc.OdbcException
                         objcon.trans.Rollback()
                         objcon.conn.Close()
                         MsgBox("No se pudo ejecutar la transacción!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error en la transacción")
+                    Catch ex As Exception
                         MsgBox(ex.ToString, MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Detalles del error")
 
                     End Try
@@ -354,7 +374,7 @@
                 Else
                     MsgBox("La eliminación a sido cancelada", MsgBoxStyle.Information, "JAFERRO")
                 End If
-                End If
+            End If
         Else
         End If
     End Sub
@@ -425,7 +445,7 @@
                     txt_sub.Text = s
                     txt_total.Text = t
                 End If
-                
+
             End If
         Else
 
@@ -511,7 +531,22 @@
         txt_valor.Text = Nothing
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         MsgBox(Me.dg_productosventa.RowCount.ToString - 1)
+    End Sub
+
+    Private Sub btn_cerrar_Click(sender As Object, e As EventArgs) Handles btn_cerrar.Click
+        Me.Close()
+
+    End Sub
+
+    Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub barra_MouseMove(sender As Object, e As MouseEventArgs) Handles barra.MouseMove
+        If e.Button = MouseButtons.Left Then
+            moverForm()
+        End If
     End Sub
 End Class

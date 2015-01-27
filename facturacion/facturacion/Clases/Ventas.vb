@@ -73,18 +73,16 @@
             Return True
         End If
     End Function
-    Sub ejecutartodo()
-        VariasTrans()
-    End Sub
+  
     Sub CrearVenta(ByVal num_factura As Integer, ByVal fecha As String, ByVal valorventa As Integer, ByVal valoriva As Integer, ByVal idcli As Integer, ByVal idvendedor As Integer)
         'conn.Open()
         Dim estado As Integer = 1
         'trans = conn.BeginTransaction()
         'cmd.CommandType = CommandType.Text
         'cmd.Connection = conn
-        'cmd.Transaction = trans
-        listquerys = "INSERT INTO factura_venta(numero_factura,fecha_expedicion,valor_total_venta,valor_total_iva,estado,cliente_idcliente,vendedor_idvendedor) VALUES (" & num_factura & " , '" & fecha & "', " & valorventa & "," & valoriva & "," & estado & "," & idcli & "," & idvendedor & ");"
-        MsgBox(listquerys(increment))
+        ''cmd.Transaction = trans
+        'listquerys = "INSERT INTO factura_venta(numero_factura,fecha_expedicion,valor_total_venta,valor_total_iva,estado,cliente_idcliente,vendedor_idvendedor) VALUES (" & num_factura & " , '" & fecha & "', " & valorventa & "," & valoriva & "," & estado & "," & idcli & "," & idvendedor & ");"
+        'MsgBox(listquerys(increment))
         'cmd.ExecuteNonQuery()
         ''trans.Commit()
         'conn.Close()

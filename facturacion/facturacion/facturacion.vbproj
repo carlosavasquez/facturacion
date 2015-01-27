@@ -74,7 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Cliente.vb" />
+    <Compile Include="Clases\Compras.vb" />
     <Compile Include="Clases\conexion.vb" />
+    <Compile Include="Clases\Proveedor.vb" />
     <Compile Include="Clases\Vendedor.vb" />
     <Compile Include="Formularios\Crear Cliente.vb">
       <SubType>Form</SubType>
@@ -83,10 +85,22 @@
       <DependentUpon>Crear Cliente.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Crear Compra.Designer.vb">
+      <DependentUpon>Crear Compra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Crear Compra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Crear Producto.Designer.vb">
       <DependentUpon>Crear Producto.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Crear Producto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Crear Proveedor.Designer.vb">
+      <DependentUpon>Crear Proveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Crear Proveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Crear Vendedor.Designer.vb">
@@ -107,7 +121,9 @@
     <Compile Include="Formularios\Editar Cliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clases\funciones varias.vb" />
+    <Compile Include="Clases\funciones varias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Menu Principal.Designer.vb">
       <DependentUpon>Menu Principal.vb</DependentUpon>
     </Compile>
@@ -137,8 +153,14 @@
     <EmbeddedResource Include="Formularios\Crear Cliente.resx">
       <DependentUpon>Crear Cliente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Crear Compra.resx">
+      <DependentUpon>Crear Compra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Crear Producto.resx">
       <DependentUpon>Crear Producto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Crear Proveedor.resx">
+      <DependentUpon>Crear Proveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Crear Vendedor.resx">
       <DependentUpon>Crear Vendedor.vb</DependentUpon>
@@ -173,6 +195,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logojaferro.ico" />
+    <None Include="Resources\Search1.png" />
+    <None Include="Resources\eliminar B-N.png" />
+    <None Include="Resources\saveB-N.png" />
+    <None Include="Resources\editar B-N.png" />
+    <None Include="Resources\documentsB-N.png" />
+    <None Include="Resources\Recycle Bin Full.png" />
+    <None Include="Resources\1422410201_cancel.png" />
+    <None Include="Resources\Save1.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\Notepad.png" />
+    <None Include="Resources\Documents.png" />
+    <None Include="Resources\Editar.ico" />
+    <None Include="Resources\nuevo.ico" />
+    <None Include="Resources\Отзывы о форуме Компьютерная Помощь!.png" />
+    <None Include="Resources\usuarios.png" />
+    <None Include="Resources\usuarios.ico" />
+    <None Include="Resources\barra.png" />
+    <None Include="Resources\maxi.png" />
+    <None Include="Resources\mini2.png" />
     <None Include="Resources\1421382337_add1-.png" />
     <None Include="Resources\add product.png" />
     <None Include="Resources\add person.png" />

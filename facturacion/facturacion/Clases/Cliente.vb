@@ -21,7 +21,7 @@
             If resultado <> 0 Then
                 Return True
             Else
-                Return False
+                Return _idcliente
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
