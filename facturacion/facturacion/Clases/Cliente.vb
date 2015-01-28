@@ -44,11 +44,9 @@
                 conn.Close()
                 Return True
             End While
-
         Else
             conn.Close()
             Return False
-
         End If
         lector.Close()
         conn.Close()

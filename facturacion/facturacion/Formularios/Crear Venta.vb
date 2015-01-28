@@ -80,7 +80,6 @@
             habilitarcampos()
         End If
     End Sub
-
     Private Sub Crear_Venta_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Menu_Principal.btn_ventas.Enabled = True
         Menu_Principal.btn_ventas.Image = My.Resources.ventas
@@ -118,24 +117,6 @@
         objproductos.obtenercantidad()
         txt_existencias.Text = objproductos._cantidad
 
-    End Sub
-    Private Sub check_nompro_CheckedChanged1(sender As Object, e As EventArgs) Handles check_nompro.CheckedChanged
-        If check_referencia.CheckState = CheckState.Checked Then
-            check_referencia.CheckState = CheckState.Unchecked
-        Else
-            check_nompro.CheckState = CheckState.Checked
-            criterio = "nombre"
-
-        End If
-    End Sub
-    Private Sub check_referencia_CheckedChanged1(sender As Object, e As EventArgs) Handles check_referencia.CheckedChanged
-        If check_nompro.CheckState = CheckState.Checked Then
-            check_nompro.CheckState = CheckState.Unchecked
-        Else
-            check_referencia.CheckState = CheckState.Checked
-            criterio = "referencia"
-
-        End If
     End Sub
     Private Sub dg_buscarnit_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dg_buscarnit.CellMouseDoubleClick
         Dim seleccionada As Integer
@@ -245,6 +226,7 @@
             MsgBox("El campo Factura esta vacio", MsgBoxStyle.Information, "JAFERRO")
         ElseIf txt_id.Text = Nothing Then
             MsgBox("No ha seleccionado un Cliente", MsgBoxStyle.Information, "JAFERRO")
+            txt_nit.Focus()
         Else
             If Me.dg_productosventa.RowCount <> 0 Then
 
@@ -308,10 +290,10 @@
     Private Sub cb_producto_TextChanged(sender As Object, e As EventArgs) Handles cb_producto.TextChanged
         'verifica
         If cb_producto.Text <> Nothing Then
-            If check_nompro.CheckState = CheckState.Checked Then
-                Dim criterio As String = "nombre"
-            Else
-                Dim criterio As String = "referencia"
+            If r_nombre.Checked Then
+                criterio = "nombre"
+            ElseIf r_ref.Checked Then
+                criterio = "referencia"
             End If
             dg_buscarproducto.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             dg_buscarproducto.DataSource = objproductos.consultar_productos(cb_producto.Text, criterio)
@@ -342,7 +324,7 @@
         If e.ColumnIndex = 8 Then
             PanelBuscar_producto.Visible = True
             p_salir.Visible = True
-            check_nompro.CheckState = CheckState.Checked
+            r_nombre.Checked = True
             cb_producto.Focus()
             cb_producto.Text = Nothing
             txt_cantidad.Text = Nothing
@@ -523,7 +505,7 @@
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         PanelBuscar_producto.Visible = True
         p_salir.Visible = True
-        check_nompro.CheckState = CheckState.Checked
+        r_nombre.Checked = True
         cb_producto.Focus()
         cb_producto.Text = Nothing
         txt_cantidad.Text = Nothing
@@ -548,5 +530,14 @@
         If e.Button = MouseButtons.Left Then
             moverForm()
         End If
+    End Sub
+
+    Private Sub txt_numfactura_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numfactura.KeyPress
+        objfuncionesvarias.comprueba_numeros(e)
+
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles r_ref.CheckedChanged
+
     End Sub
 End Class

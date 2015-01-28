@@ -48,27 +48,27 @@ Partial Class Crear_Proveedor
         Me.txt_razon = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Tip_Botones = New System.Windows.Forms.ToolTip(Me.components)
-        Me.tip_barra = New System.Windows.Forms.ToolTip(Me.components)
         Me.btn_cerrarpanel = New System.Windows.Forms.PictureBox()
         Me.btn_buscar = New System.Windows.Forms.PictureBox()
-        Me.btn_cerrar = New System.Windows.Forms.PictureBox()
-        Me.btn_minimizar = New System.Windows.Forms.PictureBox()
-        Me.barra = New System.Windows.Forms.PictureBox()
         Me.btn_guardar = New System.Windows.Forms.PictureBox()
         Me.btn_eliminar = New System.Windows.Forms.PictureBox()
         Me.btn_editar = New System.Windows.Forms.PictureBox()
         Me.btn_nuevo = New System.Windows.Forms.PictureBox()
+        Me.tip_barra = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btn_cerrar = New System.Windows.Forms.PictureBox()
+        Me.btn_minimizar = New System.Windows.Forms.PictureBox()
+        Me.barra = New System.Windows.Forms.PictureBox()
         CType(Me.dg_buscarprovee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.P_BUSCAR.SuspendLayout()
         CType(Me.btn_cerrarpanel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_buscar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.barra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_eliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_editar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_nuevo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.barra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -88,7 +88,7 @@ Partial Class Crear_Proveedor
         Me.txt_nit.Location = New System.Drawing.Point(209, 121)
         Me.txt_nit.Name = "txt_nit"
         Me.txt_nit.Size = New System.Drawing.Size(272, 29)
-        Me.txt_nit.TabIndex = 7
+        Me.txt_nit.TabIndex = 1
         '
         'Label3
         '
@@ -117,7 +117,7 @@ Partial Class Crear_Proveedor
         Me.txt_tel.Location = New System.Drawing.Point(207, 188)
         Me.txt_tel.Name = "txt_tel"
         Me.txt_tel.Size = New System.Drawing.Size(272, 29)
-        Me.txt_tel.TabIndex = 11
+        Me.txt_tel.TabIndex = 3
         '
         'Label5
         '
@@ -136,7 +136,7 @@ Partial Class Crear_Proveedor
         Me.txt_email.Location = New System.Drawing.Point(207, 258)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(272, 29)
-        Me.txt_email.TabIndex = 13
+        Me.txt_email.TabIndex = 5
         '
         'txt_tipo
         '
@@ -147,7 +147,7 @@ Partial Class Crear_Proveedor
         Me.txt_tipo.Location = New System.Drawing.Point(207, 154)
         Me.txt_tipo.Name = "txt_tipo"
         Me.txt_tipo.Size = New System.Drawing.Size(80, 29)
-        Me.txt_tipo.TabIndex = 14
+        Me.txt_tipo.TabIndex = 2
         '
         'Label6
         '
@@ -220,7 +220,7 @@ Partial Class Crear_Proveedor
         Me.dg_buscarprovee.ReadOnly = True
         Me.dg_buscarprovee.RowHeadersVisible = False
         Me.dg_buscarprovee.Size = New System.Drawing.Size(340, 192)
-        Me.dg_buscarprovee.TabIndex = 29
+        Me.dg_buscarprovee.TabIndex = 3
         '
         'txt_dir
         '
@@ -229,7 +229,7 @@ Partial Class Crear_Proveedor
         Me.txt_dir.Location = New System.Drawing.Point(207, 223)
         Me.txt_dir.Name = "txt_dir"
         Me.txt_dir.Size = New System.Drawing.Size(272, 29)
-        Me.txt_dir.TabIndex = 31
+        Me.txt_dir.TabIndex = 4
         '
         'Label11
         '
@@ -298,7 +298,7 @@ Partial Class Crear_Proveedor
         Me.txt_razon.Location = New System.Drawing.Point(209, 86)
         Me.txt_razon.Name = "txt_razon"
         Me.txt_razon.Size = New System.Drawing.Size(272, 29)
-        Me.txt_razon.TabIndex = 34
+        Me.txt_razon.TabIndex = 0
         '
         'Label1
         '
@@ -333,38 +333,6 @@ Partial Class Crear_Proveedor
         Me.btn_buscar.TabStop = False
         Me.Tip_Botones.SetToolTip(Me.btn_buscar, "Buscar")
         Me.btn_buscar.Visible = False
-        '
-        'btn_cerrar
-        '
-        Me.btn_cerrar.Image = Global.facturacion.My.Resources.Resources.salir
-        Me.btn_cerrar.Location = New System.Drawing.Point(518, 0)
-        Me.btn_cerrar.Name = "btn_cerrar"
-        Me.btn_cerrar.Size = New System.Drawing.Size(30, 30)
-        Me.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_cerrar.TabIndex = 23
-        Me.btn_cerrar.TabStop = False
-        Me.tip_barra.SetToolTip(Me.btn_cerrar, "Cerrar Formulario")
-        '
-        'btn_minimizar
-        '
-        Me.btn_minimizar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_minimizar.Image = Global.facturacion.My.Resources.Resources.mini2
-        Me.btn_minimizar.Location = New System.Drawing.Point(488, 0)
-        Me.btn_minimizar.Name = "btn_minimizar"
-        Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
-        Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_minimizar.TabIndex = 22
-        Me.btn_minimizar.TabStop = False
-        Me.tip_barra.SetToolTip(Me.btn_minimizar, "Minimizar")
-        '
-        'barra
-        '
-        Me.barra.Image = Global.facturacion.My.Resources.Resources.barra
-        Me.barra.Location = New System.Drawing.Point(0, 0)
-        Me.barra.Name = "barra"
-        Me.barra.Size = New System.Drawing.Size(553, 30)
-        Me.barra.TabIndex = 21
-        Me.barra.TabStop = False
         '
         'btn_guardar
         '
@@ -412,6 +380,38 @@ Partial Class Crear_Proveedor
         Me.btn_nuevo.TabStop = False
         Me.Tip_Botones.SetToolTip(Me.btn_nuevo, "Nuevo Proveedor")
         '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.Image = Global.facturacion.My.Resources.Resources.salir
+        Me.btn_cerrar.Location = New System.Drawing.Point(518, 0)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_cerrar.TabIndex = 23
+        Me.btn_cerrar.TabStop = False
+        Me.tip_barra.SetToolTip(Me.btn_cerrar, "Cerrar Formulario")
+        '
+        'btn_minimizar
+        '
+        Me.btn_minimizar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_minimizar.Image = Global.facturacion.My.Resources.Resources.mini2
+        Me.btn_minimizar.Location = New System.Drawing.Point(488, 0)
+        Me.btn_minimizar.Name = "btn_minimizar"
+        Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_minimizar.TabIndex = 22
+        Me.btn_minimizar.TabStop = False
+        Me.tip_barra.SetToolTip(Me.btn_minimizar, "Minimizar")
+        '
+        'barra
+        '
+        Me.barra.Image = Global.facturacion.My.Resources.Resources.barra
+        Me.barra.Location = New System.Drawing.Point(0, 0)
+        Me.barra.Name = "barra"
+        Me.barra.Size = New System.Drawing.Size(553, 30)
+        Me.barra.TabIndex = 21
+        Me.barra.TabStop = False
+        '
         'Crear_Proveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -454,13 +454,13 @@ Partial Class Crear_Proveedor
         Me.P_BUSCAR.PerformLayout()
         CType(Me.btn_cerrarpanel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_buscar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.barra, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_eliminar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_editar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_nuevo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.barra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
