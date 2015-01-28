@@ -195,6 +195,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logojaferro.ico" />
+    <None Include="Resources\agregar1.png" />
+    <None Include="Resources\Personal1.png" />
+    <None Include="Resources\Personal.png" />
+    <None Include="Resources\agregar.png" />
+    <None Include="Resources\User No-Frame.png" />
+    <None Include="Resources\actualizar.png" />
     <None Include="Resources\Search1.png" />
     <None Include="Resources\eliminar B-N.png" />
     <None Include="Resources\saveB-N.png" />

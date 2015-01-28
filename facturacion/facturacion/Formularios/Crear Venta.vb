@@ -83,7 +83,7 @@
 
     Private Sub Crear_Venta_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Menu_Principal.btn_ventas.Enabled = True
-        Menu_Principal.btn_ventas.Image = My.Resources.shopping_cart_insert256
+        Menu_Principal.btn_ventas.Image = My.Resources.ventas
     End Sub
     Private Sub Crear_Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txt_tdocu.SelectedIndex = 0

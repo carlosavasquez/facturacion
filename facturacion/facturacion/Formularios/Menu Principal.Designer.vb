@@ -162,7 +162,7 @@ Partial Class Menu_Principal
         'btn_reportes
         '
         Me.btn_reportes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_reportes.Image = Global.facturacion.My.Resources.Resources.sales_report_icon
+        Me.btn_reportes.Image = Global.facturacion.My.Resources.Resources.reportes
         Me.btn_reportes.Location = New System.Drawing.Point(736, 246)
         Me.btn_reportes.Name = "btn_reportes"
         Me.btn_reportes.Size = New System.Drawing.Size(150, 150)
@@ -173,7 +173,7 @@ Partial Class Menu_Principal
         'btn_vendedores
         '
         Me.btn_vendedores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_vendedores.Image = Global.facturacion.My.Resources.Resources.Occupations_Technical_Support_Representative_Male_Light_icon
+        Me.btn_vendedores.Image = Global.facturacion.My.Resources.Resources.vendedor
         Me.btn_vendedores.Location = New System.Drawing.Point(549, 337)
         Me.btn_vendedores.Name = "btn_vendedores"
         Me.btn_vendedores.Size = New System.Drawing.Size(150, 150)
@@ -184,7 +184,7 @@ Partial Class Menu_Principal
         'btn_ventas
         '
         Me.btn_ventas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_ventas.Image = Global.facturacion.My.Resources.Resources.shopping_cart_insert256
+        Me.btn_ventas.Image = Global.facturacion.My.Resources.Resources.ventas
         Me.btn_ventas.Location = New System.Drawing.Point(157, 337)
         Me.btn_ventas.Name = "btn_ventas"
         Me.btn_ventas.Size = New System.Drawing.Size(150, 150)
@@ -195,7 +195,7 @@ Partial Class Menu_Principal
         'btn_clientes
         '
         Me.btn_clientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_clientes.Image = Global.facturacion.My.Resources.Resources.man1_256
+        Me.btn_clientes.Image = Global.facturacion.My.Resources.Resources.cliente
         Me.btn_clientes.Location = New System.Drawing.Point(355, 337)
         Me.btn_clientes.Name = "btn_clientes"
         Me.btn_clientes.Size = New System.Drawing.Size(150, 150)
@@ -217,7 +217,7 @@ Partial Class Menu_Principal
         'btn_proveedores
         '
         Me.btn_proveedores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_proveedores.Image = Global.facturacion.My.Resources.Resources.couple256
+        Me.btn_proveedores.Image = Global.facturacion.My.Resources.Resources.proveedores
         Me.btn_proveedores.Location = New System.Drawing.Point(355, 160)
         Me.btn_proveedores.Name = "btn_proveedores"
         Me.btn_proveedores.Size = New System.Drawing.Size(150, 150)
@@ -228,7 +228,7 @@ Partial Class Menu_Principal
         'btn_compras
         '
         Me.btn_compras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_compras.Image = Global.facturacion.My.Resources.Resources.shopping_cart_add256
+        Me.btn_compras.Image = Global.facturacion.My.Resources.Resources.compras
         Me.btn_compras.Location = New System.Drawing.Point(157, 160)
         Me.btn_compras.Name = "btn_compras"
         Me.btn_compras.Size = New System.Drawing.Size(150, 150)
