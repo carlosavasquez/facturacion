@@ -22,19 +22,19 @@ Partial Class Crear_Compra
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Crear_Compra))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txt_numfactura = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txt_id = New System.Windows.Forms.TextBox()
@@ -47,8 +47,6 @@ Partial Class Crear_Compra
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.btn_crear_proveedor = New System.Windows.Forms.PictureBox()
-        Me.btn_add = New System.Windows.Forms.PictureBox()
         Me.dg_productosventa = New System.Windows.Forms.DataGridView()
         Me.col_idproducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,9 +58,6 @@ Partial Class Crear_Compra
         Me.col_existencias = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_btn_agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.col_eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btn_cerrar = New System.Windows.Forms.PictureBox()
-        Me.btn_minimizar = New System.Windows.Forms.PictureBox()
-        Me.barra = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -71,39 +66,49 @@ Partial Class Crear_Compra
         Me.txt_sub = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_fecha = New System.Windows.Forms.DateTimePicker()
-        Me.btn_guardar = New System.Windows.Forms.PictureBox()
-        Me.p_salir_buscarcliente = New System.Windows.Forms.PictureBox()
         Me.dg_buscarnit = New System.Windows.Forms.DataGridView()
         Me.txt_tdocu = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.p_salir = New System.Windows.Forms.PictureBox()
         Me.dg_buscarproducto = New System.Windows.Forms.DataGridView()
         Me.PanelBuscar_producto = New System.Windows.Forms.Panel()
+        Me.txt_valor = New System.Windows.Forms.TextBox()
         Me.r_ref = New System.Windows.Forms.RadioButton()
         Me.r_nombre = New System.Windows.Forms.RadioButton()
         Me.cb_producto = New System.Windows.Forms.TextBox()
         Me.txt_existencias = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txt_cantidad = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.txt_valor = New System.Windows.Forms.TextBox()
-        CType(Me.btn_crear_proveedor, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_add, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.p_salir = New System.Windows.Forms.PictureBox()
+        Me.p_salir_buscarcliente = New System.Windows.Forms.PictureBox()
+        Me.btn_guardar = New System.Windows.Forms.PictureBox()
+        Me.btn_cerrar = New System.Windows.Forms.PictureBox()
+        Me.btn_minimizar = New System.Windows.Forms.PictureBox()
+        Me.barra = New System.Windows.Forms.PictureBox()
+        Me.btn_add = New System.Windows.Forms.PictureBox()
+        Me.btn_crear_proveedor = New System.Windows.Forms.PictureBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         CType(Me.dg_productosventa, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg_buscarproducto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelBuscar_producto.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p_salir, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p_salir_buscarcliente, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.barra, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.p_salir_buscarcliente, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.p_salir, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dg_buscarproducto, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelBuscar_producto.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_add, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_crear_proveedor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt_numfactura
@@ -217,54 +222,33 @@ Partial Class Crear_Compra
         Me.Label9.TabIndex = 151
         Me.Label9.Text = "Nombre ó Razon Social:"
         '
-        'btn_crear_proveedor
-        '
-        Me.btn_crear_proveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_crear_proveedor.Image = Global.facturacion.My.Resources.Resources.Personal1
-        Me.btn_crear_proveedor.Location = New System.Drawing.Point(624, 122)
-        Me.btn_crear_proveedor.Name = "btn_crear_proveedor"
-        Me.btn_crear_proveedor.Size = New System.Drawing.Size(50, 50)
-        Me.btn_crear_proveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_crear_proveedor.TabIndex = 157
-        Me.btn_crear_proveedor.TabStop = False
-        '
-        'btn_add
-        '
-        Me.btn_add.Image = CType(resources.GetObject("btn_add.Image"), System.Drawing.Image)
-        Me.btn_add.Location = New System.Drawing.Point(676, 185)
-        Me.btn_add.Name = "btn_add"
-        Me.btn_add.Size = New System.Drawing.Size(50, 50)
-        Me.btn_add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_add.TabIndex = 160
-        Me.btn_add.TabStop = False
-        '
         'dg_productosventa
         '
         Me.dg_productosventa.AllowUserToAddRows = False
         Me.dg_productosventa.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dg_productosventa.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dg_productosventa.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle25
         Me.dg_productosventa.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.dg_productosventa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_productosventa.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_productosventa.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle26
         Me.dg_productosventa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_productosventa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idproducto, Me.col_nombre, Me.col_iva, Me.col_estado, Me.col_cantidad, Me.col_unitario, Me.col_valortotal, Me.col_existencias, Me.col_btn_agregar, Me.col_eliminar})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_productosventa.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle33.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_productosventa.DefaultCellStyle = DataGridViewCellStyle33
         Me.dg_productosventa.Location = New System.Drawing.Point(33, 186)
         Me.dg_productosventa.Name = "dg_productosventa"
         Me.dg_productosventa.RowHeadersVisible = False
@@ -273,17 +257,17 @@ Partial Class Crear_Compra
         '
         'col_idproducto
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.col_idproducto.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle27.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.col_idproducto.DefaultCellStyle = DataGridViewCellStyle27
         Me.col_idproducto.HeaderText = "Id Producto"
         Me.col_idproducto.Name = "col_idproducto"
         Me.col_idproducto.Visible = False
         '
         'col_nombre
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.col_nombre.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.col_nombre.DefaultCellStyle = DataGridViewCellStyle28
         Me.col_nombre.HeaderText = "PRODUCTO"
         Me.col_nombre.Name = "col_nombre"
         Me.col_nombre.ReadOnly = True
@@ -304,20 +288,20 @@ Partial Class Crear_Compra
         '
         'col_cantidad
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Format = "N0"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.col_cantidad.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle29.Format = "N0"
+        DataGridViewCellStyle29.NullValue = Nothing
+        Me.col_cantidad.DefaultCellStyle = DataGridViewCellStyle29
         Me.col_cantidad.HeaderText = "CANTIDAD"
         Me.col_cantidad.Name = "col_cantidad"
         Me.col_cantidad.Width = 80
         '
         'col_unitario
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Format = "C0"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.col_unitario.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle30.Format = "C0"
+        DataGridViewCellStyle30.NullValue = Nothing
+        Me.col_unitario.DefaultCellStyle = DataGridViewCellStyle30
         Me.col_unitario.HeaderText = "V. UNITARIO"
         Me.col_unitario.Name = "col_unitario"
         Me.col_unitario.ReadOnly = True
@@ -325,19 +309,19 @@ Partial Class Crear_Compra
         '
         'col_valortotal
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Format = "C0"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.col_valortotal.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle31.Format = "C0"
+        DataGridViewCellStyle31.NullValue = Nothing
+        Me.col_valortotal.DefaultCellStyle = DataGridViewCellStyle31
         Me.col_valortotal.HeaderText = "V. TOTAL"
         Me.col_valortotal.Name = "col_valortotal"
         Me.col_valortotal.ReadOnly = True
         '
         'col_existencias
         '
-        DataGridViewCellStyle8.Format = "N0"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.col_existencias.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle32.Format = "N0"
+        DataGridViewCellStyle32.NullValue = Nothing
+        Me.col_existencias.DefaultCellStyle = DataGridViewCellStyle32
         Me.col_existencias.HeaderText = "Existencias"
         Me.col_existencias.Name = "col_existencias"
         Me.col_existencias.Visible = False
@@ -361,63 +345,33 @@ Partial Class Crear_Compra
         Me.col_eliminar.UseColumnTextForButtonValue = True
         Me.col_eliminar.Width = 70
         '
-        'btn_cerrar
-        '
-        Me.btn_cerrar.Image = Global.facturacion.My.Resources.Resources.salir
-        Me.btn_cerrar.Location = New System.Drawing.Point(724, 0)
-        Me.btn_cerrar.Name = "btn_cerrar"
-        Me.btn_cerrar.Size = New System.Drawing.Size(30, 30)
-        Me.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_cerrar.TabIndex = 163
-        Me.btn_cerrar.TabStop = False
-        '
-        'btn_minimizar
-        '
-        Me.btn_minimizar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_minimizar.Image = Global.facturacion.My.Resources.Resources.mini2
-        Me.btn_minimizar.Location = New System.Drawing.Point(694, 0)
-        Me.btn_minimizar.Name = "btn_minimizar"
-        Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
-        Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_minimizar.TabIndex = 162
-        Me.btn_minimizar.TabStop = False
-        '
-        'barra
-        '
-        Me.barra.Image = Global.facturacion.My.Resources.Resources.barra
-        Me.barra.Location = New System.Drawing.Point(-5, 0)
-        Me.barra.Name = "barra"
-        Me.barra.Size = New System.Drawing.Size(759, 30)
-        Me.barra.TabIndex = 161
-        Me.barra.TabStop = False
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(475, 474)
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(475, 481)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(60, 18)
+        Me.Label6.Size = New System.Drawing.Size(59, 21)
         Me.Label6.TabIndex = 169
         Me.Label6.Text = "TOTAL"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(475, 452)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(32, 18)
+        Me.Label4.Size = New System.Drawing.Size(36, 21)
         Me.Label4.TabIndex = 168
         Me.Label4.Text = "IVA"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(475, 430)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(475, 425)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 18)
+        Me.Label3.Size = New System.Drawing.Size(75, 21)
         Me.Label3.TabIndex = 167
         Me.Label3.Text = "SubTotal"
         '
@@ -425,84 +379,62 @@ Partial Class Crear_Compra
         '
         Me.txt_iva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_iva.Enabled = False
-        Me.txt_iva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_iva.Location = New System.Drawing.Point(567, 448)
+        Me.txt_iva.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_iva.Location = New System.Drawing.Point(567, 450)
         Me.txt_iva.Name = "txt_iva"
-        Me.txt_iva.Size = New System.Drawing.Size(107, 22)
+        Me.txt_iva.Size = New System.Drawing.Size(107, 29)
         Me.txt_iva.TabIndex = 166
         '
         'txt_total
         '
         Me.txt_total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_total.Enabled = False
-        Me.txt_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_total.Location = New System.Drawing.Point(567, 470)
+        Me.txt_total.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_total.Location = New System.Drawing.Point(567, 479)
         Me.txt_total.Name = "txt_total"
-        Me.txt_total.Size = New System.Drawing.Size(107, 22)
+        Me.txt_total.Size = New System.Drawing.Size(107, 29)
         Me.txt_total.TabIndex = 164
         '
         'txt_sub
         '
         Me.txt_sub.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_sub.Enabled = False
-        Me.txt_sub.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_sub.Location = New System.Drawing.Point(567, 426)
+        Me.txt_sub.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_sub.Location = New System.Drawing.Point(567, 421)
         Me.txt_sub.Name = "txt_sub"
-        Me.txt_sub.Size = New System.Drawing.Size(107, 22)
+        Me.txt_sub.Size = New System.Drawing.Size(107, 29)
         Me.txt_sub.TabIndex = 165
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(28, 426)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(29, 432)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(121, 18)
+        Me.Label1.Size = New System.Drawing.Size(113, 21)
         Me.Label1.TabIndex = 171
         Me.Label1.Text = "Fecha Factura:"
         '
         'txt_fecha
         '
-        Me.txt_fecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_fecha.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_fecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txt_fecha.Location = New System.Drawing.Point(155, 426)
+        Me.txt_fecha.Location = New System.Drawing.Point(142, 426)
         Me.txt_fecha.Name = "txt_fecha"
-        Me.txt_fecha.Size = New System.Drawing.Size(93, 24)
+        Me.txt_fecha.Size = New System.Drawing.Size(119, 29)
         Me.txt_fecha.TabIndex = 170
-        '
-        'btn_guardar
-        '
-        Me.btn_guardar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_guardar.Image = Global.facturacion.My.Resources.Resources.Save
-        Me.btn_guardar.Location = New System.Drawing.Point(351, 430)
-        Me.btn_guardar.Name = "btn_guardar"
-        Me.btn_guardar.Size = New System.Drawing.Size(50, 50)
-        Me.btn_guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_guardar.TabIndex = 172
-        Me.btn_guardar.TabStop = False
-        '
-        'p_salir_buscarcliente
-        '
-        Me.p_salir_buscarcliente.Image = Global.facturacion.My.Resources.Resources.salir
-        Me.p_salir_buscarcliente.Location = New System.Drawing.Point(674, 77)
-        Me.p_salir_buscarcliente.Name = "p_salir_buscarcliente"
-        Me.p_salir_buscarcliente.Size = New System.Drawing.Size(25, 25)
-        Me.p_salir_buscarcliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.p_salir_buscarcliente.TabIndex = 174
-        Me.p_salir_buscarcliente.TabStop = False
-        Me.p_salir_buscarcliente.Visible = False
         '
         'dg_buscarnit
         '
         Me.dg_buscarnit.AllowUserToAddRows = False
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_buscarnit.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle34.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_buscarnit.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle34
         Me.dg_buscarnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_buscarnit.Location = New System.Drawing.Point(342, 100)
         Me.dg_buscarnit.Name = "dg_buscarnit"
@@ -543,38 +475,27 @@ Partial Class Crear_Compra
         Me.Label5.TabIndex = 177
         Me.Label5.Text = "COMPRAS"
         '
-        'p_salir
-        '
-        Me.p_salir.Image = Global.facturacion.My.Resources.Resources.salir
-        Me.p_salir.Location = New System.Drawing.Point(663, 112)
-        Me.p_salir.Name = "p_salir"
-        Me.p_salir.Size = New System.Drawing.Size(25, 25)
-        Me.p_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.p_salir.TabIndex = 180
-        Me.p_salir.TabStop = False
-        Me.p_salir.Visible = False
-        '
         'dg_buscarproducto
         '
         Me.dg_buscarproducto.AllowUserToAddRows = False
         Me.dg_buscarproducto.AllowUserToDeleteRows = False
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_buscarproducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle35.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_buscarproducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle35
         Me.dg_buscarproducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_buscarproducto.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle36.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_buscarproducto.DefaultCellStyle = DataGridViewCellStyle36
         Me.dg_buscarproducto.Location = New System.Drawing.Point(94, 300)
         Me.dg_buscarproducto.Name = "dg_buscarproducto"
         Me.dg_buscarproducto.ReadOnly = True
@@ -586,6 +507,9 @@ Partial Class Crear_Compra
         'PanelBuscar_producto
         '
         Me.PanelBuscar_producto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelBuscar_producto.Controls.Add(Me.Label18)
+        Me.PanelBuscar_producto.Controls.Add(Me.Label10)
+        Me.PanelBuscar_producto.Controls.Add(Me.PictureBox2)
         Me.PanelBuscar_producto.Controls.Add(Me.txt_valor)
         Me.PanelBuscar_producto.Controls.Add(Me.r_ref)
         Me.PanelBuscar_producto.Controls.Add(Me.r_nombre)
@@ -603,6 +527,14 @@ Partial Class Crear_Compra
         Me.PanelBuscar_producto.Size = New System.Drawing.Size(570, 162)
         Me.PanelBuscar_producto.TabIndex = 181
         Me.PanelBuscar_producto.Visible = False
+        '
+        'txt_valor
+        '
+        Me.txt_valor.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_valor.Location = New System.Drawing.Point(242, 97)
+        Me.txt_valor.Name = "txt_valor"
+        Me.txt_valor.Size = New System.Drawing.Size(124, 29)
+        Me.txt_valor.TabIndex = 2
         '
         'r_ref
         '
@@ -636,7 +568,7 @@ Partial Class Crear_Compra
         Me.cb_producto.Location = New System.Drawing.Point(110, 52)
         Me.cb_producto.Name = "cb_producto"
         Me.cb_producto.Size = New System.Drawing.Size(437, 29)
-        Me.cb_producto.TabIndex = 146
+        Me.cb_producto.TabIndex = 0
         '
         'txt_existencias
         '
@@ -658,17 +590,6 @@ Partial Class Crear_Compra
         Me.Label16.TabIndex = 144
         Me.Label16.Text = "Existencias:"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Image = Global.facturacion.My.Resources.Resources.agregar2
-        Me.PictureBox1.Location = New System.Drawing.Point(497, 97)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 49)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 143
-        Me.PictureBox1.TabStop = False
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -686,7 +607,7 @@ Partial Class Crear_Compra
         Me.txt_cantidad.Location = New System.Drawing.Point(110, 87)
         Me.txt_cantidad.Name = "txt_cantidad"
         Me.txt_cantidad.Size = New System.Drawing.Size(56, 29)
-        Me.txt_cantidad.TabIndex = 56
+        Me.txt_cantidad.TabIndex = 1
         '
         'Label14
         '
@@ -710,13 +631,141 @@ Partial Class Crear_Compra
         Me.Label15.TabIndex = 55
         Me.Label15.Text = "Cantidad:"
         '
-        'txt_valor
+        'PictureBox2
         '
-        Me.txt_valor.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_valor.Location = New System.Drawing.Point(242, 97)
-        Me.txt_valor.Name = "txt_valor"
-        Me.txt_valor.Size = New System.Drawing.Size(124, 29)
-        Me.txt_valor.TabIndex = 149
+        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox2.Image = Global.facturacion.My.Resources.Resources.agregar_producto
+        Me.PictureBox2.Location = New System.Drawing.Point(405, 108)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(50, 49)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 149
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Image = Global.facturacion.My.Resources.Resources.agregar2
+        Me.PictureBox1.Location = New System.Drawing.Point(497, 108)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 49)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 143
+        Me.PictureBox1.TabStop = False
+        '
+        'p_salir
+        '
+        Me.p_salir.Image = Global.facturacion.My.Resources.Resources.salir
+        Me.p_salir.Location = New System.Drawing.Point(663, 112)
+        Me.p_salir.Name = "p_salir"
+        Me.p_salir.Size = New System.Drawing.Size(25, 25)
+        Me.p_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.p_salir.TabIndex = 180
+        Me.p_salir.TabStop = False
+        Me.p_salir.Visible = False
+        '
+        'p_salir_buscarcliente
+        '
+        Me.p_salir_buscarcliente.Image = Global.facturacion.My.Resources.Resources.salir
+        Me.p_salir_buscarcliente.Location = New System.Drawing.Point(674, 77)
+        Me.p_salir_buscarcliente.Name = "p_salir_buscarcliente"
+        Me.p_salir_buscarcliente.Size = New System.Drawing.Size(25, 25)
+        Me.p_salir_buscarcliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.p_salir_buscarcliente.TabIndex = 174
+        Me.p_salir_buscarcliente.TabStop = False
+        Me.p_salir_buscarcliente.Visible = False
+        '
+        'btn_guardar
+        '
+        Me.btn_guardar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_guardar.Image = Global.facturacion.My.Resources.Resources.Save
+        Me.btn_guardar.Location = New System.Drawing.Point(343, 439)
+        Me.btn_guardar.Name = "btn_guardar"
+        Me.btn_guardar.Size = New System.Drawing.Size(50, 50)
+        Me.btn_guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_guardar.TabIndex = 172
+        Me.btn_guardar.TabStop = False
+        '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.Image = Global.facturacion.My.Resources.Resources.salir
+        Me.btn_cerrar.Location = New System.Drawing.Point(724, 0)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_cerrar.TabIndex = 163
+        Me.btn_cerrar.TabStop = False
+        '
+        'btn_minimizar
+        '
+        Me.btn_minimizar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_minimizar.Image = Global.facturacion.My.Resources.Resources.mini2
+        Me.btn_minimizar.Location = New System.Drawing.Point(694, 0)
+        Me.btn_minimizar.Name = "btn_minimizar"
+        Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_minimizar.TabIndex = 162
+        Me.btn_minimizar.TabStop = False
+        '
+        'barra
+        '
+        Me.barra.Image = Global.facturacion.My.Resources.Resources.barra
+        Me.barra.Location = New System.Drawing.Point(-5, 0)
+        Me.barra.Name = "barra"
+        Me.barra.Size = New System.Drawing.Size(759, 30)
+        Me.barra.TabIndex = 161
+        Me.barra.TabStop = False
+        '
+        'btn_add
+        '
+        Me.btn_add.Image = CType(resources.GetObject("btn_add.Image"), System.Drawing.Image)
+        Me.btn_add.Location = New System.Drawing.Point(676, 185)
+        Me.btn_add.Name = "btn_add"
+        Me.btn_add.Size = New System.Drawing.Size(50, 50)
+        Me.btn_add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_add.TabIndex = 160
+        Me.btn_add.TabStop = False
+        '
+        'btn_crear_proveedor
+        '
+        Me.btn_crear_proveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_crear_proveedor.Image = Global.facturacion.My.Resources.Resources.Personal1
+        Me.btn_crear_proveedor.Location = New System.Drawing.Point(624, 122)
+        Me.btn_crear_proveedor.Name = "btn_crear_proveedor"
+        Me.btn_crear_proveedor.Size = New System.Drawing.Size(50, 50)
+        Me.btn_crear_proveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_crear_proveedor.TabIndex = 157
+        Me.btn_crear_proveedor.TabStop = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(388, 90)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(94, 15)
+        Me.Label10.TabIndex = 150
+        Me.Label10.Text = "Nuevo Producto"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(502, 90)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(42, 15)
+        Me.Label18.TabIndex = 151
+        Me.Label18.Text = "Añadir"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(344, 421)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(49, 15)
+        Me.Label19.TabIndex = 152
+        Me.Label19.Text = "Guardar"
         '
         'Crear_Compra
         '
@@ -724,10 +773,9 @@ Partial Class Crear_Compra
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(755, 537)
-        Me.Controls.Add(Me.dg_buscarproducto)
+        Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.PanelBuscar_producto)
         Me.Controls.Add(Me.p_salir)
-        Me.Controls.Add(Me.dg_buscarnit)
         Me.Controls.Add(Me.p_salir_buscarcliente)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txt_tdocu)
@@ -759,24 +807,27 @@ Partial Class Crear_Compra
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.dg_buscarnit)
+        Me.Controls.Add(Me.dg_buscarproducto)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Crear_Compra"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Crear_Compra"
-        CType(Me.btn_crear_proveedor, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_add, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg_productosventa, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.barra, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.p_salir_buscarcliente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.p_salir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg_buscarproducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBuscar_producto.ResumeLayout(False)
         Me.PanelBuscar_producto.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p_salir, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p_salir_buscarcliente, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.barra, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_add, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_crear_proveedor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -837,4 +888,8 @@ Partial Class Crear_Compra
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents txt_valor As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
 End Class

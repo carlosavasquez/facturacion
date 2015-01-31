@@ -21,6 +21,8 @@
     Dim objfuncionesvarias As New funciones_varias
     Dim objprovee As New Proveedor
     Dim objproductos As New Productos
+    Dim objcon As New conexion
+    Dim objcompra As New Compras
     Dim criterio As String
 #Region "botones barra"
     Private Sub barra_MouseMove(sender As Object, e As MouseEventArgs) Handles barra.MouseMove
@@ -70,10 +72,14 @@
     End Sub
     Private Sub Crear_Compra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txt_tdocu.SelectedIndex = 0
+        txt_fecha.Format = DateTimePickerFormat.Custom
+        txt_fecha.CustomFormat = "yyyy-MM-dd"
     End Sub
-
     Private Sub txt_nit_TextChanged(sender As Object, e As EventArgs) Handles txt_nit.TextChanged
         If txt_nit.Text <> Nothing Then
+            PanelBuscar_producto.Visible = False
+            p_salir.Visible = False
+            dg_buscarproducto.Visible = False
             dg_buscarnit.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             dg_buscarnit.DataSource = objprovee.consultar_con_criterio(txt_nit.Text, "identificacion")
             dg_buscarnit.Columns(0).HeaderText = "NOMBRE"
@@ -89,6 +95,7 @@
                 p_salir_buscarcliente.Visible = True
             End If
             If objprovee.obtener_datos_con_nit(txt_nit.Text, "identificacion") = True Then
+                txt_id.Text = objprovee._idproveedor
                 txt_nit.Text = objprovee._numdocumento
                 txt_nombre.Text = objprovee._nombre
                 txt_telefono.Text = objprovee._telefono
@@ -131,13 +138,13 @@
     Private Sub btn_crear_cliente_Click(sender As Object, e As EventArgs) Handles btn_crear_proveedor.Click
         Dim estado As String = "1"
         If txt_nit.Text = Nothing Then
-            MsgBox("El campo Nit esta vacio", MsgBoxStyle.Information, "JAFERRO")
+            MsgBox("El campo Nit esta vacio", MsgBoxStyle.Information, "INVENTARIO")
         ElseIf txt_nombre.Text = Nothing Then
-            MsgBox("El campo Nombre esta vacio", MsgBoxStyle.Information, "JAFERRO")
+            MsgBox("El campo Nombre esta vacio", MsgBoxStyle.Information, "INVENTARIO")
         ElseIf txt_direccion.Text = Nothing Then
-            MsgBox("El campo Direccion esta vacio", MsgBoxStyle.Information, "JAFERRO")
+            MsgBox("El campo Direccion esta vacio", MsgBoxStyle.Information, "INVENTARIO")
         ElseIf txt_telefono.Text = Nothing Then
-            MsgBox("El campo Telefono esta vacio", MsgBoxStyle.Information, "JAFERRO")
+            MsgBox("El campo Telefono esta vacio", MsgBoxStyle.Information, "INVENTARIO")
         Else
             If MsgBox("Confirma la creacion del Proveedor con los siguientes datos:" & vbCrLf & "NIT/CC: " & txt_nit.Text & vbCrLf & "NOMBRE Ó RAZON SOCIAL: " & txt_nombre.Text & vbCrLf & "DIRECCIÓN: " & txt_direccion.Text & vbCrLf & "TELEFONO: " & txt_telefono.Text, MsgBoxStyle.YesNo, "INVENTARIO") = MsgBoxResult.Yes Then
                 objprovee.crear_proveedor(txt_nit.Text, txt_nombre.Text, txt_tdocu.Text, txt_telefono.Text, txt_direccion.Text, Nothing, estado)
@@ -160,6 +167,8 @@
     End Sub
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
+        dg_buscarnit.Visible = False
+        p_salir_buscarcliente.Visible = False
         PanelBuscar_producto.Visible = True
         p_salir.Visible = True
         r_nombre.Checked = True
@@ -211,11 +220,11 @@
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If cb_producto.Text = Nothing Then
-            MsgBox("El campo Producto esta vacio", MsgBoxStyle.Information, "JAFERRO")
+            MsgBox("El campo Producto esta vacio", MsgBoxStyle.Information, "INVENTARIO")
         ElseIf txt_cantidad.Text = Nothing Or txt_cantidad.Text = "0" Then
-            MsgBox("El campo Cantidad esta vacio ó es cero", MsgBoxStyle.Information, "JAFERRO")
+            MsgBox("El campo Cantidad esta vacio ó es cero", MsgBoxStyle.Information, "INVENTARIO")
         ElseIf txt_valor.Text = Nothing Then
-            MsgBox("El campo Precio esta vacio", MsgBoxStyle.Information, "JAFERRO")
+            MsgBox("El campo Precio esta vacio", MsgBoxStyle.Information, "INVENTARIO")
 
         Else           
                 objproductos.calcular_iva(Val(txt_valor.Text), Val(txt_cantidad.Text))
@@ -245,6 +254,109 @@
         objproductos.obtenercantidad()
         txt_existencias.Text = objproductos._cantidad
         txt_cantidad.Focus()
+    End Sub
 
+    Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
+        Dim si As Integer = 0
+        If txt_numfactura.Text = Nothing Then
+            MsgBox("El campo Factura esta vacio", MsgBoxStyle.Information, "INVENTARIO")
+        ElseIf txt_id.Text = Nothing Then
+            MsgBox("No ha seleccionado un Cliente", MsgBoxStyle.Information, "INVENTARIO")
+            txt_nit.Focus()
+        Else
+            If Me.dg_productosventa.RowCount <> 0 Then
+                Try
+                    Dim cantidadproductos As Integer = Me.dg_productosventa.RowCount
+                    Dim vtot As Integer = Val(txt_total.Text)
+                    Dim viv As Integer = Val(txt_iva.Text)
+                    'objventas.obteneridventa()
+                    objcon.conn.Open()
+                    objcon.trans = objcon.conn.BeginTransaction()
+                    objcon.cmd.CommandType = CommandType.Text
+                    objcon.cmd.Connection = objcon.conn
+                    Dim estado As Integer = 1
+                    'objventas.CrearVenta(Val(txt_numfactura.Text), txt_fecha.Text, vtot, viv, Val(txt_id.Text), objvendedor._idvendedor)
+                    objcon.cmd.CommandText = "INSERT INTO factura_compra(numero_factura,fecha_expedicion,valor_total_compra,valor_total_iva,estado,proveedor_idproveedor) VALUES (" & txt_numfactura.Text & " , '" & txt_fecha.Text & "', " & vtot & "," & viv & "," & estado & "," & Val(txt_id.Text) & ")"
+                    objcon.cmd.Transaction = objcon.trans
+                    objcon.cmd.ExecuteNonQuery()
+                    objcon.cmd.CommandText = "SELECT idfactura_compra FROM factura_compra ORDER BY idfactura_compra DESC LIMIT 1 FOR UPDATE"
+                    objcon.cmd.Transaction = objcon.trans
+                    objcompra._idcompra = objcon.cmd.ExecuteScalar()
+                    For i = 0 To cantidadproductos - 1
+                        objproductos._idproducto = Me.dg_productosventa.Rows(i).Cells(0).Value()
+                        Dim cant_vendida As Integer = Me.dg_productosventa.Rows(i).Cells(4).Value()
+                        Dim val_unit As Integer = Me.dg_productosventa.Rows(i).Cells(5).Value()
+                        objproductos._cantidad = Me.dg_productosventa.Rows(i).Cells(7).Value()
+                        'objproductos.obtenercantidad()
+                        objproductos._cantidad += cant_vendida
+                        'objcon.increment += 1
+                        objcon.cmd.CommandText = "insert into productos_compra(cantidad,valor,estado,factura_compra_idfactura_compra,producto_idproducto) values(" & cant_vendida & "," & val_unit & ",'" & estado & "'," & objcompra._idcompra & ",'" & objproductos._idproducto & "')"
+                        objcon.cmd.Transaction = objcon.trans
+                        objcon.cmd.ExecuteNonQuery()
+                        objcon.cmd.CommandText = "UPDATE producto SET cantidad=" & objproductos._cantidad & " WHERE idproducto='" & objproductos._idproducto & "'"
+                        objcon.cmd.Transaction = objcon.trans
+                        objcon.cmd.ExecuteNonQuery()
+                    Next
+                    If MsgBox("Confirma la Compra con los siguientes datos:" & vbCrLf & "PROVEEDOR: " & txt_nombre.Text & vbCrLf & "VALOR TOTAL: " & txt_total.Text, MsgBoxStyle.YesNo, "INVENTARIO") = MsgBoxResult.Yes Then
+                        objcon.trans.Commit()
+                        MsgBox("COMPRA EXITOSA", MsgBoxStyle.Information, "INVENTARIO")
+                        objcon.conn.Close()
+                        Me.Close()
+                    Else
+                        MsgBox("Compra Cancelada", MsgBoxStyle.Information, "INVENTARIO")
+                    End If
+                Catch ex As System.Data.Odbc.OdbcException
+                    objcon.trans.Rollback()
+                    objcon.conn.Close()
+                    MsgBox("No se pudo ejecutar la transacción!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error en la transacción")
+                Catch ex As Exception
+                    MsgBox(ex.ToString, MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Detalles del error")
+
+                End Try
+            Else
+                MsgBox("No Ha Agregado Productos a la Venta", MsgBoxStyle.Critical, "INVENTARIO")
+        End If
+        End If
+    End Sub
+
+    Private Sub dg_productosventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_productosventa.CellContentClick
+        If e.ColumnIndex = 8 Then
+            PanelBuscar_producto.Visible = True
+            p_salir.Visible = True
+            r_nombre.Checked = True
+            cb_producto.Focus()
+            cb_producto.Text = Nothing
+            txt_cantidad.Text = Nothing
+            txt_existencias.Text = Nothing
+            txt_valor.Text = Nothing
+
+        ElseIf e.ColumnIndex = 9 Then
+            If dg_productosventa.RowCount = 0 Then
+                MsgBox("No hay productos para eliminar", MsgBoxStyle.Information, "JAFERRO")
+            Else
+                Dim seleccionada As Integer
+                seleccionada = CType(sender, DataGridView).CurrentRow.Index
+                Dim vuni As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(5).Value()
+                Dim piva As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(2).Value()
+                Dim can As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(4).Value()
+                Dim nom As String = Me.dg_productosventa.CurrentRow.Cells.Item(1).Value()
+                If MsgBox("Confirma la Eliminacion de este Producto:" & vbCrLf & "Producto:" & nom & vbCrLf & "Cantidad:" & can.ToString, MsgBoxStyle.YesNo, "JAFERRO") = MsgBoxResult.Yes Then
+
+                    objproductos.restartotales(vuni, can, piva)
+                    Dim i, s, t As Integer
+                    i = objproductos._totaliva
+                    s = objproductos._subtotal
+                    t = objproductos._totalventa
+                    txt_iva.Text = i
+                    txt_sub.Text = s
+                    txt_total.Text = t
+                    dg_productosventa.Rows.RemoveAt(seleccionada)
+
+                Else
+                    MsgBox("La eliminación a sido cancelada", MsgBoxStyle.Information, "JAFERRO")
+                End If
+            End If
+        Else
+        End If
     End Sub
 End Class

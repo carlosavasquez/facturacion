@@ -23,14 +23,14 @@ Partial Class Crear_Venta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Crear_Venta))
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -140,23 +140,23 @@ Partial Class Crear_Venta
         '
         Me.dg_buscarproducto.AllowUserToAddRows = False
         Me.dg_buscarproducto.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_buscarproducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_buscarproducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
         Me.dg_buscarproducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_buscarproducto.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_buscarproducto.DefaultCellStyle = DataGridViewCellStyle26
         Me.dg_buscarproducto.Location = New System.Drawing.Point(94, 300)
         Me.dg_buscarproducto.Name = "dg_buscarproducto"
         Me.dg_buscarproducto.ReadOnly = True
@@ -420,14 +420,14 @@ Partial Class Crear_Venta
         Me.dg_productosventa.AllowUserToDeleteRows = False
         Me.dg_productosventa.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.dg_productosventa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_productosventa.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_productosventa.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle27
         Me.dg_productosventa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_productosventa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idproducto, Me.col_nombre, Me.col_iva, Me.col_estado, Me.col_cantidad, Me.col_unitario, Me.col_valortotal, Me.col_existencias, Me.col_btn_agregar, Me.col_eliminar})
         Me.dg_productosventa.Location = New System.Drawing.Point(33, 186)
@@ -444,8 +444,8 @@ Partial Class Crear_Venta
         '
         'col_nombre
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.col_nombre.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.col_nombre.DefaultCellStyle = DataGridViewCellStyle28
         Me.col_nombre.HeaderText = "PRODUCTO"
         Me.col_nombre.Name = "col_nombre"
         Me.col_nombre.ReadOnly = True
@@ -466,20 +466,20 @@ Partial Class Crear_Venta
         '
         'col_cantidad
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Format = "N0"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.col_cantidad.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle29.Format = "N0"
+        DataGridViewCellStyle29.NullValue = Nothing
+        Me.col_cantidad.DefaultCellStyle = DataGridViewCellStyle29
         Me.col_cantidad.HeaderText = "CANTIDAD"
         Me.col_cantidad.Name = "col_cantidad"
         Me.col_cantidad.Width = 80
         '
         'col_unitario
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Format = "C0"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.col_unitario.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle30.Format = "C0"
+        DataGridViewCellStyle30.NullValue = Nothing
+        Me.col_unitario.DefaultCellStyle = DataGridViewCellStyle30
         Me.col_unitario.HeaderText = "V. UNITARIO"
         Me.col_unitario.Name = "col_unitario"
         Me.col_unitario.ReadOnly = True
@@ -487,22 +487,22 @@ Partial Class Crear_Venta
         '
         'col_valortotal
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Format = "C0"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.col_valortotal.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle31.Format = "C0"
+        DataGridViewCellStyle31.NullValue = Nothing
+        Me.col_valortotal.DefaultCellStyle = DataGridViewCellStyle31
         Me.col_valortotal.HeaderText = "V. TOTAL"
         Me.col_valortotal.Name = "col_valortotal"
         Me.col_valortotal.ReadOnly = True
         '
         'col_existencias
         '
-        DataGridViewCellStyle8.Format = "N0"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.col_existencias.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle32.Format = "N0"
+        DataGridViewCellStyle32.NullValue = Nothing
+        Me.col_existencias.DefaultCellStyle = DataGridViewCellStyle32
         Me.col_existencias.HeaderText = "Existencias"
         Me.col_existencias.Name = "col_existencias"
-        Me.col_existencias.Visible = false
+        Me.col_existencias.Visible = False
         '
         'col_btn_agregar
         '
@@ -510,8 +510,8 @@ Partial Class Crear_Venta
         Me.col_btn_agregar.Name = "col_btn_agregar"
         Me.col_btn_agregar.Text = "Agregar"
         Me.col_btn_agregar.ToolTipText = "Boton Agregar"
-        Me.col_btn_agregar.UseColumnTextForButtonValue = true
-        Me.col_btn_agregar.Visible = false
+        Me.col_btn_agregar.UseColumnTextForButtonValue = True
+        Me.col_btn_agregar.Visible = False
         Me.col_btn_agregar.Width = 70
         '
         'col_eliminar
@@ -520,14 +520,14 @@ Partial Class Crear_Venta
         Me.col_eliminar.Name = "col_eliminar"
         Me.col_eliminar.Text = "Eliminar"
         Me.col_eliminar.ToolTipText = "Boton Eliminar"
-        Me.col_eliminar.UseColumnTextForButtonValue = true
+        Me.col_eliminar.UseColumnTextForButtonValue = True
         Me.col_eliminar.Width = 70
         '
         'Label5
         '
-        Me.Label5.AutoSize = true
+        Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(311, 33)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(117, 37)
@@ -536,8 +536,8 @@ Partial Class Crear_Venta
         '
         'Label2
         '
-        Me.Label2.AutoSize = true
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(654, 76)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(24, 13)
@@ -546,8 +546,8 @@ Partial Class Crear_Venta
         '
         'txt_id
         '
-        Me.txt_id.Enabled = false
-        Me.txt_id.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.txt_id.Enabled = False
+        Me.txt_id.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_id.Location = New System.Drawing.Point(690, 72)
         Me.txt_id.Name = "txt_id"
         Me.txt_id.Size = New System.Drawing.Size(58, 29)
@@ -556,7 +556,7 @@ Partial Class Crear_Venta
         'txt_numfactura
         '
         Me.txt_numfactura.BackColor = System.Drawing.SystemColors.Window
-        Me.txt_numfactura.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.txt_numfactura.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_numfactura.Location = New System.Drawing.Point(565, 72)
         Me.txt_numfactura.Name = "txt_numfactura"
         Me.txt_numfactura.Size = New System.Drawing.Size(77, 29)
@@ -564,9 +564,9 @@ Partial Class Crear_Venta
         '
         'Label17
         '
-        Me.Label17.AutoSize = true
+        Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.Transparent
-        Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.Location = New System.Drawing.Point(470, 76)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(89, 21)
@@ -576,8 +576,8 @@ Partial Class Crear_Venta
         'txt_tdocu
         '
         Me.txt_tdocu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txt_tdocu.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.txt_tdocu.FormattingEnabled = true
+        Me.txt_tdocu.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_tdocu.FormattingEnabled = True
         Me.txt_tdocu.Items.AddRange(New Object() {"CC", "NIT", "TI", "PSP"})
         Me.txt_tdocu.Location = New System.Drawing.Point(399, 73)
         Me.txt_tdocu.Name = "txt_tdocu"
@@ -586,8 +586,8 @@ Partial Class Crear_Venta
         '
         'Label11
         '
-        Me.Label11.AutoSize = true
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(333, 76)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(60, 21)
@@ -596,8 +596,8 @@ Partial Class Crear_Venta
         '
         'Label8
         '
-        Me.Label8.AutoSize = true
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(29, 76)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(67, 21)
@@ -606,8 +606,8 @@ Partial Class Crear_Venta
         '
         'Label7
         '
-        Me.Label7.AutoSize = true
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(29, 146)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(83, 21)
@@ -616,8 +616,8 @@ Partial Class Crear_Venta
         '
         'Label9
         '
-        Me.Label9.AutoSize = true
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(29, 111)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(184, 21)
@@ -626,7 +626,7 @@ Partial Class Crear_Venta
         '
         'txt_nit
         '
-        Me.txt_nit.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.txt_nit.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_nit.Location = New System.Drawing.Point(100, 73)
         Me.txt_nit.Name = "txt_nit"
         Me.txt_nit.Size = New System.Drawing.Size(227, 29)
@@ -634,7 +634,7 @@ Partial Class Crear_Venta
         '
         'txt_direccion
         '
-        Me.txt_direccion.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.txt_direccion.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_direccion.Location = New System.Drawing.Point(142, 143)
         Me.txt_direccion.Name = "txt_direccion"
         Me.txt_direccion.Size = New System.Drawing.Size(234, 29)
@@ -642,7 +642,7 @@ Partial Class Crear_Venta
         '
         'txt_nombre
         '
-        Me.txt_nombre.Font = New System.Drawing.Font("Segoe UI Semibold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.txt_nombre.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_nombre.Location = New System.Drawing.Point(218, 108)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(359, 29)
@@ -656,7 +656,7 @@ Partial Class Crear_Venta
         Me.btn_cerrar.Size = New System.Drawing.Size(30, 30)
         Me.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_cerrar.TabIndex = 154
-        Me.btn_cerrar.TabStop = false
+        Me.btn_cerrar.TabStop = False
         '
         'btn_minimizar
         '
@@ -667,7 +667,7 @@ Partial Class Crear_Venta
         Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
         Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_minimizar.TabIndex = 153
-        Me.btn_minimizar.TabStop = false
+        Me.btn_minimizar.TabStop = False
         '
         'barra
         '
@@ -676,17 +676,17 @@ Partial Class Crear_Venta
         Me.barra.Name = "barra"
         Me.barra.Size = New System.Drawing.Size(762, 30)
         Me.barra.TabIndex = 152
-        Me.barra.TabStop = false
+        Me.barra.TabStop = False
         '
         'btn_add
         '
-        Me.btn_add.Image = CType(resources.GetObject("btn_add.Image"),System.Drawing.Image)
+        Me.btn_add.Image = CType(resources.GetObject("btn_add.Image"), System.Drawing.Image)
         Me.btn_add.Location = New System.Drawing.Point(677, 186)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(50, 50)
         Me.btn_add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_add.TabIndex = 151
-        Me.btn_add.TabStop = false
+        Me.btn_add.TabStop = False
         '
         'p_salir_buscarcliente
         '
@@ -696,8 +696,8 @@ Partial Class Crear_Venta
         Me.p_salir_buscarcliente.Size = New System.Drawing.Size(25, 25)
         Me.p_salir_buscarcliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.p_salir_buscarcliente.TabIndex = 143
-        Me.p_salir_buscarcliente.TabStop = false
-        Me.p_salir_buscarcliente.Visible = false
+        Me.p_salir_buscarcliente.TabStop = False
+        Me.p_salir_buscarcliente.Visible = False
         '
         'p_salir
         '
@@ -707,8 +707,8 @@ Partial Class Crear_Venta
         Me.p_salir.Size = New System.Drawing.Size(25, 25)
         Me.p_salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.p_salir.TabIndex = 137
-        Me.p_salir.TabStop = false
-        Me.p_salir.Visible = false
+        Me.p_salir.TabStop = False
+        Me.p_salir.Visible = False
         '
         'btn_guardar
         '
@@ -719,15 +719,15 @@ Partial Class Crear_Venta
         Me.btn_guardar.Size = New System.Drawing.Size(50, 50)
         Me.btn_guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_guardar.TabIndex = 139
-        Me.btn_guardar.TabStop = false
+        Me.btn_guardar.TabStop = False
         '
         'Crear_Venta
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(755, 537)
-        Me.Controls.Add(Me.dg_buscarproducto)
+        Me.Controls.Add(Me.dg_buscarnit)
         Me.Controls.Add(Me.PanelBuscar_producto)
         Me.Controls.Add(Me.txt_direccion)
         Me.Controls.Add(Me.Label7)
@@ -763,7 +763,7 @@ Partial Class Crear_Venta
         Me.Controls.Add(Me.txt_total)
         Me.Controls.Add(Me.txt_sub)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.dg_buscarnit)
+        Me.Controls.Add(Me.dg_buscarproducto)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Crear_Venta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

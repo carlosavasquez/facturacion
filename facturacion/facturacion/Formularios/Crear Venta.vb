@@ -254,23 +254,22 @@
                             Dim cant_vendida As Integer = Me.dg_productosventa.Rows(i).Cells(4).Value()
                             Dim val_unit As Integer = Me.dg_productosventa.Rows(i).Cells(5).Value()
                             objproductos._cantidad = Me.dg_productosventa.Rows(i).Cells(7).Value()
-                            'objproductos.obtenercantidad()
                             objproductos._cantidad -= cant_vendida
-                            'objcon.increment += 1
                             objcon.cmd.CommandText = "insert into productos_venta(cantidad,valor,estado,factura_venta_idfactura_venta,producto_idproducto) values(" & cant_vendida & "," & val_unit & ",'" & estado & "'," & objventas._idventa & ",'" & objproductos._idproducto & "')"
                             objcon.cmd.Transaction = objcon.trans
-                            objcon.cmd.ExecuteNonQuery()
-                            'objproductos.agregar_productos_a_venta(cant_vendida, val_unit, objventas._idventa)
-                            'objcon.increment += 1
-                            'objproductos.actualizarcantidad()
+                            objcon.cmd.ExecuteNonQuery()                            
                             objcon.cmd.CommandText = "Update producto Set cantidad=" & objproductos._cantidad & " WHERE idproducto='" & objproductos._idproducto & "'"
                             objcon.cmd.Transaction = objcon.trans
                             objcon.cmd.ExecuteNonQuery()
                         Next
-                        objcon.trans.Commit()
-                        MsgBox("VENTA EXITOSA", MsgBoxStyle.Information, "JAFERRO")
-                        objcon.conn.Close()
-                        Me.Close()
+                        If MsgBox("Confirma la Compra con los siguientes datos:" & vbCrLf & "PROVEEDOR: " & txt_nombre.Text & vbCrLf & "VALOR TOTAL: " & txt_total.Text, MsgBoxStyle.YesNo, "INVENTARIO") = MsgBoxResult.Yes Then
+                            objcon.trans.Commit()
+                            MsgBox("VENTA EXITOSA", MsgBoxStyle.Information, "INVENTARIO")
+                            objcon.conn.Close()
+                            Me.Close()
+                        Else
+                            MsgBox("Venta Cancelada", MsgBoxStyle.Information, "INVENTARIO")
+                        End If
                     Catch ex As System.Data.Odbc.OdbcException
                         objcon.trans.Rollback()
                         objcon.conn.Close()

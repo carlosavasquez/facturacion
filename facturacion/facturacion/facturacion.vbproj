@@ -195,6 +195,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logojaferro.ico" />
+    <None Include="Resources\Personal_activado.png" />
+    <None Include="Resources\Personal_desactivado_BN.png" />
+    <None Include="Resources\desactivar_producto_BN.png" />
+    <None Include="Resources\Personal_desactivado.png" />
+    <None Include="Resources\desactivar_producto.png" />
+    <None Include="Resources\producto_activado.png" />
+    <None Include="Resources\agregar_producto.png" />
     <None Include="Resources\agregar2.png" />
     <None Include="Resources\agregar1.png" />
     <None Include="Resources\Personal1.png" />

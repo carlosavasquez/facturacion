@@ -23,8 +23,8 @@ Partial Class Crear_Proveedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_nit = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -48,27 +48,27 @@ Partial Class Crear_Proveedor
         Me.txt_razon = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Tip_Botones = New System.Windows.Forms.ToolTip(Me.components)
-        Me.btn_cerrarpanel = New System.Windows.Forms.PictureBox()
+        Me.tip_barra = New System.Windows.Forms.ToolTip(Me.components)
         Me.btn_buscar = New System.Windows.Forms.PictureBox()
+        Me.btn_cerrar = New System.Windows.Forms.PictureBox()
+        Me.btn_minimizar = New System.Windows.Forms.PictureBox()
+        Me.barra = New System.Windows.Forms.PictureBox()
         Me.btn_guardar = New System.Windows.Forms.PictureBox()
         Me.btn_eliminar = New System.Windows.Forms.PictureBox()
         Me.btn_editar = New System.Windows.Forms.PictureBox()
         Me.btn_nuevo = New System.Windows.Forms.PictureBox()
-        Me.tip_barra = New System.Windows.Forms.ToolTip(Me.components)
-        Me.btn_cerrar = New System.Windows.Forms.PictureBox()
-        Me.btn_minimizar = New System.Windows.Forms.PictureBox()
-        Me.barra = New System.Windows.Forms.PictureBox()
+        Me.btn_cerrarpanel = New System.Windows.Forms.PictureBox()
         CType(Me.dg_buscarprovee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.P_BUSCAR.SuspendLayout()
-        CType(Me.btn_cerrarpanel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_buscar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.barra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_eliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_editar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_nuevo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.barra, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_cerrarpanel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -193,7 +193,7 @@ Partial Class Crear_Proveedor
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(236, 40)
+        Me.Label10.Location = New System.Drawing.Point(186, 40)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(176, 32)
         Me.Label10.TabIndex = 28
@@ -203,18 +203,18 @@ Partial Class Crear_Proveedor
         '
         Me.dg_buscarprovee.AllowUserToAddRows = False
         Me.dg_buscarprovee.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dg_buscarprovee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dg_buscarprovee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dg_buscarprovee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_buscarprovee.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_buscarprovee.DefaultCellStyle = DataGridViewCellStyle4
         Me.dg_buscarprovee.Location = New System.Drawing.Point(11, 99)
         Me.dg_buscarprovee.Name = "dg_buscarprovee"
         Me.dg_buscarprovee.ReadOnly = True
@@ -310,18 +310,6 @@ Partial Class Crear_Proveedor
         Me.Label1.TabIndex = 35
         Me.Label1.Text = "Nombre ó Razon Social"
         '
-        'btn_cerrarpanel
-        '
-        Me.btn_cerrarpanel.Image = Global.facturacion.My.Resources.Resources.salir
-        Me.btn_cerrarpanel.Location = New System.Drawing.Point(520, 67)
-        Me.btn_cerrarpanel.Name = "btn_cerrarpanel"
-        Me.btn_cerrarpanel.Size = New System.Drawing.Size(20, 20)
-        Me.btn_cerrarpanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_cerrarpanel.TabIndex = 36
-        Me.btn_cerrarpanel.TabStop = False
-        Me.Tip_Botones.SetToolTip(Me.btn_cerrarpanel, "Boton Cerrrar Panel")
-        Me.btn_cerrarpanel.Visible = False
-        '
         'btn_buscar
         '
         Me.btn_buscar.Image = Global.facturacion.My.Resources.Resources.Search
@@ -333,52 +321,6 @@ Partial Class Crear_Proveedor
         Me.btn_buscar.TabStop = False
         Me.Tip_Botones.SetToolTip(Me.btn_buscar, "Buscar")
         Me.btn_buscar.Visible = False
-        '
-        'btn_guardar
-        '
-        Me.btn_guardar.Enabled = False
-        Me.btn_guardar.Image = Global.facturacion.My.Resources.Resources.saveBN
-        Me.btn_guardar.Location = New System.Drawing.Point(324, 331)
-        Me.btn_guardar.Name = "btn_guardar"
-        Me.btn_guardar.Size = New System.Drawing.Size(50, 50)
-        Me.btn_guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_guardar.TabIndex = 3
-        Me.btn_guardar.TabStop = False
-        Me.Tip_Botones.SetToolTip(Me.btn_guardar, "Guardar Proveedor")
-        '
-        'btn_eliminar
-        '
-        Me.btn_eliminar.Enabled = False
-        Me.btn_eliminar.Image = Global.facturacion.My.Resources.Resources.eliminarBN
-        Me.btn_eliminar.Location = New System.Drawing.Point(380, 331)
-        Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(50, 50)
-        Me.btn_eliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_eliminar.TabIndex = 2
-        Me.btn_eliminar.TabStop = False
-        Me.Tip_Botones.SetToolTip(Me.btn_eliminar, "Desactivar Proveedor")
-        '
-        'btn_editar
-        '
-        Me.btn_editar.Image = Global.facturacion.My.Resources.Resources.editar
-        Me.btn_editar.Location = New System.Drawing.Point(268, 331)
-        Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(50, 50)
-        Me.btn_editar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_editar.TabIndex = 1
-        Me.btn_editar.TabStop = False
-        Me.Tip_Botones.SetToolTip(Me.btn_editar, "Editar Proveedor")
-        '
-        'btn_nuevo
-        '
-        Me.btn_nuevo.Image = Global.facturacion.My.Resources.Resources.Nuevo
-        Me.btn_nuevo.Location = New System.Drawing.Point(212, 331)
-        Me.btn_nuevo.Name = "btn_nuevo"
-        Me.btn_nuevo.Size = New System.Drawing.Size(50, 50)
-        Me.btn_nuevo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_nuevo.TabIndex = 0
-        Me.btn_nuevo.TabStop = False
-        Me.Tip_Botones.SetToolTip(Me.btn_nuevo, "Nuevo Proveedor")
         '
         'btn_cerrar
         '
@@ -412,6 +354,64 @@ Partial Class Crear_Proveedor
         Me.barra.TabIndex = 21
         Me.barra.TabStop = False
         '
+        'btn_guardar
+        '
+        Me.btn_guardar.Enabled = False
+        Me.btn_guardar.Image = Global.facturacion.My.Resources.Resources.saveBN
+        Me.btn_guardar.Location = New System.Drawing.Point(324, 331)
+        Me.btn_guardar.Name = "btn_guardar"
+        Me.btn_guardar.Size = New System.Drawing.Size(50, 50)
+        Me.btn_guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_guardar.TabIndex = 3
+        Me.btn_guardar.TabStop = False
+        Me.Tip_Botones.SetToolTip(Me.btn_guardar, "Guardar Proveedor")
+        '
+        'btn_eliminar
+        '
+        Me.btn_eliminar.Enabled = False
+        Me.btn_eliminar.Image = Global.facturacion.My.Resources.Resources.Personal_desactivado_BN
+        Me.btn_eliminar.Location = New System.Drawing.Point(380, 331)
+        Me.btn_eliminar.Name = "btn_eliminar"
+        Me.btn_eliminar.Size = New System.Drawing.Size(50, 50)
+        Me.btn_eliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_eliminar.TabIndex = 2
+        Me.btn_eliminar.TabStop = False
+        Me.Tip_Botones.SetToolTip(Me.btn_eliminar, "Desactivar Proveedor")
+        '
+        'btn_editar
+        '
+        Me.btn_editar.Image = Global.facturacion.My.Resources.Resources.editar
+        Me.btn_editar.Location = New System.Drawing.Point(268, 331)
+        Me.btn_editar.Name = "btn_editar"
+        Me.btn_editar.Size = New System.Drawing.Size(50, 50)
+        Me.btn_editar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_editar.TabIndex = 1
+        Me.btn_editar.TabStop = False
+        Me.Tip_Botones.SetToolTip(Me.btn_editar, "Editar Proveedor")
+        '
+        'btn_nuevo
+        '
+        Me.btn_nuevo.Image = Global.facturacion.My.Resources.Resources.Nuevo
+        Me.btn_nuevo.Location = New System.Drawing.Point(212, 331)
+        Me.btn_nuevo.Name = "btn_nuevo"
+        Me.btn_nuevo.Size = New System.Drawing.Size(50, 50)
+        Me.btn_nuevo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_nuevo.TabIndex = 0
+        Me.btn_nuevo.TabStop = False
+        Me.Tip_Botones.SetToolTip(Me.btn_nuevo, "Nuevo Proveedor")
+        '
+        'btn_cerrarpanel
+        '
+        Me.btn_cerrarpanel.Image = Global.facturacion.My.Resources.Resources.salir
+        Me.btn_cerrarpanel.Location = New System.Drawing.Point(520, 67)
+        Me.btn_cerrarpanel.Name = "btn_cerrarpanel"
+        Me.btn_cerrarpanel.Size = New System.Drawing.Size(20, 20)
+        Me.btn_cerrarpanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_cerrarpanel.TabIndex = 36
+        Me.btn_cerrarpanel.TabStop = False
+        Me.Tip_Botones.SetToolTip(Me.btn_cerrarpanel, "Boton Cerrrar Panel")
+        Me.btn_cerrarpanel.Visible = False
+        '
         'Crear_Proveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -419,7 +419,6 @@ Partial Class Crear_Proveedor
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(548, 410)
         Me.Controls.Add(Me.P_BUSCAR)
-        Me.Controls.Add(Me.btn_cerrarpanel)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_razon)
         Me.Controls.Add(Me.txt_dir)
@@ -445,6 +444,7 @@ Partial Class Crear_Proveedor
         Me.Controls.Add(Me.btn_eliminar)
         Me.Controls.Add(Me.btn_editar)
         Me.Controls.Add(Me.btn_nuevo)
+        Me.Controls.Add(Me.btn_cerrarpanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Crear_Proveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -452,15 +452,15 @@ Partial Class Crear_Proveedor
         CType(Me.dg_buscarprovee, System.ComponentModel.ISupportInitialize).EndInit()
         Me.P_BUSCAR.ResumeLayout(False)
         Me.P_BUSCAR.PerformLayout()
-        CType(Me.btn_cerrarpanel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_buscar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.barra, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_eliminar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_editar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_nuevo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.barra, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_cerrarpanel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
