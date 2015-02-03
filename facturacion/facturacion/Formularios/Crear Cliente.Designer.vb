@@ -23,13 +23,9 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tip_barra = New System.Windows.Forms.ToolTip(Me.components)
-        Me.btn_cerrar = New System.Windows.Forms.PictureBox()
-        Me.btn_minimizar = New System.Windows.Forms.PictureBox()
         Me.P_BUSCAR = New System.Windows.Forms.Panel()
         Me.txt_busqueda = New System.Windows.Forms.TextBox()
         Me.r_nit = New System.Windows.Forms.RadioButton()
@@ -40,12 +36,10 @@ Partial Class Form1
         Me.txt_dir = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.btn_buscar = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.label_guar = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.barra = New System.Windows.Forms.PictureBox()
         Me.txt_tipo = New System.Windows.Forms.ComboBox()
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -54,17 +48,21 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_nit = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Tip_Botones = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btn_buscar = New System.Windows.Forms.PictureBox()
+        Me.btn_cerrar = New System.Windows.Forms.PictureBox()
+        Me.btn_minimizar = New System.Windows.Forms.PictureBox()
+        Me.barra = New System.Windows.Forms.PictureBox()
         Me.btn_nuevo = New System.Windows.Forms.PictureBox()
         Me.btn_guardar = New System.Windows.Forms.PictureBox()
         Me.btn_eliminar = New System.Windows.Forms.PictureBox()
         Me.btn_editar = New System.Windows.Forms.PictureBox()
-        Me.Tip_Botones = New System.Windows.Forms.ToolTip(Me.components)
         Me.btn_cerrarpanel = New System.Windows.Forms.PictureBox()
-        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.P_BUSCAR.SuspendLayout()
         CType(Me.dg_buscarprovee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_buscar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.barra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_nuevo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,36 +70,6 @@ Partial Class Form1
         CType(Me.btn_editar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_cerrarpanel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "Save.png")
-        Me.ImageList1.Images.SetKeyName(1, "Close_Box_Red.png")
-        '
-        'btn_cerrar
-        '
-        Me.btn_cerrar.Image = Global.facturacion.My.Resources.Resources.salir
-        Me.btn_cerrar.Location = New System.Drawing.Point(517, 1)
-        Me.btn_cerrar.Name = "btn_cerrar"
-        Me.btn_cerrar.Size = New System.Drawing.Size(30, 30)
-        Me.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_cerrar.TabIndex = 63
-        Me.btn_cerrar.TabStop = False
-        Me.tip_barra.SetToolTip(Me.btn_cerrar, "Cerrar Formulario")
-        '
-        'btn_minimizar
-        '
-        Me.btn_minimizar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.btn_minimizar.Image = Global.facturacion.My.Resources.Resources.mini2
-        Me.btn_minimizar.Location = New System.Drawing.Point(487, 1)
-        Me.btn_minimizar.Name = "btn_minimizar"
-        Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
-        Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_minimizar.TabIndex = 62
-        Me.btn_minimizar.TabStop = False
-        Me.tip_barra.SetToolTip(Me.btn_minimizar, "Minimizar")
         '
         'P_BUSCAR
         '
@@ -157,18 +125,18 @@ Partial Class Form1
         '
         Me.dg_buscarprovee.AllowUserToAddRows = False
         Me.dg_buscarprovee.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dg_buscarprovee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dg_buscarprovee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_buscarprovee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_buscarprovee.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_buscarprovee.DefaultCellStyle = DataGridViewCellStyle2
         Me.dg_buscarprovee.Location = New System.Drawing.Point(11, 99)
         Me.dg_buscarprovee.Name = "dg_buscarprovee"
         Me.dg_buscarprovee.ReadOnly = True
@@ -224,18 +192,6 @@ Partial Class Form1
         Me.Label10.TabIndex = 68
         Me.Label10.Text = "CLIENTES"
         '
-        'btn_buscar
-        '
-        Me.btn_buscar.Image = Global.facturacion.My.Resources.Resources.Search
-        Me.btn_buscar.Location = New System.Drawing.Point(475, 80)
-        Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(50, 50)
-        Me.btn_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btn_buscar.TabIndex = 70
-        Me.btn_buscar.TabStop = False
-        Me.Tip_Botones.SetToolTip(Me.btn_buscar, "Buscar")
-        Me.btn_buscar.Visible = False
-        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -275,15 +231,6 @@ Partial Class Form1
         Me.Label6.Size = New System.Drawing.Size(42, 15)
         Me.Label6.TabIndex = 64
         Me.Label6.Text = "Nuevo"
-        '
-        'barra
-        '
-        Me.barra.Image = Global.facturacion.My.Resources.Resources.barra
-        Me.barra.Location = New System.Drawing.Point(-3, 1)
-        Me.barra.Name = "barra"
-        Me.barra.Size = New System.Drawing.Size(553, 30)
-        Me.barra.TabIndex = 61
-        Me.barra.TabStop = False
         '
         'txt_tipo
         '
@@ -362,6 +309,50 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(63, 21)
         Me.Label2.TabIndex = 57
         Me.Label2.Text = "CC/NIT"
+        '
+        'btn_buscar
+        '
+        Me.btn_buscar.Image = Global.facturacion.My.Resources.Resources.Search
+        Me.btn_buscar.Location = New System.Drawing.Point(475, 80)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(50, 50)
+        Me.btn_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_buscar.TabIndex = 70
+        Me.btn_buscar.TabStop = False
+        Me.Tip_Botones.SetToolTip(Me.btn_buscar, "Buscar")
+        Me.btn_buscar.Visible = False
+        '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.Image = Global.facturacion.My.Resources.Resources.salir
+        Me.btn_cerrar.Location = New System.Drawing.Point(518, -1)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_cerrar.TabIndex = 63
+        Me.btn_cerrar.TabStop = False
+        Me.tip_barra.SetToolTip(Me.btn_cerrar, "Cerrar Formulario")
+        '
+        'btn_minimizar
+        '
+        Me.btn_minimizar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.btn_minimizar.Image = Global.facturacion.My.Resources.Resources.mini2
+        Me.btn_minimizar.Location = New System.Drawing.Point(488, -1)
+        Me.btn_minimizar.Name = "btn_minimizar"
+        Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.btn_minimizar.TabIndex = 62
+        Me.btn_minimizar.TabStop = False
+        Me.tip_barra.SetToolTip(Me.btn_minimizar, "Minimizar")
+        '
+        'barra
+        '
+        Me.barra.Image = Global.facturacion.My.Resources.Resources.barra
+        Me.barra.Location = New System.Drawing.Point(-3, -1)
+        Me.barra.Name = "barra"
+        Me.barra.Size = New System.Drawing.Size(561, 30)
+        Me.barra.TabIndex = 61
+        Me.barra.TabStop = False
         '
         'btn_nuevo
         '
@@ -458,12 +449,12 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Crear Cliente"
-        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.P_BUSCAR.ResumeLayout(False)
         Me.P_BUSCAR.PerformLayout()
         CType(Me.dg_buscarprovee, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_buscar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.barra, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_nuevo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_guardar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -474,7 +465,6 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents tip_barra As System.Windows.Forms.ToolTip
     Friend WithEvents btn_cerrar As System.Windows.Forms.PictureBox
     Friend WithEvents btn_minimizar As System.Windows.Forms.PictureBox

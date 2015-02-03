@@ -112,7 +112,6 @@
             habilitarcampos()
         End If
     End Sub
-
     Private Sub dg_buscarnit_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dg_buscarnit.CellMouseDoubleClick
         Dim seleccionada As Integer
         Dim nit_provee As String
@@ -129,12 +128,10 @@
         p_salir_buscarcliente.Visible = False
 
     End Sub
-
     Private Sub p_salir_buscarcliente_Click(sender As Object, e As EventArgs) Handles p_salir_buscarcliente.Click
         dg_buscarnit.Visible = False
         p_salir_buscarcliente.Visible = False
     End Sub
-
     Private Sub btn_crear_cliente_Click(sender As Object, e As EventArgs) Handles btn_crear_proveedor.Click
         Dim estado As String = "1"
         If txt_nit.Text = Nothing Then
@@ -165,7 +162,6 @@
             End If
         End If
     End Sub
-
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         dg_buscarnit.Visible = False
         p_salir_buscarcliente.Visible = False
@@ -178,13 +174,11 @@
         txt_existencias.Text = Nothing
         txt_valor.Text = Nothing
     End Sub
-
     Private Sub p_salir_Click(sender As Object, e As EventArgs) Handles p_salir.Click
         PanelBuscar_producto.Visible = False
         p_salir.Visible = False
         dg_buscarproducto.Visible = False
     End Sub
-
     Private Sub cb_producto_TextChanged(sender As Object, e As EventArgs) Handles cb_producto.TextChanged
         If cb_producto.Text <> Nothing Then
             If r_nombre.Checked Then
@@ -217,7 +211,6 @@
             dg_buscarproducto.Visible = False
         End If
     End Sub
-
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If cb_producto.Text = Nothing Then
             MsgBox("El campo Producto esta vacio", MsgBoxStyle.Information, "INVENTARIO")
@@ -225,7 +218,6 @@
             MsgBox("El campo Cantidad esta vacio ó es cero", MsgBoxStyle.Information, "INVENTARIO")
         ElseIf txt_valor.Text = Nothing Then
             MsgBox("El campo Precio esta vacio", MsgBoxStyle.Information, "INVENTARIO")
-
         Else           
                 objproductos.calcular_iva(Val(txt_valor.Text), Val(txt_cantidad.Text))
                 Dim i, s, t As Integer
@@ -255,7 +247,6 @@
         txt_existencias.Text = objproductos._cantidad
         txt_cantidad.Focus()
     End Sub
-
     Private Sub btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
         Dim si As Integer = 0
         If txt_numfactura.Text = Nothing Then
@@ -269,13 +260,11 @@
                     Dim cantidadproductos As Integer = Me.dg_productosventa.RowCount
                     Dim vtot As Integer = Val(txt_total.Text)
                     Dim viv As Integer = Val(txt_iva.Text)
-                    'objventas.obteneridventa()
                     objcon.conn.Open()
                     objcon.trans = objcon.conn.BeginTransaction()
                     objcon.cmd.CommandType = CommandType.Text
                     objcon.cmd.Connection = objcon.conn
                     Dim estado As Integer = 1
-                    'objventas.CrearVenta(Val(txt_numfactura.Text), txt_fecha.Text, vtot, viv, Val(txt_id.Text), objvendedor._idvendedor)
                     objcon.cmd.CommandText = "INSERT INTO factura_compra(numero_factura,fecha_expedicion,valor_total_compra,valor_total_iva,estado,proveedor_idproveedor) VALUES (" & txt_numfactura.Text & " , '" & txt_fecha.Text & "', " & vtot & "," & viv & "," & estado & "," & Val(txt_id.Text) & ")"
                     objcon.cmd.Transaction = objcon.trans
                     objcon.cmd.ExecuteNonQuery()
@@ -287,9 +276,7 @@
                         Dim cant_vendida As Integer = Me.dg_productosventa.Rows(i).Cells(4).Value()
                         Dim val_unit As Integer = Me.dg_productosventa.Rows(i).Cells(5).Value()
                         objproductos._cantidad = Me.dg_productosventa.Rows(i).Cells(7).Value()
-                        'objproductos.obtenercantidad()
                         objproductos._cantidad += cant_vendida
-                        'objcon.increment += 1
                         objcon.cmd.CommandText = "insert into productos_compra(cantidad,valor,estado,factura_compra_idfactura_compra,producto_idproducto) values(" & cant_vendida & "," & val_unit & ",'" & estado & "'," & objcompra._idcompra & ",'" & objproductos._idproducto & "')"
                         objcon.cmd.Transaction = objcon.trans
                         objcon.cmd.ExecuteNonQuery()
@@ -311,14 +298,12 @@
                     MsgBox("No se pudo ejecutar la transacción!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error en la transacción")
                 Catch ex As Exception
                     MsgBox(ex.ToString, MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Detalles del error")
-
                 End Try
             Else
                 MsgBox("No Ha Agregado Productos a la Venta", MsgBoxStyle.Critical, "INVENTARIO")
         End If
         End If
     End Sub
-
     Private Sub dg_productosventa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dg_productosventa.CellContentClick
         If e.ColumnIndex = 8 Then
             PanelBuscar_producto.Visible = True
@@ -329,7 +314,6 @@
             txt_cantidad.Text = Nothing
             txt_existencias.Text = Nothing
             txt_valor.Text = Nothing
-
         ElseIf e.ColumnIndex = 9 Then
             If dg_productosventa.RowCount = 0 Then
                 MsgBox("No hay productos para eliminar", MsgBoxStyle.Information, "JAFERRO")
@@ -341,7 +325,6 @@
                 Dim can As Integer = Me.dg_productosventa.CurrentRow.Cells.Item(4).Value()
                 Dim nom As String = Me.dg_productosventa.CurrentRow.Cells.Item(1).Value()
                 If MsgBox("Confirma la Eliminacion de este Producto:" & vbCrLf & "Producto:" & nom & vbCrLf & "Cantidad:" & can.ToString, MsgBoxStyle.YesNo, "JAFERRO") = MsgBoxResult.Yes Then
-
                     objproductos.restartotales(vuni, can, piva)
                     Dim i, s, t As Integer
                     i = objproductos._totaliva
@@ -351,12 +334,32 @@
                     txt_sub.Text = s
                     txt_total.Text = t
                     dg_productosventa.Rows.RemoveAt(seleccionada)
-
                 Else
                     MsgBox("La eliminación a sido cancelada", MsgBoxStyle.Information, "JAFERRO")
                 End If
             End If
         Else
+        End If
+    End Sub
+    Private Sub txt_nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_nombre.TextChanged
+        If txt_nombre.Text <> Nothing Then
+            dg_buscarnit.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            dg_buscarnit.DataSource = objprovee.consultar_nombre_nit(txt_nombre.Text, "nombre_razon_social")
+            dg_buscarnit.Columns(0).HeaderText = "NOMBRE"
+            dg_buscarnit.Columns(0).Width = 200
+            dg_buscarnit.Columns(1).HeaderText = "NIT/CC"
+            dg_buscarnit.Columns(1).Width = 130
+            If dg_buscarnit.RowCount = 0 Then
+                dg_buscarnit.Visible = False
+                p_salir_buscarcliente.Visible = False
+            Else
+                dg_buscarnit.Visible = True
+                p_salir_buscarcliente.Visible = True
+            End If
+        Else
+            dg_buscarnit.Visible = False
+            p_salir_buscarcliente.Visible = False
+            habilitarcampos()
         End If
     End Sub
 End Class

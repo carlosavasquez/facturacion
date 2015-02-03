@@ -22,8 +22,8 @@ Partial Class Crear_Producto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txt_iva = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -331,7 +331,7 @@ Partial Class Crear_Producto
         Me.P_BUSCAR.Controls.Add(Me.r_REF)
         Me.P_BUSCAR.Controls.Add(Me.r_nombre)
         Me.P_BUSCAR.Controls.Add(Me.dg_buscarprovee)
-        Me.P_BUSCAR.Location = New System.Drawing.Point(216, 49)
+        Me.P_BUSCAR.Location = New System.Drawing.Point(205, 70)
         Me.P_BUSCAR.Name = "P_BUSCAR"
         Me.P_BUSCAR.Size = New System.Drawing.Size(363, 302)
         Me.P_BUSCAR.TabIndex = 63
@@ -378,18 +378,18 @@ Partial Class Crear_Producto
         '
         Me.dg_buscarprovee.AllowUserToAddRows = False
         Me.dg_buscarprovee.AllowUserToDeleteRows = False
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dg_buscarprovee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dg_buscarprovee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_buscarprovee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_buscarprovee.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_buscarprovee.DefaultCellStyle = DataGridViewCellStyle2
         Me.dg_buscarprovee.Location = New System.Drawing.Point(11, 99)
         Me.dg_buscarprovee.Name = "dg_buscarprovee"
         Me.dg_buscarprovee.ReadOnly = True
@@ -400,7 +400,7 @@ Partial Class Crear_Producto
         'btn_cerrarpanel
         '
         Me.btn_cerrarpanel.Image = Global.facturacion.My.Resources.Resources.salir
-        Me.btn_cerrarpanel.Location = New System.Drawing.Point(578, 30)
+        Me.btn_cerrarpanel.Location = New System.Drawing.Point(567, 51)
         Me.btn_cerrarpanel.Name = "btn_cerrarpanel"
         Me.btn_cerrarpanel.Size = New System.Drawing.Size(20, 20)
         Me.btn_cerrarpanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

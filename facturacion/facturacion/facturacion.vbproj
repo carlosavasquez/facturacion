@@ -118,10 +118,10 @@
     <Compile Include="Formularios\Crear Venta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Editar Cliente.Designer.vb">
-      <DependentUpon>Editar Cliente.vb</DependentUpon>
+    <Compile Include="Formularios\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Editar Cliente.vb">
+    <Compile Include="Formularios\Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Menu Principal.Designer.vb">
@@ -168,8 +168,8 @@
     <EmbeddedResource Include="Formularios\Crear Venta.resx">
       <DependentUpon>Crear Venta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Editar Cliente.resx">
-      <DependentUpon>Editar Cliente.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu Principal.resx">
       <DependentUpon>Menu Principal.vb</DependentUpon>
@@ -195,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logojaferro.ico" />
+    <None Include="Resources\fondo_login.jpg" />
+    <None Include="Resources\fondo Power - Lock.png" />
+    <None Include="Resources\Power - Lock.png" />
     <None Include="Resources\Personal_activado.png" />
     <None Include="Resources\Personal_desactivado_BN.png" />
     <None Include="Resources\desactivar_producto_BN.png" />

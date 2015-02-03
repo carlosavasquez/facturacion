@@ -68,7 +68,6 @@
     End Sub
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
-        'habilitarcampos()
         txt_razon.Focus()
         btn_guardar.Image = My.Resources.Save
         btn_editar.Image = My.Resources.editarBN
@@ -76,7 +75,7 @@
         btn_guardar.Enabled = True
         btn_guardar.Image = My.Resources.actualizar
         label_guar.Text = "Actualizar"
-        label_guar.Location = New Point(318, 316)
+        label_guar.Location = New Point(310, 310)
         btn_buscar.Visible = True
 
     End Sub
@@ -155,12 +154,12 @@
             btn_eliminar.Image = My.Resources.Personal_desactivado
             btn_eliminar.Enabled = True
             Label9.Text = "Desactivar"
-            Label9.Location = New Point(375, 316)
+            Label9.Location = New Point(365, 310)
         ElseIf estado = 0 Then
             btn_eliminar.Image = My.Resources.Personal_activado
             btn_eliminar.Enabled = True
             Label9.Text = "Activar"
-            Label9.Location = New Point(383, 316)
+            Label9.Location = New Point(372, 310)
         End If
         txt_razon.Focus()
         P_BUSCAR.Visible = False
@@ -171,7 +170,7 @@
 
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
         estado = "0"
-        If MsgBox("Si desactiva este proveedor, no podra utilizarlos en sus comprar. ¿Desea Desactivarlo?", MsgBoxStyle.YesNo, "INVENTARIO") = MsgBoxResult.Yes Then
+        If MsgBox("Si desactiva este Cliente, no podra utilizarlos en sus comprar. ¿Desea Desactivarlo?", MsgBoxStyle.YesNo, "INVENTARIO") = MsgBoxResult.Yes Then
             objcliente.editarcliente(txt_nit.Text, txt_razon.Text, txt_tipo.Text, txt_tel.Text, txt_dir.Text, txt_email.Text, estado)
             MsgBox("Cliente Desactivado", MsgBoxStyle.Information, "INVENTARIO")
             Me.Close()

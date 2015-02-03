@@ -167,8 +167,8 @@
                     objcliente.consultar_id_con_nit(txt_nit.Text)
                     txt_id.Text = objcliente._idcliente
                     inhabilitarcampos()
-                    Dim adi_clien As New Editar_Cliente
-                    adi_clien.Show()
+                    Dim clien As New Form1
+                    clien.Show()
                 Else
                     If objcliente.consultar_id_con_nit(txt_nit.Text) = True Then
                         txt_id.Text = objcliente._idcliente
@@ -262,6 +262,10 @@
                             objcon.cmd.Transaction = objcon.trans
                             objcon.cmd.ExecuteNonQuery()
                         Next
+                        Dim desc As String = "Venta realizada"
+                        objcon.cmd.CommandText = "INSERT INTO registro(accion,tabla,id_registro_tabla,descripcion,operador_idoperador) VALUES (Venta , factura_venta, " & objventas._idventa & "," & desc & ")"
+                        objcon.cmd.Transaction = objcon.trans
+                        objcon.cmd.ExecuteNonQuery()
                         If MsgBox("Confirma la Compra con los siguientes datos:" & vbCrLf & "PROVEEDOR: " & txt_nombre.Text & vbCrLf & "VALOR TOTAL: " & txt_total.Text, MsgBoxStyle.YesNo, "INVENTARIO") = MsgBoxResult.Yes Then
                             objcon.trans.Commit()
                             MsgBox("VENTA EXITOSA", MsgBoxStyle.Information, "INVENTARIO")
@@ -536,7 +540,4 @@
 
     End Sub
 
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles r_ref.CheckedChanged
-
-    End Sub
 End Class
