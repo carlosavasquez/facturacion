@@ -70,13 +70,13 @@
             'MsgBox("No hay numeros de facturas")
             conn.Close()
             lector.Close()
-            Return True
+            Return False
         End If
     End Function
   
     Sub CrearVenta(ByVal num_factura As Integer, ByVal fecha As String, ByVal valorventa As Integer, ByVal valoriva As Integer, ByVal idcli As Integer, ByVal idvendedor As Integer)
         'conn.Open()
-        Dim estado As Integer = 1
+        'Dim estado As Integer = 1
         'trans = conn.BeginTransaction()
         'cmd.CommandType = CommandType.Text
         'cmd.Connection = conn

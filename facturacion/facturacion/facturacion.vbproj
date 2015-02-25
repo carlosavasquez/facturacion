@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +23,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>facturacion.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +34,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>facturacion.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -49,10 +52,17 @@
     <ApplicationIcon>logojaferro.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,6 +83,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Clase Login.vb" />
     <Compile Include="Clases\Cliente.vb" />
     <Compile Include="Clases\Compras.vb" />
     <Compile Include="Clases\conexion.vb" />
@@ -118,6 +129,18 @@
     <Compile Include="Formularios\Crear Venta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Formularios\CrystalReport2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Formularios\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -128,6 +151,30 @@
       <DependentUpon>Menu Principal.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Menu Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\no se.Designer.vb">
+      <DependentUpon>no se.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\no se.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\reporte compras.Designer.vb">
+      <DependentUpon>reporte compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\reporte compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reporte Inventario.Designer.vb">
+      <DependentUpon>Reporte Inventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reporte Inventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\reporte.Designer.vb">
+      <DependentUpon>reporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\reporte.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -168,11 +215,31 @@
     <EmbeddedResource Include="Formularios\Crear Venta.resx">
       <DependentUpon>Crear Venta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu Principal.resx">
       <DependentUpon>Menu Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\no se.resx">
+      <DependentUpon>no se.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\reporte compras.resx">
+      <DependentUpon>reporte compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reporte Inventario.resx">
+      <DependentUpon>Reporte Inventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\reporte.resx">
+      <DependentUpon>reporte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -195,6 +262,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logojaferro.ico" />
+    <None Include="Resources\1423015442_cancel.png" />
+    <None Include="Resources\1423015455_ok.png" />
     <None Include="Resources\fondo_login.jpg" />
     <None Include="Resources\fondo Power - Lock.png" />
     <None Include="Resources\Power - Lock.png" />
@@ -253,6 +322,9 @@
     <None Include="Resources\Search.png" />
     <None Include="Resources\salir.jpg" />
     <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

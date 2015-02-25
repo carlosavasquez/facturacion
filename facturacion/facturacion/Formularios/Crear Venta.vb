@@ -62,6 +62,7 @@
                 habilitarcampos()
             Else
                 dg_buscarnit.Visible = True
+                dg_buscarnit.Focus()
                 p_salir_buscarcliente.Visible = True
             End If
             If objcliente.consultar_todos_con_nit(txt_nit.Text, "identificacion") = True Then
@@ -232,6 +233,7 @@
 
                 If objventas.validar_factura(Val(txt_numfactura.Text)) = False Then
                     Try
+
                         Dim cantidadproductos As Integer = Me.dg_productosventa.RowCount
                         objvendedor.obtenerid(txt_vendedor.Text)
                         Dim vtot As Integer = Val(txt_total.Text)
@@ -257,15 +259,15 @@
                             objproductos._cantidad -= cant_vendida
                             objcon.cmd.CommandText = "insert into productos_venta(cantidad,valor,estado,factura_venta_idfactura_venta,producto_idproducto) values(" & cant_vendida & "," & val_unit & ",'" & estado & "'," & objventas._idventa & ",'" & objproductos._idproducto & "')"
                             objcon.cmd.Transaction = objcon.trans
-                            objcon.cmd.ExecuteNonQuery()                            
+                            objcon.cmd.ExecuteNonQuery()
                             objcon.cmd.CommandText = "Update producto Set cantidad=" & objproductos._cantidad & " WHERE idproducto='" & objproductos._idproducto & "'"
                             objcon.cmd.Transaction = objcon.trans
                             objcon.cmd.ExecuteNonQuery()
                         Next
                         Dim desc As String = "Venta realizada"
-                        objcon.cmd.CommandText = "INSERT INTO registro(accion,tabla,id_registro_tabla,descripcion,operador_idoperador) VALUES (Venta , factura_venta, " & objventas._idventa & "," & desc & ")"
-                        objcon.cmd.Transaction = objcon.trans
-                        objcon.cmd.ExecuteNonQuery()
+                        'objcon.cmd.CommandText = "INSERT INTO registro(accion,tabla,id_registro_tabla,descripcion,operador_idoperador) VALUES (Venta , factura_venta, " & objventas._idventa & "," & desc & ")"
+                        'objcon.cmd.Transaction = objcon.trans
+                        'objcon.cmd.ExecuteNonQuery()
                         If MsgBox("Confirma la Compra con los siguientes datos:" & vbCrLf & "PROVEEDOR: " & txt_nombre.Text & vbCrLf & "VALOR TOTAL: " & txt_total.Text, MsgBoxStyle.YesNo, "INVENTARIO") = MsgBoxResult.Yes Then
                             objcon.trans.Commit()
                             MsgBox("VENTA EXITOSA", MsgBoxStyle.Information, "INVENTARIO")
@@ -278,6 +280,7 @@
                         objcon.trans.Rollback()
                         objcon.conn.Close()
                         MsgBox("No se pudo ejecutar la transacción!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error en la transacción")
+                        MsgBox(ex.ToString)
                     Catch ex As Exception
                         MsgBox(ex.ToString, MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Detalles del error")
 
@@ -300,18 +303,22 @@
             End If
             dg_buscarproducto.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             dg_buscarproducto.DataSource = objproductos.consultar_productos(cb_producto.Text, criterio)
-            dg_buscarproducto.Columns(0).HeaderText = "NOMBRE"
-            dg_buscarproducto.Columns(0).Width = 200
-            dg_buscarproducto.Columns(1).HeaderText = "REF."
-            dg_buscarproducto.Columns(1).Width = 80
-            dg_buscarproducto.Columns(2).HeaderText = "CANT."
-            dg_buscarproducto.Columns(2).Width = 50
-            dg_buscarproducto.Columns(3).HeaderText = "PRECIO 1"
-            dg_buscarproducto.Columns(3).Width = 80
-            dg_buscarproducto.Columns(4).HeaderText = "PRECIO 2"
+            dg_buscarproducto.Columns(0).HeaderText = "ID"
+            dg_buscarproducto.Columns(0).Width = 50
+            dg_buscarproducto.Columns(0).Visible = False
+
+            dg_buscarproducto.Columns(1).HeaderText = "NOMBRE"
+            dg_buscarproducto.Columns(1).Width = 200
+            dg_buscarproducto.Columns(2).HeaderText = "REF."
+            dg_buscarproducto.Columns(2).Width = 80
+            dg_buscarproducto.Columns(3).HeaderText = "CANT."
+            dg_buscarproducto.Columns(3).Width = 50
+            dg_buscarproducto.Columns(4).HeaderText = "PRECIO 1"
             dg_buscarproducto.Columns(4).Width = 80
-            dg_buscarproducto.Columns(5).HeaderText = "PRECIO 3"
+            dg_buscarproducto.Columns(5).HeaderText = "PRECIO 2"
             dg_buscarproducto.Columns(5).Width = 80
+            dg_buscarproducto.Columns(6).HeaderText = "PRECIO 3"
+            dg_buscarproducto.Columns(6).Width = 80
             If dg_buscarproducto.RowCount = 0 Then
                 dg_buscarproducto.Visible = False
                 'p_salir_buscarcliente.Visible = False
@@ -367,7 +374,7 @@
         Dim seleccionada As Integer
         Dim nompro As String
         seleccionada = CType(sender, DataGridView).CurrentRow.Index
-        nompro = dg_buscarproducto.Rows(seleccionada).Cells(0).Value()
+        nompro = dg_buscarproducto.Rows(seleccionada).Cells(1).Value()
         cb_producto.Text = nompro
         txt_cantidad.Focus()
     End Sub
@@ -515,29 +522,37 @@
         txt_existencias.Text = Nothing
         txt_valor.Text = Nothing
     End Sub
-
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         MsgBox(Me.dg_productosventa.RowCount.ToString - 1)
     End Sub
-
     Private Sub btn_cerrar_Click(sender As Object, e As EventArgs) Handles btn_cerrar.Click
         Me.Close()
-
     End Sub
-
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-
     Private Sub barra_MouseMove(sender As Object, e As MouseEventArgs) Handles barra.MouseMove
         If e.Button = MouseButtons.Left Then
             moverForm()
         End If
     End Sub
-
     Private Sub txt_numfactura_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_numfactura.KeyPress
         objfuncionesvarias.comprueba_numeros(e)
 
     End Sub
 
+    Private Sub dg_buscarnit_KeyDown(sender As Object, e As KeyEventArgs) Handles dg_buscarnit.KeyDown
+
+        If e.KeyCode = Keys.Enter Then
+            'MsgBox("DISTE ENTER")
+            Dim seleccionada As Integer
+            Dim nomdg As String
+            seleccionada = CType(sender, DataGridView).CurrentRow.Index
+            nomdg = dg_buscarnit.Rows(seleccionada).Cells(1).Value()
+            txt_nit.Text = nomdg
+            txt_nit.Focus()
+            dg_buscarnit.Visible = False
+            p_salir_buscarcliente.Visible = False
+        End If
+    End Sub
 End Class

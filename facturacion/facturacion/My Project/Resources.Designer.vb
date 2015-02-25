@@ -113,6 +113,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property cancel() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("cancel", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property cliente() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("cliente", resourceCulture)
@@ -213,9 +223,9 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property fondo_Power___Lock() As System.Drawing.Bitmap
+        Friend ReadOnly Property fondoPowerLock() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("fondo Power - Lock", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("fondoPowerLock", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -256,6 +266,16 @@ Namespace My.Resources
         Friend ReadOnly Property nuevoBN() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("nuevoBN", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ok() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ok", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -323,9 +343,9 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Power___Lock() As System.Drawing.Bitmap
+        Friend ReadOnly Property PowerLock() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Power - Lock", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("PowerLock", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

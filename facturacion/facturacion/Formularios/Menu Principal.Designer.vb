@@ -43,6 +43,10 @@ Partial Class Menu_Principal
         Me.btn_compras = New System.Windows.Forms.PictureBox()
         Me.barra = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_maximizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +64,7 @@ Partial Class Menu_Principal
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(178, 145)
+        Me.Label1.Location = New System.Drawing.Point(159, 144)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(104, 25)
         Me.Label1.TabIndex = 4
@@ -70,7 +74,7 @@ Partial Class Menu_Principal
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(355, 144)
+        Me.Label2.Location = New System.Drawing.Point(261, 144)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(144, 25)
         Me.Label2.TabIndex = 5
@@ -80,7 +84,7 @@ Partial Class Menu_Principal
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(377, 325)
+        Me.Label3.Location = New System.Drawing.Point(286, 280)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(97, 25)
         Me.Label3.TabIndex = 6
@@ -90,7 +94,7 @@ Partial Class Menu_Principal
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(188, 325)
+        Me.Label4.Location = New System.Drawing.Point(159, 280)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(85, 25)
         Me.Label4.TabIndex = 8
@@ -100,7 +104,7 @@ Partial Class Menu_Principal
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(557, 145)
+        Me.Label5.Location = New System.Drawing.Point(411, 144)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(126, 25)
         Me.Label5.TabIndex = 10
@@ -110,7 +114,7 @@ Partial Class Menu_Principal
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(554, 325)
+        Me.Label6.Location = New System.Drawing.Point(389, 280)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(135, 25)
         Me.Label6.TabIndex = 13
@@ -120,7 +124,7 @@ Partial Class Menu_Principal
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(762, 232)
+        Me.Label7.Location = New System.Drawing.Point(621, 154)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(104, 25)
         Me.Label7.TabIndex = 16
@@ -164,7 +168,7 @@ Partial Class Menu_Principal
         '
         Me.btn_reportes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.btn_reportes.Image = Global.facturacion.My.Resources.Resources.reportes
-        Me.btn_reportes.Location = New System.Drawing.Point(738, 258)
+        Me.btn_reportes.Location = New System.Drawing.Point(597, 180)
         Me.btn_reportes.Name = "btn_reportes"
         Me.btn_reportes.Size = New System.Drawing.Size(150, 150)
         Me.btn_reportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -175,9 +179,9 @@ Partial Class Menu_Principal
         '
         Me.btn_vendedores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.btn_vendedores.Image = Global.facturacion.My.Resources.Resources.vendedor
-        Me.btn_vendedores.Location = New System.Drawing.Point(546, 353)
+        Me.btn_vendedores.Location = New System.Drawing.Point(406, 308)
         Me.btn_vendedores.Name = "btn_vendedores"
-        Me.btn_vendedores.Size = New System.Drawing.Size(150, 150)
+        Me.btn_vendedores.Size = New System.Drawing.Size(100, 100)
         Me.btn_vendedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_vendedores.TabIndex = 12
         Me.btn_vendedores.TabStop = False
@@ -186,9 +190,9 @@ Partial Class Menu_Principal
         '
         Me.btn_ventas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.btn_ventas.Image = Global.facturacion.My.Resources.Resources.ventas
-        Me.btn_ventas.Location = New System.Drawing.Point(154, 353)
+        Me.btn_ventas.Location = New System.Drawing.Point(154, 308)
         Me.btn_ventas.Name = "btn_ventas"
-        Me.btn_ventas.Size = New System.Drawing.Size(150, 150)
+        Me.btn_ventas.Size = New System.Drawing.Size(100, 100)
         Me.btn_ventas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_ventas.TabIndex = 7
         Me.btn_ventas.TabStop = False
@@ -197,9 +201,9 @@ Partial Class Menu_Principal
         '
         Me.btn_clientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.btn_clientes.Image = Global.facturacion.My.Resources.Resources.cliente
-        Me.btn_clientes.Location = New System.Drawing.Point(352, 353)
+        Me.btn_clientes.Location = New System.Drawing.Point(283, 308)
         Me.btn_clientes.Name = "btn_clientes"
-        Me.btn_clientes.Size = New System.Drawing.Size(150, 150)
+        Me.btn_clientes.Size = New System.Drawing.Size(100, 100)
         Me.btn_clientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_clientes.TabIndex = 3
         Me.btn_clientes.TabStop = False
@@ -208,9 +212,9 @@ Partial Class Menu_Principal
         '
         Me.btn_productos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.btn_productos.Image = Global.facturacion.My.Resources.Resources.product256
-        Me.btn_productos.Location = New System.Drawing.Point(546, 172)
+        Me.btn_productos.Location = New System.Drawing.Point(419, 171)
         Me.btn_productos.Name = "btn_productos"
-        Me.btn_productos.Size = New System.Drawing.Size(150, 150)
+        Me.btn_productos.Size = New System.Drawing.Size(100, 100)
         Me.btn_productos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_productos.TabIndex = 9
         Me.btn_productos.TabStop = False
@@ -219,9 +223,9 @@ Partial Class Menu_Principal
         '
         Me.btn_proveedores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.btn_proveedores.Image = Global.facturacion.My.Resources.Resources.proveedores
-        Me.btn_proveedores.Location = New System.Drawing.Point(352, 171)
+        Me.btn_proveedores.Location = New System.Drawing.Point(283, 171)
         Me.btn_proveedores.Name = "btn_proveedores"
-        Me.btn_proveedores.Size = New System.Drawing.Size(150, 150)
+        Me.btn_proveedores.Size = New System.Drawing.Size(100, 100)
         Me.btn_proveedores.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_proveedores.TabIndex = 2
         Me.btn_proveedores.TabStop = False
@@ -232,7 +236,7 @@ Partial Class Menu_Principal
         Me.btn_compras.Image = Global.facturacion.My.Resources.Resources.compras
         Me.btn_compras.Location = New System.Drawing.Point(154, 171)
         Me.btn_compras.Name = "btn_compras"
-        Me.btn_compras.Size = New System.Drawing.Size(150, 150)
+        Me.btn_compras.Size = New System.Drawing.Size(100, 100)
         Me.btn_compras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btn_compras.TabIndex = 1
         Me.btn_compras.TabStop = False
@@ -249,13 +253,49 @@ Partial Class Menu_Principal
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.BackColor = System.Drawing.Color.MediumTurquoise
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(435, 5)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(172, 25)
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "MENU PRINCIPAL"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(154, 108)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(255, 108)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(344, 108)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 24
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(442, 108)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 25
+        Me.Button4.Text = "Button4"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Menu_Principal
         '
@@ -264,6 +304,10 @@ Partial Class Menu_Principal
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(1042, 646)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btn_cerrar)
         Me.Controls.Add(Me.btn_maximizar)
@@ -324,4 +368,8 @@ Partial Class Menu_Principal
     Friend WithEvents barra As System.Windows.Forms.PictureBox
     Friend WithEvents tip_barra As System.Windows.Forms.ToolTip
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class

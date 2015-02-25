@@ -188,18 +188,22 @@
             End If
             dg_buscarproducto.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             dg_buscarproducto.DataSource = objproductos.consultar_productos(cb_producto.Text, criterio)
-            dg_buscarproducto.Columns(0).HeaderText = "NOMBRE"
-            dg_buscarproducto.Columns(0).Width = 200
-            dg_buscarproducto.Columns(1).HeaderText = "REF."
-            dg_buscarproducto.Columns(1).Width = 80
-            dg_buscarproducto.Columns(2).HeaderText = "CANT."
-            dg_buscarproducto.Columns(2).Width = 50
-            dg_buscarproducto.Columns(3).HeaderText = "PRECIO 1"
-            dg_buscarproducto.Columns(3).Width = 80
-            dg_buscarproducto.Columns(4).HeaderText = "PRECIO 2"
+            dg_buscarproducto.Columns(0).HeaderText = "ID"
+            dg_buscarproducto.Columns(0).Width = 50
+            dg_buscarproducto.Columns(0).Visible = False
+
+            dg_buscarproducto.Columns(1).HeaderText = "NOMBRE"
+            dg_buscarproducto.Columns(1).Width = 200
+            dg_buscarproducto.Columns(2).HeaderText = "REF."
+            dg_buscarproducto.Columns(2).Width = 80
+            dg_buscarproducto.Columns(3).HeaderText = "CANT."
+            dg_buscarproducto.Columns(3).Width = 50
+            dg_buscarproducto.Columns(4).HeaderText = "PRECIO 1"
             dg_buscarproducto.Columns(4).Width = 80
-            dg_buscarproducto.Columns(5).HeaderText = "PRECIO 3"
+            dg_buscarproducto.Columns(5).HeaderText = "PRECIO 2"
             dg_buscarproducto.Columns(5).Width = 80
+            dg_buscarproducto.Columns(6).HeaderText = "PRECIO 3"
+            dg_buscarproducto.Columns(6).Width = 80
             If dg_buscarproducto.RowCount = 0 Then
                 dg_buscarproducto.Visible = False
                 'p_salir_buscarcliente.Visible = False
@@ -240,7 +244,7 @@
         Dim seleccionada As Integer
         Dim nompro As String
         seleccionada = CType(sender, DataGridView).CurrentRow.Index
-        nompro = dg_buscarproducto.Rows(seleccionada).Cells(0).Value()
+        nompro = dg_buscarproducto.Rows(seleccionada).Cells(1).Value()
         cb_producto.Text = nompro
         objproductos.obtener_idproducto_connombre_o_ref(criterio, cb_producto.Text)
         objproductos.obtenercantidad()
@@ -361,5 +365,10 @@
             p_salir_buscarcliente.Visible = False
             habilitarcampos()
         End If
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Dim pro As New Crear_Producto
+        pro.Show()
     End Sub
 End Class

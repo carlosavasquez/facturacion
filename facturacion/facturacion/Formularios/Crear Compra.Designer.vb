@@ -33,8 +33,8 @@ Partial Class Crear_Compra
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Crear_Compra))
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txt_numfactura = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txt_id = New System.Windows.Forms.TextBox()
@@ -66,7 +66,6 @@ Partial Class Crear_Compra
         Me.txt_sub = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_fecha = New System.Windows.Forms.DateTimePicker()
-        Me.dg_buscarnit = New System.Windows.Forms.DataGridView()
         Me.txt_tdocu = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -95,8 +94,8 @@ Partial Class Crear_Compra
         Me.btn_add = New System.Windows.Forms.PictureBox()
         Me.btn_crear_proveedor = New System.Windows.Forms.PictureBox()
         Me.Label19 = New System.Windows.Forms.Label()
+        Me.dg_buscarnit = New System.Windows.Forms.DataGridView()
         CType(Me.dg_productosventa, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dg_buscarproducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBuscar_producto.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +108,7 @@ Partial Class Crear_Compra
         CType(Me.barra, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_add, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_crear_proveedor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt_numfactura
@@ -424,25 +424,6 @@ Partial Class Crear_Compra
         Me.txt_fecha.Size = New System.Drawing.Size(119, 29)
         Me.txt_fecha.TabIndex = 170
         '
-        'dg_buscarnit
-        '
-        Me.dg_buscarnit.AllowUserToAddRows = False
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_buscarnit.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
-        Me.dg_buscarnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg_buscarnit.Location = New System.Drawing.Point(342, 100)
-        Me.dg_buscarnit.Name = "dg_buscarnit"
-        Me.dg_buscarnit.RowHeadersVisible = False
-        Me.dg_buscarnit.Size = New System.Drawing.Size(332, 261)
-        Me.dg_buscarnit.TabIndex = 173
-        Me.dg_buscarnit.Visible = False
-        '
         'txt_tdocu
         '
         Me.txt_tdocu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -479,23 +460,23 @@ Partial Class Crear_Compra
         '
         Me.dg_buscarproducto.AllowUserToAddRows = False
         Me.dg_buscarproducto.AllowUserToDeleteRows = False
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_buscarproducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
+        Me.dg_buscarproducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_buscarproducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
-        Me.dg_buscarproducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dg_buscarproducto.DefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dg_buscarproducto.DefaultCellStyle = DataGridViewCellStyle23
         Me.dg_buscarproducto.Location = New System.Drawing.Point(94, 300)
         Me.dg_buscarproducto.Name = "dg_buscarproducto"
         Me.dg_buscarproducto.ReadOnly = True
@@ -767,6 +748,25 @@ Partial Class Crear_Compra
         Me.Label19.TabIndex = 152
         Me.Label19.Text = "Guardar"
         '
+        'dg_buscarnit
+        '
+        Me.dg_buscarnit.AllowUserToAddRows = False
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_buscarnit.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle24
+        Me.dg_buscarnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg_buscarnit.Location = New System.Drawing.Point(342, 100)
+        Me.dg_buscarnit.Name = "dg_buscarnit"
+        Me.dg_buscarnit.RowHeadersVisible = False
+        Me.dg_buscarnit.Size = New System.Drawing.Size(332, 261)
+        Me.dg_buscarnit.TabIndex = 173
+        Me.dg_buscarnit.Visible = False
+        '
         'Crear_Compra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -814,7 +814,6 @@ Partial Class Crear_Compra
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Crear_Compra"
         CType(Me.dg_productosventa, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg_buscarproducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBuscar_producto.ResumeLayout(False)
         Me.PanelBuscar_producto.PerformLayout()
@@ -828,6 +827,7 @@ Partial Class Crear_Compra
         CType(Me.barra, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_add, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_crear_proveedor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dg_buscarnit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -870,7 +870,6 @@ Partial Class Crear_Compra
     Friend WithEvents col_eliminar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents btn_guardar As System.Windows.Forms.PictureBox
     Friend WithEvents p_salir_buscarcliente As System.Windows.Forms.PictureBox
-    Friend WithEvents dg_buscarnit As System.Windows.Forms.DataGridView
     Friend WithEvents txt_tdocu As System.Windows.Forms.ComboBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -892,4 +891,5 @@ Partial Class Crear_Compra
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents dg_buscarnit As System.Windows.Forms.DataGridView
 End Class
