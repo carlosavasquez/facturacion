@@ -5,7 +5,7 @@ Imports System
 Imports System.IO
 Public Class conexion
     'Variables globales utilizadas en todo el programas
-    Public conn As New OdbcConnection("dsn=jaferro")
+    Public conn As New OdbcConnection("dsn=inventario")
     Public cmd As New OdbcCommand
     Public cmd1 As New OdbcCommand
     Public cmd4 As New OdbcCommand
@@ -13,6 +13,7 @@ Public Class conexion
     Public lector As Odbc.OdbcDataReader
     Public lector1 As Odbc.OdbcDataReader
     Public trans As OdbcTransaction
+    
     'procedimiento que abre un OdbcConnection
     Public Sub conectarse()
         Try

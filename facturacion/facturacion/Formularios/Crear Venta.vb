@@ -540,9 +540,7 @@
         objfuncionesvarias.comprueba_numeros(e)
 
     End Sub
-
     Private Sub dg_buscarnit_KeyDown(sender As Object, e As KeyEventArgs) Handles dg_buscarnit.KeyDown
-
         If e.KeyCode = Keys.Enter Then
             'MsgBox("DISTE ENTER")
             Dim seleccionada As Integer

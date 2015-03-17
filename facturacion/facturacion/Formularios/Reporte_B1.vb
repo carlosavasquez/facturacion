@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class CrystalReport1
+Public Class Reporte_B1
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class CrystalReport1
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "CrystalReport1.rpt"
+            Return "Reporte_B1.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class CrystalReport1
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "facturacion.CrystalReport1.rpt"
+            Return "facturacion.Reporte_B1.rpt"
         End Get
         Set
             'Do nothing
@@ -94,7 +94,7 @@ Public Class CrystalReport1
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_fechadesde() As CrystalDecisions.[Shared].IParameterField
+    Public ReadOnly Property Parameter_final() As CrystalDecisions.[Shared].IParameterField
         Get
             Return Me.DataDefinition.ParameterFields(0)
         End Get
@@ -102,7 +102,7 @@ Public Class CrystalReport1
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_fechahasta() As CrystalDecisions.[Shared].IParameterField
+    Public ReadOnly Property Parameter_inicial() As CrystalDecisions.[Shared].IParameterField
         Get
             Return Me.DataDefinition.ParameterFields(1)
         End Get
@@ -110,7 +110,7 @@ Public Class CrystalReport1
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedCrystalReport1
+Public Class CachedReporte_B1
     Inherits Component
     Implements ICachedReport
     
@@ -152,7 +152,7 @@ Public Class CachedCrystalReport1
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As CrystalReport1 = New CrystalReport1()
+        Dim rpt As Reporte_B1 = New Reporte_B1()
         rpt.Site = Me.Site
         Return rpt
     End Function

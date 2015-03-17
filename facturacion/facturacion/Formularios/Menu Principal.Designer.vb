@@ -33,6 +33,10 @@ Partial Class Menu_Principal
         Me.tip_barra = New System.Windows.Forms.ToolTip(Me.components)
         Me.btn_cerrar = New System.Windows.Forms.PictureBox()
         Me.btn_minimizar = New System.Windows.Forms.PictureBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.btn_maximizar = New System.Windows.Forms.PictureBox()
         Me.btn_reportes = New System.Windows.Forms.PictureBox()
         Me.btn_vendedores = New System.Windows.Forms.PictureBox()
@@ -42,11 +46,6 @@ Partial Class Menu_Principal
         Me.btn_proveedores = New System.Windows.Forms.PictureBox()
         Me.btn_compras = New System.Windows.Forms.PictureBox()
         Me.barra = New System.Windows.Forms.PictureBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.btn_cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_maximizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,6 +152,44 @@ Partial Class Menu_Principal
         Me.btn_minimizar.TabStop = False
         Me.tip_barra.SetToolTip(Me.btn_minimizar, "Minimizar")
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.MediumTurquoise
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(435, 5)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(172, 25)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = "MENU PRINCIPAL"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(154, 108)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(255, 108)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(344, 108)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 24
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'btn_maximizar
         '
         Me.btn_maximizar.Image = Global.facturacion.My.Resources.Resources.maxi
@@ -250,53 +287,6 @@ Partial Class Menu_Principal
         Me.barra.TabIndex = 20
         Me.barra.TabStop = False
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.MediumTurquoise
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(435, 5)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(172, 25)
-        Me.Label8.TabIndex = 21
-        Me.Label8.Text = "MENU PRINCIPAL"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(154, 108)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 22
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(255, 108)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 23
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(344, 108)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 24
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(442, 108)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 25
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'Menu_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -304,7 +294,6 @@ Partial Class Menu_Principal
         Me.BackColor = System.Drawing.Color.Teal
         Me.ClientSize = New System.Drawing.Size(1042, 646)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -371,5 +360,4 @@ Partial Class Menu_Principal
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class

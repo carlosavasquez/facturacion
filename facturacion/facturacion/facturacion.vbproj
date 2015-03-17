@@ -91,6 +91,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clases\Proveedor.vb" />
+    <Compile Include="Clases\Variables Globales.vb" />
     <Compile Include="Clases\Vendedor.vb" />
     <Compile Include="Formularios\Crear Cliente.vb">
       <SubType>Form</SubType>
@@ -129,22 +130,16 @@
     <Compile Include="Formularios\Crear Venta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\CrystalReport1.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Formularios\CrystalReport2.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Formularios\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Menu informes.Designer.vb">
+      <DependentUpon>Menu informes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Menu informes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Menu Principal.Designer.vb">
@@ -153,11 +148,17 @@
     <Compile Include="Formularios\Menu Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\no se.Designer.vb">
-      <DependentUpon>no se.vb</DependentUpon>
+    <Compile Include="Formularios\produ_mas_ingre.Designer.vb">
+      <DependentUpon>produ_mas_ingre.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\no se.vb">
+    <Compile Include="Formularios\produ_mas_ingre.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reporte A2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reporte A2.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Formularios\reporte compras.Designer.vb">
       <DependentUpon>reporte compras.vb</DependentUpon>
@@ -175,6 +176,24 @@
       <DependentUpon>reporte.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\reporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reporte_A1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reporte_A1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reporte_B1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reporte_B1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seleccionar_Rango.Designer.vb">
+      <DependentUpon>Seleccionar_Rango.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seleccionar_Rango.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -215,22 +234,21 @@
     <EmbeddedResource Include="Formularios\Crear Venta.resx">
       <DependentUpon>Crear Venta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CrystalReport2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport2.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Menu informes.resx">
+      <DependentUpon>Menu informes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu Principal.resx">
       <DependentUpon>Menu Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\no se.resx">
-      <DependentUpon>no se.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\produ_mas_ingre.resx">
+      <DependentUpon>produ_mas_ingre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reporte A2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reporte A2.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\reporte compras.resx">
       <DependentUpon>reporte compras.vb</DependentUpon>
@@ -240,6 +258,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\reporte.resx">
       <DependentUpon>reporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reporte_A1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reporte_A1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reporte_B1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reporte_B1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seleccionar_Rango.resx">
+      <DependentUpon>Seleccionar_Rango.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -262,6 +291,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logojaferro.ico" />
+    <None Include="Resources\System alt.png" />
     <None Include="Resources\1423015442_cancel.png" />
     <None Include="Resources\1423015455_ok.png" />
     <None Include="Resources\fondo_login.jpg" />
